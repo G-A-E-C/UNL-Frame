@@ -659,52 +659,95 @@
             </div>
         </section>
 
-        <!-- Galería -->
-        <section class="gallery" aria-labelledby="gallery-title">
-            <div class="container">
-                <h2 id="gallery-title" class="gallery__title">VIDA UNIVERSITARIA</h2>
-                <div class="gallery__grid">
-                    <button class="gallery__item" data-gallery-item aria-label="Ampliar imagen de ceremonia de graduación">
-                        <img src="./assets/img/gallery-graduation.jpg" alt="Ceremonia de graduación 2024" class="gallery__image">
-                        <div class="gallery__overlay">
-                            <span class="gallery__expand-text">Ampliar</span>
-                        </div>
-                    </button>
-                    <button class="gallery__item" data-gallery-item aria-label="Ampliar imagen de laboratorio de investigación">
-                        <img src="./assets/img/gallery-lab.jpg" alt="Laboratorio de investigación avanzada" class="gallery__image">
-                        <div class="gallery__overlay">
-                            <span class="gallery__expand-text">Ampliar</span>
-                        </div>
-                    </button>
-                    <button class="gallery__item" data-gallery-item aria-label="Ampliar imagen de campus universitario">
-                        <img src="./assets/img/gallery-campus.jpg" alt="Vista del campus universitario" class="gallery__image">
-                        <div class="gallery__overlay">
-                            <span class="gallery__expand-text">Ampliar</span>
-                        </div>
-                    </button>
-                    <button class="gallery__item" data-gallery-item aria-label="Ampliar imagen de biblioteca central">
-                        <img src="./assets/img/gallery-library.jpg" alt="Biblioteca central moderna" class="gallery__image">
-                        <div class="gallery__overlay">
-                            <span class="gallery__expand-text">Ampliar</span>
-                        </div>
-                    </button>
-                    <button class="gallery__item" data-gallery-item aria-label="Ampliar imagen de conferencia académica">
-                        <img src="./assets/img/gallery-conference.jpg" alt="Conferencia académica internacional" class="gallery__image">
-                        <div class="gallery__overlay">
-                            <span class="gallery__expand-text">Ampliar</span>
-                        </div>
-                    </button>
-                    <button class="gallery__item" data-gallery-item aria-label="Ampliar imagen de actividades estudiantiles">
-                        <img src="./assets/img/gallery-activities.jpg" alt="Actividades estudiantiles y deportivas" class="gallery__image">
-                        <div class="gallery__overlay">
-                            <span class="gallery__expand-text">Ampliar</span>
-                        </div>
-                    </button>
-                </div>
-            </div>
-        </section>
 
         <!-- Mapa de Ubicación -->
+        <!-- VIDA UNIVERSITARIA - Feed de Curator.io -->
+        <section class="vida-universitaria-feed" aria-labelledby="vida-universitaria-title">
+            <div class="container">
+                <h2 id="vida-universitaria-title" class="gallery__title">VIDA UNIVERSITARIA</h2>
+                <!-- Indicador de carga para el feed -->
+                <div id="feed-loading" style="margin: 40px 0; text-align: center; color: #B71C1C; font-size: 1.2rem;">
+                    <i class="fas fa-spinner fa-spin" style="margin-right: 10px;"></i>
+                    Cargando contenido de redes sociales...
+                    <div style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+                        Si no aparece contenido en unos segundos, verifica tu conexión a internet
+                    </div>
+                </div>
+                <!-- Contenedor del feed de Curator.io -->
+                <div id="curator-feed-default-feed-layout" style="min-height: 400px; margin: 20px 0;">
+                  <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">
+                    Powered by Curator.io
+                  </a>
+                </div>
+                <!-- Mensaje alternativo si no carga el feed -->
+                <div id="feed-fallback" style="display: none; margin: 40px 0; padding: 30px; border: 2px dashed #ddd; border-radius: 10px; text-align: center; background: #f9f9f9;">
+                    <h3 style="color: #B71C1C; margin-bottom: 15px;">¡Síguenos en nuestras redes!</h3>
+                    <p style="color: #666; margin-bottom: 20px;">El feed de redes sociales está cargando o no está disponible en este momento</p>
+                    <button onclick="retryCuratorFeed()" style="background: #B71C1C; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; margin-bottom: 20px; font-weight: 600;">
+                        Intentar de nuevo
+                    </button>
+                    <p style="color: #666; margin-bottom: 20px;">Mientras tanto, síguenos directamente en:</p>
+                    <div style="display: flex; justify-content: center; gap: 30px; margin-top: 20px;">
+                        <a href="https://www.instagram.com/unloficial" target="_blank" style="color: #E1306C; font-size: 2.5rem; text-decoration: none; transition: transform 0.3s ease;" title="Síguenos en Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/unloficial" target="_blank" style="color: #1877F2; font-size: 2.5rem; text-decoration: none; transition: transform 0.3s ease;" title="Síguenos en Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.threads.com/@unloficial" target="_blank" style="color: #000; font-size: 2.5rem; text-decoration: none; transition: transform 0.3s ease;" title="Síguenos en Threads">
+                            <i class="fab fa-threads"></i>
+                        </a>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                // Función para reintentar la carga del feed
+                function retryCuratorFeed() {
+                    var fallbackEl = document.getElementById('feed-fallback');
+                    var loadingEl = document.getElementById('feed-loading');
+                    if (fallbackEl) fallbackEl.style.display = 'none';
+                    if (loadingEl) loadingEl.style.display = 'block';
+                    var feedContainer = document.getElementById('curator-feed-default-feed-layout');
+                    if (feedContainer) {
+                        feedContainer.innerHTML = '<a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a>';
+                    }
+                    setTimeout(loadCuratorFeed, 1000);
+                }
+                // Función para manejar la carga del feed
+                function loadCuratorFeed() {
+                    var loadingEl = document.getElementById('feed-loading');
+                    var fallbackEl = document.getElementById('feed-fallback');
+                    var feedContainer = document.getElementById('curator-feed-default-feed-layout');
+                    var timeout = setTimeout(function() {
+                        if (loadingEl) loadingEl.style.display = 'none';
+                        if (fallbackEl) fallbackEl.style.display = 'block';
+                    }, 10000);
+                    (function(){
+                        var i,e,d=document,s="script";
+                        i=d.createElement("script");
+                        i.async=1;
+                        i.charset="UTF-8";
+                        i.src="https://cdn.curator.io/published/5f787138-2ee8-4859-85f4-2b04d7d97336.js";
+                        i.onload = function() {
+                            clearTimeout(timeout);
+                            if (loadingEl) loadingEl.style.display = 'none';
+                        };
+                        i.onerror = function() {
+                            clearTimeout(timeout);
+                            if (loadingEl) loadingEl.style.display = 'none';
+                            if (fallbackEl) fallbackEl.style.display = 'block';
+                        };
+                        e=d.getElementsByTagName(s)[0];
+                        e.parentNode.insertBefore(i, e);
+                    })();
+                }
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', loadCuratorFeed);
+                } else {
+                    loadCuratorFeed();
+                }
+                </script>
+            </div>
+        </section>
         <section class="location" aria-labelledby="location-title">
             <div class="container">
                 <h2 id="location-title" class="location__title">NUESTRA UBICACIÓN</h2>
