@@ -1,0 +1,430 @@
+/* ==========================================================================
+   ESTILOS DE ACCESIBILIDAD WCAG 2.1 COMPLIANT
+   ========================================================================== */
+
+/* Variables CSS para colores de alto contraste */
+:root {
+  /* Colores institucionales originales */
+  --color-rojo: #B5121B;              /* Rojo institucional */
+  --color-blanco: #FFFFFF;            /* Blanco */
+  --color-negro: #000000;             /* Negro */
+  --color-gris-900: #333333;          /* Gris oscuro */
+  --color-gris-700: #616161;          /* Gris medio */
+  --color-gris-500: #9E9E9E;          /* Gris */
+  --color-gris-300: #CCCCCC;          /* Gris claro */
+  --color-gris-100: #F5F5F5;          /* Gris muy claro */
+  --color-verde: #2E7D32;             /* Verde */
+  --color-azul: #1565C0;              /* Azul */
+  --color-amarillo: #F9A825;          /* Amarillo */
+  
+  /* Para compatibilidad con accesibilidad */
+  --color-primary: #B5121B;           /* Rojo institucional */
+  --color-primary-hover: #8E0F16;     /* Rojo oscuro para hover */
+  --color-secondary: #1565C0;         /* Azul */
+  --color-success: #2E7D32;           /* Verde */
+  --color-warning: #F9A825;           /* Amarillo */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-gray-900: #333333;
+  --color-gray-700: #616161;
+  --color-gray-500: #9E9E9E;
+  --color-gray-300: #CCCCCC;
+  --color-gray-100: #F5F5F5;
+  
+  /* Colores de texto originales */
+  --text-primary: #333333;            /* Gris oscuro como era originalmente */
+  --text-inverse: #FFFFFF;            /* Blanco sobre oscuro */
+  --text-on-primary: #FFFFFF;         /* Blanco sobre rojo */
+  --text-on-secondary: #FFFFFF;       /* Blanco sobre azul */
+  --text-on-success: #FFFFFF;         /* Blanco sobre verde */
+  --text-on-warning: #000000;         /* Negro sobre amarillo */
+  
+  /* Tipografía accesible */
+  --font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --font-size-base: 16px;             /* Tamaño mínimo WCAG */
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 48px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --line-height-base: 1.5;
+  --line-height-tight: 1.25;
+  
+  /* Focus states para accesibilidad */
+  --focus-outline: 2px solid var(--color-secondary);
+  --focus-offset: 2px;
+  
+  /* Transiciones */
+  --transition-fast: 250ms ease;
+}
+
+/* Reset base manteniendo colores originales */
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-primary);
+  background-color: var(--color-blanco);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus states mejorados para accesibilidad */
+:focus {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+/* Tipografía con contraste garantizado */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 1rem 0;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--text-primary);
+}
+
+h1 { font-size: var(--font-size-3xl); }
+h2 { font-size: var(--font-size-2xl); }
+h3 { font-size: var(--font-size-xl); }
+h4 { font-size: var(--font-size-lg); }
+
+p {
+  margin: 0 0 1rem 0;
+  color: var(--text-primary);
+}
+
+/* Enlaces accesibles manteniendo color rojo original */
+a {
+  color: var(--color-rojo);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover, a:focus {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+/* Botones accesibles con colores originales */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  min-height: 44px; /* Tamaño mínimo táctil WCAG */
+  min-width: 44px;
+}
+
+.btn--primary {
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
+  border-color: var(--color-rojo);
+}
+
+.btn--primary:hover, .btn--primary:focus {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: var(--color-blanco);
+  text-decoration: none;
+}
+
+.btn--secondary {
+  background-color: var(--color-azul);
+  color: var(--color-blanco);
+  border-color: var(--color-azul);
+}
+
+.btn--secondary:hover, .btn--secondary:focus {
+  background-color: #0D47A1;
+  border-color: #0D47A1;
+  color: var(--color-blanco);
+  text-decoration: none;
+}
+
+/* Header accesible con colores originales */
+.header {
+  background-color: var(--color-blanco);
+  border-bottom: 1px solid var(--color-gris-300);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header__nav-link {
+  color: var(--color-gris-900);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  padding: 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.header__nav-link:hover, .header__nav-link:focus {
+  color: var(--color-rojo);
+  text-decoration: none; /* Evitar doble subrayado */
+}
+
+.header__nav-link[aria-current="page"] {
+  color: var(--color-rojo);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Footer accesible con colores originales */
+.footer {
+  background-color: var(--color-gris-900);
+  color: var(--color-blanco);
+  padding: 2rem 0;
+}
+
+.footer a {
+  color: var(--color-blanco);
+}
+
+.footer a:hover, .footer a:focus {
+  color: var(--color-blanco);
+  text-decoration: underline;
+}
+
+/* Secciones con fondos de colores institucionales originales */
+.section--primary {
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
+}
+
+.section--secondary {
+  background-color: var(--color-azul);
+  color: var(--color-blanco);
+}
+
+.section--success {
+  background-color: var(--color-verde);
+  color: var(--color-blanco);
+}
+
+.section--warning {
+  background-color: var(--color-amarillo);
+  color: var(--color-negro);
+}
+
+.section--light {
+  background-color: var(--color-gris-100);
+  color: var(--color-gris-900);
+}
+
+/* Panel de accesibilidad con colores originales */
+.header__accessibility {
+  position: relative;
+  display: inline-block;
+}
+
+.header__accessibility button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: var(--transition-fast);
+  color: var(--color-gris-900);
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.header__accessibility button:hover, 
+.header__accessibility button:focus {
+  background-color: var(--color-gris-100);
+  color: var(--color-rojo);
+}
+
+.accessibility-panel {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 8px;
+  background: var(--color-blanco);
+  border: 1px solid var(--color-gris-300);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  z-index: 1000;
+  min-width: 220px;
+}
+
+.accessibility-panel[aria-hidden="false"] {
+  display: block;
+}
+
+.accessibility-panel h4 {
+  margin: 0 0 1rem 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gris-900);
+}
+
+.accessibility-panel button {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 8px 12px;
+  background: var(--color-gris-100);
+  color: var(--color-gris-900);
+  border: 1px solid var(--color-gris-300);
+  border-radius: 8px;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-fast);
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.accessibility-panel button:hover, 
+.accessibility-panel button:focus {
+  background: var(--color-rojo);
+  color: var(--color-blanco);
+  border-color: var(--color-rojo);
+}
+
+.accessibility-panel button:last-child {
+  margin-bottom: 0;
+}
+
+/* Estados de accesibilidad */
+html.font-large {
+  font-size: 120% !important;
+}
+
+html.font-xlarge {
+  font-size: 140% !important;
+}
+
+html.font-small {
+  font-size: 90% !important;
+}
+
+/* Modo alto contraste SOLO cuando se activa manualmente */
+body.high-contrast,
+.high-contrast .header,
+.high-contrast main,
+.high-contrast footer {
+  background: var(--color-negro) !important;
+  color: var(--color-blanco) !important;
+}
+
+.high-contrast a,
+.high-contrast button,
+.high-contrast .btn {
+  color: var(--color-blanco) !important;
+  background: var(--color-gris-900) !important;
+  border-color: var(--color-blanco) !important;
+}
+
+.high-contrast img,
+.high-contrast video {
+  filter: grayscale(1) contrast(1.2) !important;
+}
+
+/* Modo escala de grises */
+body.grayscale,
+.grayscale main,
+.grayscale header,
+.grayscale footer {
+  filter: grayscale(1) !important;
+}
+
+/* Subrayar enlaces SOLO cuando se activa la opción de accesibilidad */
+.underline-links a,
+.underline-links .btn,
+.underline-links .header__nav-link,
+.underline-links .footer__link {
+  text-decoration: underline !important;
+}
+
+/* Asegurar que los enlaces del header no tengan text-decoration por defecto */
+body:not(.underline-links) .header__nav-link {
+  text-decoration: none !important;
+}
+
+/* Utilidades */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Media queries para reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Media queries para alto contraste del sistema */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: #B5121B;
+    --color-primary-hover: #8E0F16;
+    --text-primary: #000000;
+    --color-white: #FFFFFF;
+    --color-gray-300: #999999;
+  }
+}
+
+/* Media queries para tema oscuro del sistema - DESHABILITADO para mantener colores originales */
+/* 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+  }
+  
+  .header {
+    background-color: var(--color-gray-900);
+    border-bottom-color: var(--color-gray-700);
+  }
+  
+  .header__nav-link {
+    color: var(--color-white);
+  }
+}
+*/
