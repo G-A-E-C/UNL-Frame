@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoridades - Universidad Nacional | UNL</title>
+    <meta name="description" content="Conoce a las autoridades de la Universidad Nacional: Rector, Vicerrectora y Directores Académicos.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/autoridades.css">
+    <link rel="stylesheet" href="./css/accessibility.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <!-- Barra principal de navegación -->
+        <div class="header__main">
+            <div class="container">
+                <div class="header__main-content">
+                    <a href="./index.html" class="header__logo" aria-label="Inicio - Universidad Nacional">
+                        <img src="./assets/img/logogris_0.png" alt="Logo Universidad Nacional" width="40" height="40">
+                    </a>
+
+                    <nav class="header__nav" aria-label="Navegación principal">
+                        <ul class="header__nav-list">
+                            <li class="header__nav-item">
+                                <a href="./index.html" class="header__nav-link">INICIO</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a href="#" class="header__nav-link">OFERTA ACADÉMICA</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a href="#" class="header__nav-link">INVESTIGACIÓN</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a href="#" class="header__nav-link">NOTICIAS</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a href="#" class="header__nav-link">SERVICIOS</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a href="./autoridades.html" class="header__nav-link" aria-current="page">CONTACTO</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="header__actions">
+                        <div class="header__search">
+                            <button class="header__search-toggle" aria-label="Abrir buscador">
+                                <svg class="header__search-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                </svg>
+                            </button>
+                            <div class="header__search-form" aria-hidden="true">
+                                <input type="search" class="header__search-input" placeholder="Buscar..." aria-label="Buscar en el sitio">
+                                <button type="submit" class="header__search-submit" aria-label="Realizar búsqueda">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Botón de Accesibilidad -->
+                        <div class="header__accessibility">
+                            <button id="accessibility-btn" aria-label="Opciones de accesibilidad" title="Opciones de accesibilidad">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/>
+                                </svg>
+                            </button>
+                            <div id="accessibility-panel" class="accessibility-panel" aria-hidden="true">
+                                <h4>Accesibilidad</h4>
+                                <button class="accessibility-font-inc" type="button">Aumentar texto</button>
+                                <button class="accessibility-font-dec" type="button">Reducir texto</button>
+                                <button class="accessibility-contrast" type="button">Alto contraste</button>
+                                <button class="accessibility-grayscale" type="button">Escala de grises</button>
+                                <button class="accessibility-underline-links" type="button">Subrayar enlaces</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menú móvil -->
+                    <button class="header__mobile-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                        <span class="header__mobile-toggle-bar"></span>
+                        <span class="header__mobile-toggle-bar"></span>
+                        <span class="header__mobile-toggle-bar"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil desplegable -->
+        <nav class="header__mobile-nav" aria-label="Navegación móvil" aria-hidden="true">
+            <div class="container">
+                <ul class="header__mobile-nav-list">
+                    <li><a href="./index.html" class="header__mobile-nav-link">INICIO</a></li>
+                    <li><a href="#" class="header__mobile-nav-link">OFERTA ACADÉMICA</a></li>
+                    <li><a href="#" class="header__mobile-nav-link">INVESTIGACIÓN</a></li>
+                    <li><a href="#" class="header__mobile-nav-link">NOTICIAS</a></li>
+                    <li><a href="#" class="header__mobile-nav-link">SERVICIOS</a></li>
+                    <li><a href="./autoridades.html" class="header__mobile-nav-link" aria-current="page">CONTACTO</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" role="main">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Navegación de ruta">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item">
+                        <a href="./index.html" class="breadcrumb__link">Inicio</a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                        Autoridades
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-header__title">Autoridades</h1>
+                <p class="page-header__subtitle">Conoce a las autoridades que lideran la Universidad Nacional</p>
+            </div>
+        </section>
+
+        <!-- Autoridades Content -->
+        <section class="authorities">
+            <div class="container">
+                
+                <!-- Rector -->
+                <div class="authority authority--rector">
+                    <div class="authority__image-container">
+                        <div class="authority__image-placeholder">
+                            <!-- Imagen del rector se agregará aquí -->
+                        </div>
+                    </div>
+                    <div class="authority__content">
+                        <h2 class="authority__name">Nikolay Aguirre, Ph. D.</h2>
+                        <h3 class="authority__position">Rector</h3>
+                        <p class="authority__description">
+                            Ingeniero Forestal y Ph.D en Ciencias Forestales, con más de 
+                            25 años de experiencia en investigación sobre ecología, 
+                            biodiversidad y restauración, con más de 85 publicaciones 
+                            científicas.
+                        </p>
+                        <div class="authority__contact">
+                            <div class="authority__contact-item">
+                                <strong>Biografía</strong>
+                            </div>
+                            <div class="authority__contact-item">
+                                <strong>Contacto</strong>
+                            </div>
+                            <div class="authority__contact-item">
+                                <strong>Horario Atención</strong><br>
+                                Lunes a viernes 8:00 a<br>
+                                12:30 y de 15:00 a
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vicerrectora -->
+                <div class="authority authority--vicerrector">
+                    <div class="authority__content">
+                        <h2 class="authority__name">Elvia Maricela Zhapa Amay</h2>
+                        <h3 class="authority__position">Vicerrectora</h3>
+                        <p class="authority__description">
+                            Doctora en Contabilidad y Auditoría, con maestrías en 
+                            Docencia e Investigación y Gerencia Contable Financiera. 
+                            Cuenta con vasta experiencia en administración académica. 
+                            Trayectoria docente, investigativa y directiva en la UNL. Ha 
+                            publicado libros y artículos científicos.
+                        </p>
+                        <div class="authority__contact">
+                            <div class="authority__contact-item">
+                                <strong>Horario Atención</strong><br>
+                                Lunes a viernes 8:00<br>
+                                a 12:30 y de 15:00 a
+                            </div>
+                            <div class="authority__contact-item">
+                                <strong>Biografía</strong>
+                            </div>
+                            <div class="authority__contact-item">
+                                <strong>Contacto</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="authority__image-container">
+                        <div class="authority__image-placeholder">
+                            <!-- Imagen de la vicerrectora se agregará aquí -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Directores Académicos -->
+                <div class="directors">
+                    <h2 class="directors__title">DIRECTORES</h2>
+                    <p class="directors__subtitle">Decano(a) / Gestor(a) Académico(a) / Director(a)</p>
+                    
+                    <div class="directors__grid">
+                        <!-- Director 1 -->
+                        <div class="director">
+                            <div class="director__image-container">
+                                <div class="director__image-placeholder">
+                                    <!-- Imagen del director se agregará aquí -->
+                                </div>
+                            </div>
+                            <div class="director__content">
+                                <h3 class="director__name">Daniela Calva Cabrera, Ph.D.</h3>
+                                <p class="director__description">
+                                    Directora de la Unidad de la UNL
+                                </p>
+                                <button class="director__btn">Ver información</button>
+                            </div>
+                        </div>
+
+                        <!-- Director 2 -->
+                        <div class="director">
+                            <div class="director__image-container">
+                                <div class="director__image-placeholder">
+                                    <!-- Imagen del director se agregará aquí -->
+                                </div>
+                            </div>
+                            <div class="director__content">
+                                <h3 class="director__name">Dr. Milton Mejía Balcazar, Mg.Sc.</h3>
+                                <p class="director__description">
+                                    Director de la Unidad de Educación a Distancia y en
+                                </p>
+                                <button class="director__btn">Ver información</button>
+                            </div>
+                        </div>
+
+                        <!-- Director 3 -->
+                        <div class="director">
+                            <div class="director__image-container">
+                                <div class="director__image-placeholder">
+                                    <!-- Imagen del director se agregará aquí -->
+                                </div>
+                            </div>
+                            <div class="director__content">
+                                <h3 class="director__name">Dr. Byron Serrano Ortega, Esp. Mgc.</h3>
+                                <p class="director__description">
+                                    Decano de la Facultad de la Salud Humana
+                                </p>
+                                <button class="director__btn">Ver información</button>
+                            </div>
+                        </div>
+
+                        <!-- Director 4 -->
+                        <div class="director">
+                            <div class="director__image-container">
+                                <div class="director__image-placeholder">
+                                    <!-- Imagen del director se agregará aquí -->
+                                </div>
+                            </div>
+                            <div class="director__content">
+                                <h3 class="director__name">Dr. Mario Sánchez Armijos Mg. Sc.</h3>
+                                <p class="director__description">
+                                    Decano de la Facultad Jurídica, Social y Administrativa
+                                </p>
+                                <button class="director__btn">Ver información</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <div class="footer__contact">
+                        <h3 class="footer__title">Contacto</h3>
+                        <ul class="footer__contact-list">
+                            <li class="footer__contact-item">
+                                <svg class="footer__contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                                <span>Av. Pío Jaramillo Alvarado, La Argelia, Loja</span>
+                            </li>
+                            <li class="footer__contact-item">
+                                <svg class="footer__contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                                <span>(07) 2546-100</span>
+                            </li>
+                            <li class="footer__contact-item">
+                                <svg class="footer__contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                                <span>info@unl.edu.ec</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__seal">
+                    <img src="./assets/img/logogris_0.png" alt="Sello Universidad Nacional" class="footer__seal-image">
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © <span id="current-year">2024</span> Universidad Nacional de Loja. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
