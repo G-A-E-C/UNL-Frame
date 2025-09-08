@@ -439,6 +439,241 @@
                     </div>
                 </div>
 
+
+                  <!-- Próximos eventos -->
+                    <section id="eventos" class="eventos-section">
+                        <div class="eventos-header">
+                            <h2>Próximos eventos</h2>
+                            <a href="#" class="eventos-link">Descubre más eventos <span style="font-size:1.2em;">→</span></a>
+                        </div>
+                        <h3 class="eventos-mes">Septiembre, 2025 <button class="eventos-mes-btn" style="background:none;border:none;cursor:pointer;font-size:1.2em;line-height:1;">→</button></h3>
+                        <div class="eventos-grid"></div>
+                        <div class="eventos-modal-bg">
+                            <div class="eventos-modal">
+                                <button class="eventos-modal-close">&times;</button>
+                                <div class="eventos-modal-top">
+                                    <div class="eventos-modal-fecha">
+                                        <span class="eventos-modal-dia"></span>
+                                        <span class="eventos-modal-mes"></span>
+                                    </div>
+                                    <div class="eventos-modal-info-top">
+                                        <span class="eventos-modal-destacado">DESTACADO</span>
+                                        <h4 class="eventos-modal-titulo"></h4>
+                                        <div class="eventos-modal-desc"></div>
+                                        <div class="eventos-modal-meta"></div>
+                                    </div>
+                                </div>
+                                <img class="eventos-modal-img" src="" alt="">
+                                <div class="eventos-modal-detalles">
+                                    <h5>DETALLES DEL EVENTO</h5>
+                                    <div class="eventos-modal-detalles-content"></div>
+                                    <div class="eventos-modal-extra">
+                                        <div class="eventos-modal-hora"></div>
+                                        <div class="eventos-modal-ubicacion"></div>
+                                    </div>
+                                    <div class="eventos-modal-calendario">
+                                        <button class="eventos-modal-btncal">CALENDARIO</button>
+                                        <button class="eventos-modal-btngcal">GOOGLE CALENDAR</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <style>
+                        .eventos-section {margin-bottom:3rem;}
+                        .eventos-header {display:flex;align-items:center;justify-content:space-between;}
+                        .eventos-header h2 {font-size:2.5rem;font-weight:bold;}
+                        .eventos-link {font-size:1.1rem;text-decoration:none;color:#222;display:flex;align-items:center;gap:0.3em;font-weight:500;}
+                        .eventos-mes {font-size:2rem;font-weight:500;margin:1.5rem 0 2rem 0;display:flex;align-items:center;gap:0.3em;}
+                        .eventos-mes-btn {background:none;border:none;cursor:pointer;font-size:1.2em;line-height:1;}
+                        .eventos-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem;}
+                        .eventos-card {background:#fff;border-radius:1rem;box-shadow:0 2px 12px rgba(0,0,0,0.07);overflow:hidden;transition:box-shadow .2s;cursor:pointer;display:flex;flex-direction:column;}
+                        .eventos-card:hover {box-shadow:0 4px 24px rgba(0,0,0,0.13);}
+                        .eventos-card-img {width:100%;height:180px;object-fit:cover;}
+                        .eventos-card-badge {position:absolute;top:1rem;left:1rem;background:#ffd600;color:#222;font-size:0.85rem;font-weight:700;padding:0.2em 0.7em;border-radius:0.5em;box-shadow:0 1px 4px rgba(0,0,0,0.08);}
+                        .eventos-card-fecha {font-size:2rem;font-weight:700;line-height:1;}
+                        .eventos-card-dia {font-size:2rem;font-weight:700;}
+                        .eventos-card-mes {font-size:1rem;letter-spacing:2px;}
+                        .eventos-card-content {padding:1.2rem 1.2rem 0.7rem 1.2rem;display:flex;flex-direction:column;gap:0.5rem;}
+                        .eventos-card-titulo {font-size:1.15rem;font-weight:600;}
+                        .eventos-card-meta {display:flex;align-items:center;gap:0.7em;font-size:1rem;color:#666;}
+                        .eventos-card-meta span {display:flex;align-items:center;gap:0.3em;}
+                        .eventos-card-bar {height:6px;background:#f5f5f5;border-radius:3px;margin-top:1.2rem;overflow:hidden;}
+                        .eventos-card-bar-inner {height:100%;background:#e74c3c;width:60%;border-radius:3px;transition:width .3s;}
+                        /* Modal */
+                        .eventos-modal-bg {display:none;position:fixed;z-index:1000;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;}
+                        .eventos-modal {background:#fff;border-radius:1rem;max-width:430px;width:95vw;box-shadow:0 8px 32px rgba(0,0,0,0.18);position:relative;padding:0;overflow:hidden;}
+                        .eventos-modal-close {position:absolute;top:0.7rem;right:1rem;background:none;border:none;font-size:2rem;line-height:1;color:#222;cursor:pointer;z-index:2;}
+                        .eventos-modal-top {background:#e74c3c;color:#fff;padding:1.2rem 1.2rem 0.7rem 1.2rem;display:flex;gap:1.2rem;align-items:flex-start;}
+                        .eventos-modal-fecha {display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:48px;}
+                        .eventos-modal-dia {font-size:2rem;font-weight:700;line-height:1;}
+                        .eventos-modal-mes {font-size:1rem;letter-spacing:2px;}
+                        .eventos-modal-destacado {background:#ffd600;color:#222;font-size:0.85rem;font-weight:700;padding:0.2em 0.7em;border-radius:0.5em;margin-bottom:0.5em;display:inline-block;}
+                        .eventos-modal-titulo {font-size:1.1rem;font-weight:700;margin-bottom:0.5em;}
+                        .eventos-modal-desc {font-size:1rem;line-height:1.4;margin-bottom:0.5em;}
+                        .eventos-modal-meta {font-size:0.98rem;display:flex;flex-direction:column;gap:0.2em;}
+                        .eventos-modal-img {width:100%;height:180px;object-fit:cover;display:block;}
+                        .eventos-modal-detalles {padding:1.2rem;}
+                        .eventos-modal-detalles h5 {font-size:1rem;font-weight:700;margin-bottom:0.7em;letter-spacing:1px;}
+                        .eventos-modal-detalles-content {font-size:1rem;color:#333;margin-bottom:1em;}
+                        .eventos-modal-extra {display:flex;gap:1em;margin-bottom:1em;}
+                        .eventos-modal-hora, .eventos-modal-ubicacion {background:#f5f5f5;padding:0.7em 1em;border-radius:0.7em;font-size:1rem;flex:1;display:flex;align-items:center;gap:0.5em;}
+                        .eventos-modal-calendario {display:flex;gap:1em;justify-content:flex-start;}
+                        .eventos-modal-btncal, .eventos-modal-btngcal {background:#eee;border:none;padding:0.6em 1.2em;border-radius:0.7em;font-size:1rem;cursor:pointer;font-weight:600;transition:background .2s;}
+                        .eventos-modal-btncal:hover, .eventos-modal-btngcal:hover {background:#e0e0e0;}
+                    </style>
+                    <script>
+                    const eventos = [
+                        {
+                            id: 1,
+                            titulo: "Charla: Oportunidades de Financiamiento",
+                            fecha: "08 Sep 2025",
+                            hora: "09:30 - 18:00",
+                            lugar: "Sede Aula Magna",
+                            descripcion: "Dirección de Innovación",
+                            imagen: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80",
+                            destacado: true,
+                            enVivo: true,
+                            detalles: {hora: "09:30", lugar: "Aula Magna - Computación"}
+                        },
+                        {
+                            id: 2,
+                            titulo: "Mesa de Capital Humano y Género de Energía",
+                            fecha: "08 Sep 2025",
+                            hora: "10:30 - 18:00",
+                            lugar: "Facultad de Enegía",
+                            descripcion: "Encuentro académico para discutir energía, desarrollo humano y equidad de género.",
+                            imagen: "https://images.unsplash.com/photo-1503424886301-943af3f99b07?auto=format&fit=crop&w=1200&q=80",
+                            destacado: true,
+                            enVivo: false,
+                            detalles: {hora: "10:30", lugar: "Aula Magna"}
+                        },
+                        {
+                            id: 3,
+                            titulo: "Charla magistral: 'Educational Responsibility: Generative AI, Irreversibility and Genetic Showing'",
+                            fecha: "10 Sep 2025",
+                            hora: "16:00 - 18:00",
+                            lugar: "Sala de Simulación Pedagógica",
+                            descripcion: "Conferencia internacional sobre responsabilidad educativa frente a la IA generativa.",
+                            imagen: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80",
+                            destacado: true,
+                            enVivo: false,
+                            detalles: {hora: "16:00", lugar: "Sala de Simulación Pedagógica"}
+                        },
+                    ];
+
+                    function getDiaMes(fecha) {
+                        const [dia, mes, anio] = fecha.split(' ');
+                        return {dia, mes: mes.toUpperCase()};
+                    }
+
+                    let eventosPagina = 0;
+                    const eventosPorPagina = 3;
+                    function renderEventos() {
+                        const grid = document.querySelector('.eventos-grid');
+                        if (!grid) return;
+                        grid.innerHTML = '';
+                        const inicio = eventosPagina * eventosPorPagina;
+                        const fin = inicio + eventosPorPagina;
+                        const eventosMostrar = eventos.slice(inicio, fin);
+                        eventosMostrar.forEach(ev => {
+                            const {dia, mes} = getDiaMes(ev.fecha);
+                            const card = document.createElement('div');
+                            card.className = 'eventos-card';
+                            card.innerHTML = `
+                                <div style="position:relative;">
+                                    <img class="eventos-card-img" src="${ev.imagen}" alt="${ev.titulo}">
+                                    <span class="eventos-card-badge">${ev.destacado ? 'DESTACADO' : ''}</span>
+                                </div>
+                                <div class="eventos-card-content">
+                                    <div style="display:flex;align-items:center;gap:1.2em;">
+                                        <div class="eventos-card-fecha">
+                                            <span class="eventos-card-dia">${dia}</span><br>
+                                            <span class="eventos-card-mes">${mes}</span>
+                                        </div>
+                                        <div style="flex:1;">
+                                            <div class="eventos-card-titulo">${ev.titulo}</div>
+                                            <div class="eventos-card-meta">
+                                                <span>🕒 ${ev.hora}</span>
+                                                <span>📍 ${ev.lugar}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="eventos-card-bar" style="background:#f5f5f5;">
+                                        <div class="eventos-card-bar-inner" style="background:${ev.enVivo ? '#e74c3c' : '#f5f5f5'};width:60%;"></div>
+                                    </div>
+                                </div>
+                            `;
+                            card.onclick = () => mostrarModal(ev);
+                            grid.appendChild(card);
+                        });
+                    }
+
+                    function mostrarModal(ev) {
+                        const modalBg = document.querySelector('.eventos-modal-bg');
+                        const modal = document.querySelector('.eventos-modal');
+                        if (!modalBg || !modal) return;
+                        // Fecha
+                        const {dia, mes} = getDiaMes(ev.fecha);
+                        modal.querySelector('.eventos-modal-dia').textContent = dia;
+                        modal.querySelector('.eventos-modal-mes').textContent = mes;
+                        // Destacado
+                        modal.querySelector('.eventos-modal-destacado').style.display = ev.destacado ? 'inline-block' : 'none';
+                        // Título y descripción
+                        modal.querySelector('.eventos-modal-titulo').textContent = ev.titulo;
+                        modal.querySelector('.eventos-modal-desc').textContent = ev.descripcion;
+                        // Meta
+                        modal.querySelector('.eventos-modal-meta').innerHTML = `🕒 ${ev.hora}<br>📍 ${ev.lugar}`;
+                        // Imagen
+                        modal.querySelector('.eventos-modal-img').src = ev.imagen;
+                        modal.querySelector('.eventos-modal-img').alt = ev.titulo;
+                        // Detalles
+                        modal.querySelector('.eventos-modal-detalles-content').innerHTML = `<b>Hora:</b> ${ev.detalles?.hora || ev.hora}<br><b>Lugar:</b> ${ev.detalles?.lugar || ev.lugar}`;
+                        // Extra
+                        modal.querySelector('.eventos-modal-hora').innerHTML = `🕒 <b>Hora:</b> ${ev.hora}`;
+                        modal.querySelector('.eventos-modal-ubicacion').innerHTML = `📍 <b>Ubicación:</b> ${ev.lugar}`;
+                        // Mostrar
+                        modalBg.style.display = 'flex';
+                    }
+
+                    function cerrarModal() {
+                        const modalBg = document.querySelector('.eventos-modal-bg');
+                        if (modalBg) modalBg.style.display = 'none';
+                    }
+
+                    document.addEventListener('DOMContentLoaded', () => {
+                        renderEventos();
+                        // Cerrar modal
+                        document.querySelector('.eventos-modal-close').onclick = cerrarModal;
+                        document.querySelector('.eventos-modal-bg').onclick = e => { if (e.target.classList.contains('eventos-modal-bg')) cerrarModal(); };
+
+                        // Solo el enlace "Descubre más eventos" funcional
+                        const link = document.querySelector('.eventos-link');
+                        if(link) {
+                            link.onclick = (e) => {
+                                e.preventDefault();
+                                if((eventosPagina+1)*eventosPorPagina < eventos.length) {
+                                    eventosPagina++;
+                                    renderEventos();
+                                } else {
+                                    eventosPagina = 0;
+                                    renderEventos();
+                                }
+                            };
+                        }
+
+                        // Flecha junto a "Septiembre, 2025" funcional
+                        const mesBtn = document.querySelector('.eventos-mes-btn');
+                        if(mesBtn) {
+                            mesBtn.onclick = (e) => {
+                                e.preventDefault();
+                                eventosPagina = 0;
+                                renderEventos();
+                            };
+                        }
+                    });
+                    </script>
+
                 <!-- Sitios de Interés -->
                 <div class="interest-sites">
                     <h3 class="interest-sites__title">Sitios de interés</h3>
