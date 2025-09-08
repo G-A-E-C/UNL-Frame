@@ -91,6 +91,25 @@ body.colorblind {
 .colorblind img, .colorblind video {
   filter: grayscale(0.7) contrast(1.1) !important;
 }
+
+/* Feed de Curator.io a pantalla completa */
+.vida-universitaria-feed {
+  width: 100%;
+  background: #fff;
+  padding: 0;
+}
+.vida-universitaria-feed .container {
+  max-width: 1400px;
+  width: 95vw;
+  padding: 0;
+  margin: 0 auto;
+}
+#curator-feed-default-feed-layout {
+  width: 100% !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  background: #fff;
+}
 /* ==========================================================================
    VARIABLES CSS Y CONFIGURACIÓN GLOBAL - WCAG 2.1 COMPLIANT
    ========================================================================== */
@@ -573,6 +592,7 @@ p {
 .header__logo img {
   height: 40px;
   width: auto;
+  margin-right: 96px; /* Aún más separación del logo respecto al menú */
 }
 
 /* Navegación */
