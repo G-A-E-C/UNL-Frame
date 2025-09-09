@@ -1,3 +1,185 @@
+/* Galería personalizada de ejemplo */
+.custom-gallery-demo {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.custom-gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+.custom-gallery-item {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  background: #f5f5f5;
+  transition: box-shadow 0.3s;
+}
+.custom-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+.custom-gallery-item:hover img {
+  transform: scale(1.05);
+}
+.custom-gallery-hover {
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(181,18,27,0.92);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 24px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 12px;
+  pointer-events: none;
+}
+.custom-gallery-item:hover .custom-gallery-hover {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Modal personalizado */
+.custom-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+}
+.custom-modal-content {
+  background: #fff;
+  border-radius: 20px;
+  max-width: 800px;
+  width: 95vw;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  overflow: hidden;
+  animation: modalIn 0.2s;
+}
+@keyframes modalIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.custom-modal-header {
+  background: #B5121B;
+  color: #fff;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.custom-modal-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-left: 16px;
+}
+.custom-modal-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.custom-modal-img-container {
+  flex: 1 1 320px;
+  min-width: 320px;
+  max-width: 380px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 20px;
+}
+.custom-modal-img-container img {
+  width: 100%;
+  height: auto;
+  border-bottom-left-radius: 20px;
+  object-fit: cover;
+}
+.custom-modal-info {
+  flex: 2 1 320px;
+  padding: 32px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.custom-modal-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.custom-modal-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #B5121B;
+}
+.custom-modal-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.custom-modal-info h3 {
+  margin: 12px 0 8px 0;
+  color: #B5121B;
+  font-size: 1.2rem;
+}
+.custom-modal-info p {
+  margin: 0 0 16px 0;
+  color: #333;
+  font-size: 1rem;
+}
+.custom-modal-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #F7971E 0%, #F44369 100%);
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 24px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 18px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.custom-modal-btn:hover {
+  background: linear-gradient(90deg, #F44369 0%, #F7971E 100%);
+}
+@media (max-width: 900px) {
+  .custom-modal-body {
+    flex-direction: column;
+    align-items: center;
+  }
+  .custom-modal-img-container, .custom-modal-info {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+  .custom-modal-info {
+    padding: 24px 12px 18px 12px;
+  }
+}
 /* Feed de Curator.io a pantalla completa */
 .vida-universitaria-feed {
   width: 100%;
