@@ -1,3 +1,52 @@
+
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('accessibility-btn');
+  const panel = document.getElementById('accessibility-panel');
+  if (!btn || !panel) return;
+
+  // Mostrar/ocultar panel
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const isOpen = panel.getAttribute('aria-hidden') === 'false';
+    panel.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+  });
+  document.addEventListener('click', function(e) {
+    if (!panel.contains(e.target) && e.target !== btn) {
+      panel.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  // Tamaño de fuente
+  let fontSize = 100;
+  function setFont(size) {
+    document.documentElement.classList.remove('font-small', 'font-large', 'font-xlarge');
+    if (size <= 90) document.documentElement.classList.add('font-small');
+    else if (size >= 140) document.documentElement.classList.add('font-xlarge');
+    else if (size >= 120) document.documentElement.classList.add('font-large');
+    fontSize = size;
+  }
+  panel.querySelector('.accessibility-font-inc').addEventListener('click', function() {
+    if (fontSize < 140) setFont(fontSize + 20);
+  });
+  panel.querySelector('.accessibility-font-dec').addEventListener('click', function() {
+    if (fontSize > 90) setFont(fontSize - 10);
+  });
+
+  // Alto contraste
+  panel.querySelector('.accessibility-contrast').addEventListener('click', function() {
+    document.body.classList.toggle('high-contrast');
+  });
+
+  // Escala de grises
+  panel.querySelector('.accessibility-grayscale').addEventListener('click', function() {
+    document.body.classList.toggle('grayscale');
+  });
+
+  // Subrayar enlaces
+  panel.querySelector('.accessibility-underline-links').addEventListener('click', function() {
+    document.body.classList.toggle('underline-links');
+  });
+});
 /**
  * Main JavaScript Module
  * Landing page for Universidad Nacional - Posgrados Section
@@ -1016,10 +1065,164 @@ if ('serviceWorker' in navigator) {
     // navigator.serviceWorker.register('/sw.js')
     //   .then(registration => console.log('SW registered:', registration))
     //   .catch(registrationError => console.log('SW registration failed:', registrationError));
-  });
-}
+        });
+    }
 
-// Analytics placeholder (Google Analytics, etc.)
+    // Carrusel de sitios de interés con loop infinito mejorado
+    function initInterestSitesCarousel() {
+        const carousel = document.querySelector('[data-carousel="interest-sites"]');
+        if (!carousel) return;
+
+        const track = carousel.querySelector('.interest-sites__track');
+        const cards = track.querySelectorAll('.interest-sites__card');
+        const dots = document.querySelectorAll('.interest-sites__dot');
+        const prevBtn = document.querySelector('[data-carousel-prev="interest-sites"]');
+        const nextBtn = document.querySelector('[data-carousel-next="interest-sites"]');
+
+        let currentSlide = 0;
+        const cardsPerView = 3; // Mostrar 3 tarjetas a la vez
+        const totalCards = cards.length;
+        const originalCards = 8; // Las primeras 8 tarjetas son las originales
+        const maxSlide = totalCards - cardsPerView; // Máximo índice de slide
+        let isTransitioning = false;
+
+        console.log('Carrusel inicializado:', { totalCards, originalCards, maxSlide });
+
+        function updateCarousel(withTransition = true) {
+            if (withTransition) {
+                track.style.transition = 'transform 0.5s ease-in-out';
+            } else {
+                track.style.transition = 'none';
+            }
+            
+            const translateX = -(currentSlide * (100 / cardsPerView));
+            track.style.transform = `translateX(${translateX}%)`;
+
+            // Actualizar dots activos basado en las tarjetas originales
+            const effectiveSlide = currentSlide % originalCards;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('interest-sites__dot--active', 
+                    index === Math.floor(effectiveSlide / cardsPerView));
+            });
+
+            console.log('Carrusel actualizado:', { currentSlide, translateX, effectiveSlide });
+        }
+
+        function nextSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            console.log('Next slide - antes:', currentSlide);
+            currentSlide++;
+            
+            // Si pasamos del último slide visible, hacer transición al final y luego saltar al inicio
+            if (currentSlide > maxSlide) {
+                console.log('Loop infinito: saltando al inicio');
+                updateCarousel(true);
+                
+                setTimeout(() => {
+                    currentSlide = 0;
+                    updateCarousel(false);
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, 50);
+                }, 500);
+            } else {
+                updateCarousel(true);
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 500);
+            }
+            
+            console.log('Next slide - después:', currentSlide);
+        }
+
+        function prevSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            console.log('Prev slide - antes:', currentSlide);
+            
+            if (currentSlide <= 0) {
+                console.log('Loop infinito hacia atrás: saltando al final');
+                // Saltar al final sin transición
+                currentSlide = maxSlide;
+                updateCarousel(false);
+                
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 50);
+            } else {
+                currentSlide--;
+                updateCarousel(true);
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 500);
+            }
+            
+            console.log('Prev slide - después:', currentSlide);
+        }
+
+        // Navegación con botones
+        if (prevBtn) {
+            prevBtn.addEventListener('click', prevSlide);
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', nextSlide);
+        }
+
+        // Navegación con dots - navegar directamente a la sección correspondiente
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                
+                currentSlide = index * cardsPerView;
+                if (currentSlide > maxSlide) currentSlide = maxSlide;
+                
+                updateCarousel(true);
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 500);
+            });
+        });
+
+        // Navegación con teclado
+        carousel.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                nextSlide();
+            }
+        });
+
+        // Inicializar
+        updateCarousel(false);
+
+        // Auto-play opcional (descomenta para activar)
+        /*
+        let autoplayInterval = setInterval(() => {
+            nextSlide();
+        }, 5000);
+        
+        // Pausar autoplay al hacer hover
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoplayInterval);
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            autoplayInterval = setInterval(() => {
+                nextSlide();
+            }, 5000);
+        });
+        */
+    }
+
+    // Inicializar carrusel
+    initInterestSitesCarousel();// Analytics placeholder (Google Analytics, etc.)
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 
