@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Posgrados - Universidad Nacional | Tradición, innovación, excelencia</title>
@@ -22,6 +23,303 @@
     <link rel="stylesheet" href="./css/accessibility.css">
 </head>
 <body>
+    <style>
+    /* Estilos para el feed personalizado de Instagram */
+    .instagram-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+    }
+    .instagram-post {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .instagram-post:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    .instagram-post img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    .instagram-post:hover img {
+        transform: scale(1.05);
+    }
+    .instagram-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.75);
+        color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    .instagram-post:hover .instagram-overlay {
+        opacity: 1;
+    }
+    .instagram-overlay h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .instagram-overlay p {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        font-weight: 500;
+    }
+    .instagram-overlay .stats {
+        display: flex;
+        gap: 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+    .instagram-overlay .stats span {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 5px 12px;
+        border-radius: 15px;
+        backdrop-filter: blur(5px);
+    }
+    /* Modal para mostrar el post completo */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        backdrop-filter: blur(5px);
+    }
+    .modal-content {
+        position: relative;
+        background-color: white;
+        margin: 2% auto;
+        padding: 0;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 800px;
+        max-height: 90vh;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        animation: modalSlideIn 0.3s ease-out;
+    }
+    @keyframes modalSlideIn {
+        from { transform: translateY(-50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    .modal-header {
+        background: #B71C1C;
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .modal-body {
+        padding: 0;
+        max-height: calc(90vh - 100px);
+        overflow-y: auto;
+    }
+    .modal-post-content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .modal-image {
+        flex: 1;
+        min-width: 300px;
+    }
+    .modal-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .modal-text {
+        flex: 1;
+        min-width: 300px;
+        padding: 30px;
+        background: #f8f9fa;
+    }
+    .close {
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background-color 0.3s;
+    }
+    .close:hover {
+        background-color: rgba(255,255,255,0.2);
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+        .instagram-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .instagram-post img {
+            height: 250px;
+        }
+        .modal-content {
+            width: 95%;
+            margin: 5% auto;
+        }
+        .modal-post-content {
+            flex-direction: column;
+        }
+        .modal-text {
+            padding: 20px;
+        }
+    }
+    </style>
+    <!-- ...feed de Curator.io... -->
+    <!-- ...otras secciones principales y encabezado... -->
+    <!-- ...feed de Curator.io... -->
+    <!-- ...otras secciones principales y encabezado... -->
+    <!-- Sección de Redes Sociales (ahora correctamente debajo del feed de Curator.io y encabezado) -->
+    <!-- ...existing code... -->
+    <!-- Aquí va el feed de Curator.io -->
+    <!-- ...existing code... -->
+    <!-- Sección de Redes Sociales -->
+    <!-- Modal para mostrar posts completos -->
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">@unloficial</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-post-content" id="modal-content">
+                    <!-- Contenido dinámico del post -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    // Datos de los posts de Instagram
+    const instagramPosts = {
+        1: {
+            title: "🏆 UNL en el TOP 10",
+            image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=600&h=400&fit=crop",
+            text: "🏆 Cosechamos logros importantes, avances en la producción científica, ofreciendo diversidad en nuestra oferta académica y contribuyendo significativamente al desarrollo del país. 🏆",
+            hashtags: "#EducamosParaTransformar",
+            likes: "395 Me gusta",
+            account: "unloficial"
+        },
+        2: {
+            title: "🎉 165 Años de Historia",
+            image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=400&fit=crop",
+            text: "📚 Más de un siglo de compromiso con la educación y la investigación, esta institución se ha consolidado como un pilar fundamental en la formación de profesionales en Ecuador.",
+            hashtags: "#UNLSostenible",
+            likes: "126 Me gusta",
+            account: "unloficial"
+        },
+        3: {
+            title: "🏛️ Nuestro Campus Histórico",
+            image: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=400&fit=crop",
+            text: "🏛️ Desde 1859 haciendo historia! Nuestro campus es testigo del crecimiento y evolución de generaciones de estudiantes que han contribuido al desarrollo del país.",
+            hashtags: "#CampusUNL #Historia",
+            likes: "244 Me gusta",
+            account: "unloficial"
+        },
+        4: {
+            title: "✍️ Concurso Nacional de Poesía",
+            image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&h=400&fit=crop",
+            text: "✍️ ¡La poesía joven tiene voz propia! Participa en el V Concurso Nacional de Poesía Juvenil Héctor Manuel Carrión 2025 con tu poemario inédito y gana $1.000 dólares. 💰",
+            hashtags: "#PoesiaJoven #ConcursoUNL",
+            likes: "167 Me gusta",
+            account: "unloficial"
+        }
+    };
+    // Función para abrir el modal
+    function openModal(postId) {
+        const post = instagramPosts[postId];
+        if (!post) return;
+        const modal = document.getElementById('postModal');
+        const modalContent = document.getElementById('modal-content');
+        const modalTitle = document.getElementById('modal-title');
+        modalTitle.textContent = `@${post.account}`;
+        modalContent.innerHTML = `
+            <div class="modal-image">
+                <img src="${post.image}" alt="${post.title}">
+            </div>
+            <div class="modal-text">
+                <div style="margin-bottom: 20px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: 10px;">
+                            UNL
+                        </div>
+                        <div>
+                            <strong>@${post.account}</strong>
+                            <div style="font-size: 0.9rem; color: #666;">Universidad Nacional del Litoral</div>
+                        </div>
+                    </div>
+                    <h3 style="color: #B71C1C; margin-bottom: 15px;">${post.title}</h3>
+                    <p style="line-height: 1.6; margin-bottom: 15px; color: #333;">${post.text}</p>
+                    <p style="color: #1877F2; font-weight: 600; margin-bottom: 20px;">${post.hashtags}</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #eee;">
+                        <span style="font-weight: 600;">${post.likes}</span>
+                        <div style="display: flex; gap: 15px;">
+                            <button style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">❤️</button>
+                            <button style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">💬</button>
+                            <button style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">📤</button>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px; text-align: center;">
+                        <a href="https://www.instagram.com/unloficial" target="_blank" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-block;">
+                            Ver en Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    // Función para cerrar el modal
+    function closeModal() {
+        const modal = document.getElementById('postModal');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    // Cerrar modal al hacer clic fuera de él
+    window.onclick = function(event) {
+        const modal = document.getElementById('postModal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
+    // Cerrar modal con la tecla Escape
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+    </script>
     <!-- Header -->
     <header class="header" role="banner">
         <!-- Barra principal de navegación -->
@@ -1111,6 +1409,73 @@
             </div>
         </section>
         <section class="location" aria-labelledby="location-title">
+    <!-- Sección de Redes Sociales -->
+    <section style="width:100%; max-width:1100px; margin:48px auto 0 auto; padding:0 16px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+            <h2 style="font-size:2rem; font-weight:700; color:#444; margin:0; letter-spacing:1px;">Síguenos en Redes Sociales</h2>
+            <div style="display:flex; gap:20px; align-items:center;">
+                <a href="https://www.instagram.com/unloficial/" target="_blank"
+                    style="color:#B71C1C; font-weight:600; font-size:1.1rem; text-decoration:none; display:flex; align-items:center; gap:6px;">
+                    <i class="fab fa-instagram"></i> @unloficial
+                </a>
+                <a href="https://www.threads.com/@unloficial" target="_blank"
+                    style="color:#B71C1C; font-weight:600; font-size:1.1rem; text-decoration:none; display:flex; align-items:center; gap:6px;">
+                    <span style="background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; font-size: 1.2em;">@</span> Threads
+                </a>
+            </div>
+        </div>
+        <!-- Grid personalizado de Instagram -->
+        <div class="instagram-grid" id="instagram-feed">
+            <!-- Post 1: TOP 10 -->
+            <div class="instagram-post" onclick="openModal(1)">
+                <img src="https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400&h=300&fit=crop" alt="UNL TOP 10" onerror="this.src='https://via.placeholder.com/400x300/B71C1C/FFFFFF?text=UNL+TOP+10'">
+                <div class="instagram-overlay">
+                    <h3>🏆 TOP 10</h3>
+                    <p>De las mejores universidades del Ecuador</p>
+                    <div class="stats">
+                        <span>❤️ 395 Me gusta</span>
+                        <span>💬 Ver más</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Post 2: 165 años -->
+            <div class="instagram-post" onclick="openModal(2)">
+                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&h=300&fit=crop" alt="165 años UNL">
+                <div class="instagram-overlay">
+                    <h3>🎉 165 AÑOS</h3>
+                    <p>Más de un siglo de compromiso con la educación</p>
+                    <div class="stats">
+                        <span>❤️ 126 Me gusta</span>
+                        <span>💬 Ver más</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Post 3: Campus -->
+            <div class="instagram-post" onclick="openModal(3)">
+                <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=300&fit=crop" alt="Campus UNL">
+                <div class="instagram-overlay">
+                    <h3>🏛️ NUESTRO CAMPUS</h3>
+                    <p>Desde 1859 haciendo historia</p>
+                    <div class="stats">
+                        <span>❤️ 244 Me gusta</span>
+                        <span>💬 Ver más</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Post 4: Concurso de Poesía -->
+            <div class="instagram-post" onclick="openModal(4)">
+                <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&h=300&fit=crop" alt="Concurso de Poesía">
+                <div class="instagram-overlay">
+                    <h3>✍️ CONCURSO DE POESÍA</h3>
+                    <p>V Concurso Nacional de Poesía Juvenil Héctor Manuel Carrión 2025</p>
+                    <div class="stats">
+                        <span>❤️ 167 Me gusta</span>
+                        <span>💬 Ver más</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
             <div class="container">
                 <h2 id="location-title" class="location__title">NUESTRA UBICACIÓN</h2>
                 <div class="location__content">
