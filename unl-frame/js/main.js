@@ -203,6 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
       this.header = document.querySelector(CONFIG.selectors.header);
       this.mobileToggle = document.querySelector(CONFIG.selectors.mobileToggle);
       this.mobileNav = document.querySelector(CONFIG.selectors.mobileNav);
+      // Search toggle and form
       this.searchToggle = document.querySelector(CONFIG.selectors.searchToggle);
       this.searchForm = document.querySelector(CONFIG.selectors.searchForm);
       this.searchInput = document.querySelector(CONFIG.selectors.searchInput);
@@ -224,7 +225,15 @@ document.addEventListener('DOMContentLoaded', function() {
         this.searchToggle.addEventListener('click', () => this.toggleSearch());
       }
 
-      // Close mobile menu on escape
+      // Search form submission
+      if (this.searchForm && this.searchInput) {
+        const form = this.searchForm.querySelector('form');
+        if (form) {
+          form.addEventListener('submit', (e) => this.handleSearch(e));
+        }
+      }
+
+      // Close mobile menu and search on escape
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
           this.closeMobileMenu();
@@ -232,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
 
-      // Close mobile menu on outside click
+      // Close mobile menu and search on outside click
       document.addEventListener('click', (e) => {
         if (!this.header.contains(e.target)) {
           this.closeMobileMenu();
@@ -311,6 +320,31 @@ document.addEventListener('DOMContentLoaded', function() {
     closeSearch() {
       this.searchForm.classList.remove(CONFIG.classes.isOpen);
       this.searchForm.setAttribute('aria-hidden', 'true');
+    },
+
+    handleSearch(e) {
+      e.preventDefault();
+      const searchTerm = this.searchInput.value.trim();
+      
+      if (searchTerm) {
+        // Aquí puedes implementar la lógica de búsqueda
+        console.log('Searching for:', searchTerm);
+        
+        // Ejemplo: redirigir a una página de resultados
+        // window.location.href = `/search?q=${encodeURIComponent(searchTerm)}`;
+        
+        // O mostrar resultados en tiempo real
+        this.performSearch(searchTerm);
+        
+        // Cerrar la búsqueda después de buscar
+        this.closeSearch();
+      }
+    },
+
+    performSearch(searchTerm) {
+      // Implementar la lógica de búsqueda aquí
+      // Por ejemplo, filtrar contenido de la página o hacer una petición AJAX
+      console.log('Performing search for:', searchTerm);
     }
   };
 
@@ -1068,7 +1102,7 @@ if ('serviceWorker' in navigator) {
         });
     }
 
-    // Carrusel de sitios de interés con loop infinito mejorado
+    // Carrusel de sitios de interés con navegación individual por tarjeta
     function initInterestSitesCarousel() {
         const carousel = document.querySelector('[data-carousel="interest-sites"]');
         if (!carousel) return;
@@ -1079,116 +1113,139 @@ if ('serviceWorker' in navigator) {
         const prevBtn = document.querySelector('[data-carousel-prev="interest-sites"]');
         const nextBtn = document.querySelector('[data-carousel-next="interest-sites"]');
 
-        let currentSlide = 0;
-        const cardsPerView = 3; // Mostrar 3 tarjetas a la vez
+        const cardsPerView = 3;
         const totalCards = cards.length;
-        const originalCards = 8; // Las primeras 8 tarjetas son las originales
-        const maxSlide = totalCards - cardsPerView; // Máximo índice de slide
+        const originalCards = 8; // Las primeras 8 tarjetas son originales
+        let currentIndex = 0; // Índice de la tarjeta que está en la posición izquierda
         let isTransitioning = false;
 
-        console.log('Carrusel inicializado:', { totalCards, originalCards, maxSlide });
+        console.log('Carrusel inicializado:', { totalCards, originalCards, cardsPerView });
 
-        function updateCarousel(withTransition = true) {
-            if (withTransition) {
+        // Configurar el ancho de las tarjetas dinámicamente
+        function setupCardWidths() {
+            const containerWidth = carousel.offsetWidth;
+            const cardWidth = (containerWidth - (1.5 * 16 * 2)) / cardsPerView; // Restar gaps
+            
+            cards.forEach(card => {
+                card.style.minWidth = `${cardWidth}px`;
+                card.style.flex = `0 0 ${cardWidth}px`;
+                card.style.width = `${cardWidth}px`;
+            });
+        }
+
+        function updateCarousel(animate = true) {
+            if (animate) {
                 track.style.transition = 'transform 0.5s ease-in-out';
             } else {
                 track.style.transition = 'none';
             }
             
-            const translateX = -(currentSlide * (100 / cardsPerView));
-            track.style.transform = `translateX(${translateX}%)`;
+            // Calcular el desplazamiento basado en el ancho real de las tarjetas + gap
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 24; // 1.5rem = 24px
+            const slideWidth = cardWidth + gap;
+            const translateX = -(currentIndex * slideWidth);
+            
+            track.style.transform = `translateX(${translateX}px)`;
 
-            // Actualizar dots activos basado en las tarjetas originales
-            const effectiveSlide = currentSlide % originalCards;
+            // Actualizar dots: cada dot representa una tarjeta individual
+            // El dot activo corresponde a la tarjeta que está en la posición izquierda
+            const activeDotIndex = currentIndex % originalCards;
             dots.forEach((dot, index) => {
-                dot.classList.toggle('interest-sites__dot--active', 
-                    index === Math.floor(effectiveSlide / cardsPerView));
+                dot.classList.toggle('interest-sites__dot--active', index === activeDotIndex);
             });
 
-            console.log('Carrusel actualizado:', { currentSlide, translateX, effectiveSlide });
+            console.log('Carrusel actualizado:', { 
+                currentIndex, 
+                translateX: `${translateX}px`, 
+                activeDotIndex,
+                cardWidth,
+                slideWidth
+            });
         }
 
         function nextSlide() {
             if (isTransitioning) return;
             isTransitioning = true;
-            
-            console.log('Next slide - antes:', currentSlide);
-            currentSlide++;
-            
-            // Si pasamos del último slide visible, hacer transición al final y luego saltar al inicio
-            if (currentSlide > maxSlide) {
-                console.log('Loop infinito: saltando al inicio');
-                updateCarousel(true);
-                
+
+            currentIndex++;
+            updateCarousel(true);
+
+            // Loop infinito: saltar al inicio cuando llegamos al final
+            if (currentIndex >= totalCards - cardsPerView + 1) {
                 setTimeout(() => {
-                    currentSlide = 0;
+                    currentIndex = 0;
                     updateCarousel(false);
                     setTimeout(() => {
                         isTransitioning = false;
                     }, 50);
                 }, 500);
             } else {
-                updateCarousel(true);
                 setTimeout(() => {
                     isTransitioning = false;
                 }, 500);
             }
-            
-            console.log('Next slide - después:', currentSlide);
         }
 
         function prevSlide() {
             if (isTransitioning) return;
             isTransitioning = true;
-            
-            console.log('Prev slide - antes:', currentSlide);
-            
-            if (currentSlide <= 0) {
-                console.log('Loop infinito hacia atrás: saltando al final');
-                // Saltar al final sin transición
-                currentSlide = maxSlide;
+
+            if (currentIndex <= 0) {
+                // Saltar al final
+                currentIndex = totalCards - cardsPerView;
                 updateCarousel(false);
-                
                 setTimeout(() => {
                     isTransitioning = false;
                 }, 50);
             } else {
-                currentSlide--;
+                currentIndex--;
                 updateCarousel(true);
                 setTimeout(() => {
                     isTransitioning = false;
                 }, 500);
             }
+        }
+
+        function goToSlide(targetDotIndex) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+
+            // Cada dot representa una tarjeta específica
+            // Encontrar la mejor posición para mostrar esa tarjeta en el lado izquierdo
+            let targetIndex = targetDotIndex;
             
-            console.log('Prev slide - después:', currentSlide);
+            // Si la tarjeta objetivo está cerca del final y no se puede mostrar 3 completas,
+            // usar la versión duplicada al inicio
+            if (targetIndex > originalCards - cardsPerView) {
+                // Buscar la tarjeta equivalente en las duplicadas
+                const equivalentIndex = targetIndex - originalCards;
+                if (equivalentIndex >= 0) {
+                    targetIndex = originalCards + equivalentIndex;
+                }
+            }
+            
+            currentIndex = targetIndex;
+            updateCarousel(true);
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 500);
         }
 
-        // Navegación con botones
-        if (prevBtn) {
-            prevBtn.addEventListener('click', prevSlide);
-        }
-
+        // Event listeners
         if (nextBtn) {
             nextBtn.addEventListener('click', nextSlide);
         }
 
-        // Navegación con dots - navegar directamente a la sección correspondiente
+        if (prevBtn) {
+            prevBtn.addEventListener('click', prevSlide);
+        }
+
+        // Navegación con dots - cada dot representa una tarjeta individual
         dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                
-                currentSlide = index * cardsPerView;
-                if (currentSlide > maxSlide) currentSlide = maxSlide;
-                
-                updateCarousel(true);
-                setTimeout(() => {
-                    isTransitioning = false;
-                }, 500);
-            });
+            dot.addEventListener('click', () => goToSlide(index));
         });
 
-        // Navegación con teclado
         carousel.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') {
                 e.preventDefault();
@@ -1200,23 +1257,26 @@ if ('serviceWorker' in navigator) {
         });
 
         // Inicializar
+        setupCardWidths();
         updateCarousel(false);
+
+        // Recalcular en resize
+        window.addEventListener('resize', () => {
+            setupCardWidths();
+            updateCarousel(false);
+        });
 
         // Auto-play opcional (descomenta para activar)
         /*
-        let autoplayInterval = setInterval(() => {
-            nextSlide();
-        }, 5000);
+        let autoplayInterval = setInterval(nextSlide, 4000);
         
-        // Pausar autoplay al hacer hover
+        // Pausar autoplay en hover
         carousel.addEventListener('mouseenter', () => {
             clearInterval(autoplayInterval);
         });
         
         carousel.addEventListener('mouseleave', () => {
-            autoplayInterval = setInterval(() => {
-                nextSlide();
-            }, 5000);
+            autoplayInterval = setInterval(nextSlide, 4000);
         });
         */
     }
@@ -1873,13 +1933,135 @@ const OfferModule = {
       }
     };
 
-    return modalData[type] || null;
+  return modalData[type] || null;
+}
+};
+
+// ==========================================================================
+// FACULTY ANIMATIONS MODULE - VIDEO STYLE ANIMATION
+// ==========================================================================
+const FacultyAnimationsModule = {
+  lastScrollY: 0,
+  isScrollingDown: false,
+  animationStarted: false,
+  
+  init() {
+    console.log('🎨 Initializing Faculty Animations Module - Video Style');
+    this.setupScrollDetection();
+    this.setupMobileAnimations();
+  },
+
+  setupScrollDetection() {
+    // Detectar dirección del scroll
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      this.isScrollingDown = currentScrollY > this.lastScrollY;
+      this.lastScrollY = currentScrollY;
+    }, { passive: true });
+  },
+
+  setupMobileAnimations() {
+    // Verificar si estamos en una pantalla móvil
+    const isMobile = () => window.innerWidth <= 768;
+    
+    if (!isMobile()) return;
+
+    const facultyBlocks = document.querySelectorAll('.offer__block--hover');
+    
+    if (facultyBlocks.length === 0) {
+      console.warn('⚠️ No faculty blocks found');
+      return;
+    }
+
+    // Configurar Intersection Observer para toda la sección
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && 
+            this.isScrollingDown && 
+            !this.animationStarted) {
+          
+          console.log('🎬 Starting video-style faculty animation sequence');
+          this.animationStarted = true;
+          this.startSequentialAnimation(facultyBlocks);
+          
+          // Dejar de observar la sección
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '-30% 0px -30% 0px',
+      threshold: 0.3
+    });
+
+    // Observar la sección completa
+    const facultySection = document.querySelector('.offer--hover');
+    if (facultySection) {
+      sectionObserver.observe(facultySection);
+    }
+
+    // Re-configurar en cambio de tamaño de ventana
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (!isMobile()) {
+          console.log('🖥️ Desktop mode: Faculty animations maintained');
+        } else {
+          console.log('📱 Mobile mode: Video-style animations active');
+        }
+      }, 100);
+    });
+
+    console.log(`� Video-style faculty animations initialized for ${facultyBlocks.length} blocks`);
+  },
+
+  startSequentialAnimation(facultyBlocks) {
+    // Animación secuencial como en el video
+    facultyBlocks.forEach((block, index) => {
+      const facultyName = this.getFacultyName(block);
+      
+      // Fase 1: Bloque aparece desde abajo
+      setTimeout(() => {
+        block.classList.add('animate-in');
+        block.setAttribute('data-animated', 'true');
+        console.log(`🎯 Phase 1 - Block slides up: ${facultyName} (${index + 1}/${facultyBlocks.length})`);
+        
+        // Fase 2: Imagen aparece (automática con CSS delay)
+        setTimeout(() => {
+          console.log(`�️ Phase 2 - Image appears: ${facultyName}`);
+          
+          // Fase 3: Título aparece (automática con CSS delay)
+          setTimeout(() => {
+            console.log(`� Phase 3 - Title appears: ${facultyName}`);
+          }, 600); // Después de que aparece la imagen
+          
+        }, 300); // Delay de la imagen en CSS
+        
+      }, index * 250); // 250ms entre cada bloque
+    });
+
+    // Log cuando toda la secuencia termine
+    const totalDuration = (facultyBlocks.length * 250) + 1500; // 1500ms para la última animación completa
+    setTimeout(() => {
+      console.log('✅ Video-style animation sequence completed - All faculty blocks are now PERMANENT');
+    }, totalDuration);
+  },
+
+  getFacultyName(block) {
+    // Extraer el nombre de la facultad desde las clases CSS
+    const classList = block.className;
+    if (classList.includes('agropecuaria')) return 'Agropecuaria';
+    if (classList.includes('salud')) return 'Salud';
+    if (classList.includes('energia')) return 'Energía';
+    if (classList.includes('arte')) return 'Arte y Comunicación';
+    if (classList.includes('juridica')) return 'Jurídica';
+    if (classList.includes('distancia')) return 'Educación a Distancia';
+    return 'Desconocida';
   }
 };
 
-checkBrowserSupport();
-
-// Initialize all modules
+checkBrowserSupport();// Initialize all modules
 document.addEventListener('DOMContentLoaded', function() {
   try {
     HeaderModule.init();
@@ -1892,6 +2074,7 @@ document.addEventListener('DOMContentLoaded', function() {
     CarouselModule.init();
     DiscoverModule.init(); // Initialize discover module
     OfferModule.init(); // Initialize offer module
+    FacultyAnimationsModule.init(); // Initialize faculty animations module
     console.log('🚀 All modules initialized successfully');
   } catch (error) {
     console.error('❌ Error initializing modules:', error);

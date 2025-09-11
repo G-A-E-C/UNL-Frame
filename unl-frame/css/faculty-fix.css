@@ -1,0 +1,41 @@
+/* FACULTY EMERGENCY FIX CSS */
+@media (max-width: 768px) {
+  .offer__block--hover {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+    display: block !important;
+    height: 120px !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+  
+  .offer__block--hover img {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+  
+  .offer__block--hover h3 {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+  
+  .offer__block--hover .offer__block-image {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+  
+  .offer__block--hover .offer__block-title {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+}
