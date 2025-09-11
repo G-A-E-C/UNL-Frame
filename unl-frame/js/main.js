@@ -4,48 +4,154 @@ document.addEventListener('DOMContentLoaded', function() {
   const panel = document.getElementById('accessibility-panel');
   if (!btn || !panel) return;
 
-  // Mostrar/ocultar panel
+  // Mostrar/ocultar panel con animación mejorada
   btn.addEventListener('click', function(e) {
     e.stopPropagation();
     const isOpen = panel.getAttribute('aria-hidden') === 'false';
     panel.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+    
+    // Agregar clase para rotación del botón
+    btn.classList.toggle('active', !isOpen);
   });
+  
+  // Cerrar panel al hacer clic fuera
   document.addEventListener('click', function(e) {
     if (!panel.contains(e.target) && e.target !== btn) {
       panel.setAttribute('aria-hidden', 'true');
+      btn.classList.remove('active');
     }
   });
 
-  // Tamaño de fuente
+  // Cerrar panel con Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && panel.getAttribute('aria-hidden') === 'false') {
+      panel.setAttribute('aria-hidden', 'true');
+      btn.classList.remove('active');
+      btn.focus();
+    }
+  });
+
+  // Funciones para manejar estados activos
+  function toggleButtonState(button, isActive) {
+    button.classList.toggle('active', isActive);
+  }
+
+  // Tamaño de fuente mejorado
   let fontSize = 100;
+  const fontIncBtn = panel.querySelector('.accessibility-font-inc');
+  const fontDecBtn = panel.querySelector('.accessibility-font-dec');
+  
   function setFont(size) {
     document.documentElement.classList.remove('font-small', 'font-large', 'font-xlarge');
-    if (size <= 90) document.documentElement.classList.add('font-small');
-    else if (size >= 140) document.documentElement.classList.add('font-xlarge');
-    else if (size >= 120) document.documentElement.classList.add('font-large');
+    toggleButtonState(fontIncBtn, false);
+    toggleButtonState(fontDecBtn, false);
+    
+    if (size <= 90) {
+      document.documentElement.classList.add('font-small');
+      toggleButtonState(fontDecBtn, true);
+    } else if (size >= 140) {
+      document.documentElement.classList.add('font-xlarge');
+      toggleButtonState(fontIncBtn, true);
+    } else if (size >= 120) {
+      document.documentElement.classList.add('font-large');
+      toggleButtonState(fontIncBtn, true);
+    }
     fontSize = size;
+    
+    // Guardar preferencia
+    localStorage.setItem('accessibility-font-size', size);
   }
-  panel.querySelector('.accessibility-font-inc').addEventListener('click', function() {
+  
+  fontIncBtn.addEventListener('click', function() {
     if (fontSize < 140) setFont(fontSize + 20);
   });
-  panel.querySelector('.accessibility-font-dec').addEventListener('click', function() {
+  
+  fontDecBtn.addEventListener('click', function() {
     if (fontSize > 90) setFont(fontSize - 10);
   });
 
-  // Alto contraste
-  panel.querySelector('.accessibility-contrast').addEventListener('click', function() {
-    document.body.classList.toggle('high-contrast');
+  // Alto contraste mejorado
+  const contrastBtn = panel.querySelector('.accessibility-contrast');
+  contrastBtn.addEventListener('click', function() {
+    const isActive = document.body.classList.toggle('high-contrast');
+    toggleButtonState(contrastBtn, isActive);
+    localStorage.setItem('accessibility-high-contrast', isActive);
   });
 
-  // Escala de grises
-  panel.querySelector('.accessibility-grayscale').addEventListener('click', function() {
-    document.body.classList.toggle('grayscale');
+  // Escala de grises mejorada
+  const grayscaleBtn = panel.querySelector('.accessibility-grayscale');
+  grayscaleBtn.addEventListener('click', function() {
+    const isActive = document.body.classList.toggle('grayscale');
+    toggleButtonState(grayscaleBtn, isActive);
+    localStorage.setItem('accessibility-grayscale', isActive);
   });
 
-  // Subrayar enlaces
-  panel.querySelector('.accessibility-underline-links').addEventListener('click', function() {
-    document.body.classList.toggle('underline-links');
+  // Subrayar enlaces mejorado
+  const underlineBtn = panel.querySelector('.accessibility-underline-links');
+  underlineBtn.addEventListener('click', function() {
+    const isActive = document.body.classList.toggle('underline-links');
+    toggleButtonState(underlineBtn, isActive);
+    localStorage.setItem('accessibility-underline-links', isActive);
   });
+
+  // Restaurar preferencias guardadas
+  function loadAccessibilityPreferences() {
+    // Restaurar tamaño de fuente
+    const savedFontSize = localStorage.getItem('accessibility-font-size');
+    if (savedFontSize) {
+      setFont(parseInt(savedFontSize));
+    }
+
+    // Restaurar alto contraste
+    const savedContrast = localStorage.getItem('accessibility-high-contrast') === 'true';
+    if (savedContrast) {
+      document.body.classList.add('high-contrast');
+      toggleButtonState(contrastBtn, true);
+    }
+
+    // Restaurar escala de grises
+    const savedGrayscale = localStorage.getItem('accessibility-grayscale') === 'true';
+    if (savedGrayscale) {
+      document.body.classList.add('grayscale');
+      toggleButtonState(grayscaleBtn, true);
+    }
+
+    // Restaurar subrayar enlaces
+    const savedUnderline = localStorage.getItem('accessibility-underline-links') === 'true';
+    if (savedUnderline) {
+      document.body.classList.add('underline-links');
+      toggleButtonState(underlineBtn, true);
+    }
+  }
+
+  // Cargar preferencias al inicializar
+  loadAccessibilityPreferences();
+
+  // Botón reset para limpiar todas las preferencias
+  const resetBtn = document.createElement('button');
+  resetBtn.textContent = 'Restablecer';
+  resetBtn.className = 'accessibility-reset';
+  resetBtn.setAttribute('aria-label', 'Restablecer todas las opciones de accesibilidad');
+  resetBtn.addEventListener('click', function() {
+    // Limpiar todas las clases
+    document.documentElement.classList.remove('font-small', 'font-large', 'font-xlarge');
+    document.body.classList.remove('high-contrast', 'grayscale', 'underline-links');
+    
+    // Resetear estados de botones
+    panel.querySelectorAll('button:not(.accessibility-reset)').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    
+    // Limpiar localStorage
+    localStorage.removeItem('accessibility-font-size');
+    localStorage.removeItem('accessibility-high-contrast');
+    localStorage.removeItem('accessibility-grayscale');
+    localStorage.removeItem('accessibility-underline-links');
+    
+    fontSize = 100;
+  });
+  
+  panel.appendChild(resetBtn);
 });
 /**
  * Main JavaScript Module
