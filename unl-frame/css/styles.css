@@ -1,4 +1,313 @@
+<<<<<<< HEAD
+html, body {
+  overflow-x: hidden !important;
+}
+/* ===== Autoridad Vicerrectora (igual a ejemplo) ===== */
+.autoridad-section {
+  margin-top: 40px;
+}
+.autoridad-header-vicerrectora {
+  background: #b63a36;
+  color: #fff;
+  padding: 32px 40px 16px 40px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  font-family: 'Georgia', serif;
+}
+.autoridad-header-vicerrectora .autoridad-nombre {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  line-height: 1.1;
+}
+.autoridad-header-vicerrectora .autoridad-cargo {
+  font-style: italic;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+/* Solo una definición limpia de .autoridad-flex */
+.autoridad-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0 0 0 0;
+  gap: 32px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+.autoridad-info {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 32px 0 32px 40px;
+}
+.autoridad-descripcion {
+  font-size: 1.08rem;
+  margin-bottom: 32px;
+  color: #222;
+}
+.autoridad-actions-row {
+  display: flex;
+  align-items: flex-end;
+}
+.autoridad-actions-box {
+  display: flex;
+  background: #e5e5e5;
+  border-radius: 28px;
+  padding: 24px 32px 16px 32px;
+  gap: 32px;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.10);
+  align-items: flex-end;
+}
+.autoridad-action-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  font-size: 1.08rem;
+  color: #222;
+  cursor: pointer;
+  margin-right: 16px;
+  margin-bottom: 0;
+  transition: color 0.2s;
+}
+.autoridad-action-box:last-child {
+  margin-right: 0;
+}
+.autoridad-action-box i {
+  font-size: 2.1rem;
+  margin-bottom: 4px;
+}
+.autoridad-action-box span {
+  font-weight: 600;
+}
+.autoridad-horario {
+  font-size: 1rem;
+  color: #222;
+  margin-left: 24px;
+  font-weight: 400;
+}
+.autoridad-horario span {
+  font-weight: 700;
+}
+.autoridad-img {
+  flex: 0 0 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 32px;
+  overflow: hidden;
+  margin: 32px 40px 32px 0;
+  background: #f7f7f7;
+}
+.autoridad-img img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 32px;
+  object-fit: cover;
+}
+@media (max-width: 900px) {
+  .autoridad-flex {
+    flex-direction: column;
+    padding: 0 8px;
+    gap: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  .autoridad-img {
+    margin: 0 auto 24px auto;
+  }
+  .autoridad-info {
+    padding: 24px 0 0 0;
+  }
+}
+/* === Autoridades (universidad.html) === */
+.autoridad-main {
+  width: 100vw;
+  min-height: 100vh;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+.autoridad-flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 48px;
+  padding: 48px 0 0 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.autoridad-img {
+  flex: none;
+  width: 320px;
+  height: 420px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  border-radius: 28px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.autoridad-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+}
+.autoridad-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+}
+.autoridad-info h2 {
+  font-size: 3rem;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #222;
+  word-break: break-word;
+}
+.autoridad-info .cargo {
+  font-size: 1.5rem;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+.autoridad-info p {
+  font-size: 1.18rem;
+  color: #444;
+  margin-bottom: 32px;
+  line-height: 1.6;
+  word-break: break-word;
+}
+/* Solo una definición limpia de .autoridad-actions-row */
+.autoridad-actions-row {
+  display: flex;
+  align-items: flex-end;
+}
+/* Solo una definición limpia de .autoridad-actions-box */
+.autoridad-actions-box {
+  background: #e5e5e5;
+  border-radius: 28px;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.10);
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+  padding: 24px 32px 16px 32px;
+  min-width: 0;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  position: static;
+}
+.autoridad-actions-box .autoridad-action-box {
+  flex: none;
+  margin-right: 32px;
+}
+.autoridad-actions-box .autoridad-horario {
+  font-size: 1rem;
+  color: #222;
+  font-weight: 600;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 170px;
+  align-items: flex-end;
+  margin-left: 0;
+  margin-right: 0;
+}
+.autoridad-action-box {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+  text-decoration: none;
+  min-width: 120px;
+  transition: color 0.2s;
+}
+.autoridad-action-box i {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+.autoridad-action-box:hover {
+  color: #222;
+}
+.autoridad-horario {
+  font-size: 1rem;
+  color: #222;
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-width: 170px;
+  align-items: flex-end;
+  margin-left: 32px;
+}
+.autoridad-horario span {
+  font-weight: bold;
+}
+.autoridad-horario small {
+  display: block;
+  color: #444;
+  font-weight: 400;
+}
+@media (max-width: 900px) {
+  .autoridad-flex {
+    flex-direction: column;
+    gap: 18px;
+    padding: 24px 0 0 0;
+  }
+  .autoridad-img {
+    width: 100%;
+    height: 320px;
+    border-radius: 28px 28px 0 0;
+  }
+  .autoridad-actions-row {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .autoridad-actions-box {
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 18px 10px 12px 10px;
+  }
+  .autoridad-actions-box .autoridad-horario {
+    margin-left: 0;
+    align-items: flex-end;
+    margin-top: 18px;
+    text-align: right;
+  }
+}
+=======
 
+>>>>>>> 0ebd1292b2b1c5fcad7267d5c8d8e8983f0046d5
 /* Galería personalizada de ejemplo */
 .custom-gallery-demo {
   margin-top: 3rem;

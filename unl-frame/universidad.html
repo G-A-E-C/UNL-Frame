@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoridades - Universidad Nacional de Loja</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="autoridad-main">
+        <div class="autoridad-flex">
+            <div class="autoridad-img">
+                <img src="./assets/img/Rector.png" alt="Nikolay Aguirre, Ph. D.">
+            </div>
+            <div class="autoridad-info">
+                <h2>Nikolay Aguirre, Ph. D.</h2>
+                <div class="cargo">Rector</div>
+                <p>Ingeniero Forestal y Ph.D. en Ciencias Forestales, con más de 25 años de experiencia en investigación sobre ecología, biodiversidad y restauración, con más de 85 publicaciones.</p>
+                <div class="autoridad-actions-row">
+                    <div class="autoridad-actions-box">
+                        <button class="autoridad-action-box" onclick="openBioModal()">
+                            <i class="fa-solid fa-book-open"></i>
+                            <span>Biografía</span>
+                        </button>
+                        <a class="autoridad-action-box" href="mailto:rectorado@unl.edu.ec">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Contacto</span>
+                        </a>
+                        <div class="autoridad-horario">
+                            <span>Horario Atención</span>
+                            <small>Lunes a viernes 8:00 a 12:30<br>y de 15:00 a 18:30</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Vicerrectora -->
+            <section class="autoridad-section">
+                <div class="autoridad-header autoridad-header-vicerrectora">
+                    <h2 class="autoridad-nombre">Elvia Maricela<br>Zhapa Amay</h2>
+                    <div class="autoridad-cargo">Vicerrectora</div>
+                </div>
+                <div class="autoridad-flex">
+                    <div class="autoridad-info">
+                        <p class="autoridad-descripcion">
+                            Doctora en Contabilidad y Auditoría, con maestrías en Docencia e Investigación y Gerencia Contable Financiera. Experta en diversas áreas contables y financieras, con amplia trayectoria docente, investigadora y directiva en la UNL. Ha publicado libros y artículos científicos.
+                        </p>
+                        <div class="autoridad-actions-row">
+                            <div class="autoridad-actions-box">
+                                <button class="autoridad-action-box" onclick="openBioModalVicerrectora()">
+                                    <i class="fa-solid fa-book-open"></i>
+                                    <span>Biografía</span>
+                                </button>
+                                <a class="autoridad-action-box" href="mailto:vicerrectorado@unl.edu.ec">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <span>Contacto</span>
+                                </a>
+                                <div class="autoridad-horario">
+                                    <span><b>Horario Atencion</b><br>Lunes a viernes 8:00<br>a 12:30 y de 15:00 a 18:30</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="autoridad-img">
+                        <img src="./assets/img/Vicerrectora.png" alt="Elvia Maricela Zhapa Amay">
+                    </div>
+                </div>
+            </section>
+        <!-- Modal Biografía -->
+        <div id="bioModal" class="bio-modal" style="display:none;">
+            <div class="bio-modal-content">
+                <span class="bio-modal-close" onclick="closeBioModal()">&times;</span>
+                <h2>Biografía</h2>
+                <p>Ingeniero Forestal y Ph.D. en Ciencias Forestales, con más de 25 años de experiencia en investigación sobre ecología, biodiversidad y restauración, con más de 85 publicaciones. (Aquí puede ir una biografía extendida si se desea).</p>
+            </div>
+        </div>
+        <script>
+            function openBioModal() {
+                document.getElementById('bioModal').style.display = 'block';
+            }
+            function closeBioModal() {
+                document.getElementById('bioModal').style.display = 'none';
+            }
+            window.onclick = function(event) {
+                var modal = document.getElementById('bioModal');
+                if (event.target == modal) {
+                    closeBioModal();
+                }
+            }
+        </script>
+    </main>
+</body>
+</html>
