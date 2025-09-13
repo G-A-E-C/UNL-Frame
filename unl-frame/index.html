@@ -20,6 +20,7 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/accessibility.css">
 </head>
 <body>
     <style>
@@ -350,7 +351,7 @@
                                 <a href="#" class="header__nav-link">SERVICIOS</a>
                             </li>
                             <li class="header__nav-item">
-                                <a href="#" class="header__nav-link">CONTACTO</a>
+                                <a href="./autoridades.html" class="header__nav-link">CONTACTO</a>
                             </li>
                         </ul>
                     </nav>
@@ -369,6 +370,22 @@
                                         <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
                                     </svg>
                                 </button>
+                            </div>
+                        </div>
+                        <!-- Botón de accesibilidad -->
+                        <div class="header__accessibility">
+                            <button id="accessibility-btn" aria-label="Opciones de accesibilidad" title="Accesibilidad">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm7 6a1 1 0 0 1 0 2h-2.07l-1.1 7.34a2 2 0 0 1-1.98 1.66h-1.7a2 2 0 0 1-1.98-1.66L7.07 10H5a1 1 0 1 1 0-2h14zm-7 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+                                </svg>
+                            </button>
+                            <div id="accessibility-panel" class="accessibility-panel" aria-hidden="true">
+                                <h4>Accesibilidad</h4>
+                                <button class="accessibility-font-inc" aria-label="Aumentar tamaño de letra">A+</button>
+                                <button class="accessibility-font-dec" aria-label="Disminuir tamaño de letra">A-</button>
+                                <button class="accessibility-contrast" aria-label="Alto contraste">Alto contraste</button>
+                                <button class="accessibility-grayscale" aria-label="Escala de grises">Escala de grises</button>
+                                <button class="accessibility-underline-links" aria-label="Subrayar enlaces">Subrayar enlaces</button>
                             </div>
                         </div>
                         <a href="#" class="header__access-btn" aria-label="Acceso de usuarios">
@@ -398,7 +415,7 @@
                     <li><a href="#" class="header__mobile-nav-link">INVESTIGACIÓN</a></li>
                     <li><a href="#" class="header__mobile-nav-link">NOTICIAS</a></li>
                     <li><a href="#" class="header__mobile-nav-link">SERVICIOS</a></li>
-                    <li><a href="#" class="header__mobile-nav-link">CONTACTO</a></li>
+                    <li><a href="./autoridades.html" class="header__mobile-nav-link">CONTACTO</a></li>
                 </ul>
             </div>
         </nav>
@@ -596,118 +613,30 @@
         <!-- Oferta Académica - Versión Hover (Crecimiento) -->
         <section id="oferta-academica" class="offer offer--hover" aria-labelledby="offer-title">
             <div class="container">
-                <h2 id="offer-title" class="offer__title">OFERTA ACADÉMICA - Versión Hover</h2>
-                <p class="offer__subtitle">Pasa el cursor sobre las imágenes para verlas crecer</p>
                 <div class="offer__grid">
-                    <div class="offer__block offer__block--agropecuaria offer__block--hover" data-info="Área Agropecuaria y de Recursos Naturales Renovables">
+                    <div class="offer__block offer__block--agropecuaria offer__block--hover">
                         <img src="./assets/img/agropecuaria.webp" alt="Área Agropecuaria y de Recursos Naturales Renovables" class="offer__block-image">
-                        <div class="offer__block-title">
-                            <h3>Facultad<br>Agropecuaria y de<br>Recursos Naturales<br>Renovables</h3>
-                        </div>
-                        <div class="offer__block-info">
-                            <h3>Área Agropecuaria</h3>
-                            <p>Formación integral en ciencias agropecuarias y recursos naturales renovables. Carreras enfocadas en la producción sostenible y el desarrollo rural.</p>
-                        </div>
                     </div>
-                    <div class="offer__block offer__block--salud offer__block--hover" data-info="Área de la Salud Humana">
+                    <div class="offer__block offer__block--salud offer__block--hover">
                         <img src="./assets/img/salud.webp" alt="Área de la Salud Humana" class="offer__block-image">
-                        <div class="offer__block-title">
-                            <h3>Facultad<br>de la Salud<br>Humana</h3>
-                        </div>
-                        <div class="offer__block-info">
-                            <h3>Área de la Salud</h3>
-                            <p>Programas académicos dedicados a la formación de profesionales de la salud con excelencia científica y compromiso social.</p>
-                        </div>
                     </div>
-                    <div class="offer__block offer__block--energia offer__block--hover" data-info="Área de la Energía, las Industrias y los Recursos Naturales no Renovables">
+                    <div class="offer__block offer__block--energia offer__block--hover">
                         <img src="./assets/img/energianorenovable.webp" alt="Área de la Energía, las Industrias y los Recursos Naturales no Renovables" class="offer__block-image">
-                        <div class="offer__block-title">
-                            <h3>Facultad<br>de la Energía, las Industrias<br>y de los Recursos Naturales<br>no Renovables</h3>
-                        </div>
-                        <div class="offer__block-info">
-                            <h3>Área de Energía</h3>
-                            <p>Carreras orientadas al desarrollo energético, industrial y manejo de recursos naturales no renovables del país.</p>
-                        </div>
                     </div>
-                    <div class="offer__block offer__block--arte offer__block--hover" data-info="Área de la Educación, el Arte y la Comunicación">
+                    <div class="offer__block offer__block--arte offer__block--hover">
                         <img src="./assets/img/arte.webp" alt="Área de la Educación, el Arte y la Comunicación" class="offer__block-image">
-                        <div class="offer__block-title">
-                            <h3>Facultad<br>de la Educación,<br>el Arte y la<br>Comunicación</h3>
-                        </div>
-                        <div class="offer__block-info">
-                            <h3>Área de Educación y Arte</h3>
-                            <p>Formación en educación, artes y comunicación para el desarrollo cultural y educativo de la sociedad.</p>
-                        </div>
                     </div>
-                    <div class="offer__block offer__block--juridica offer__block--hover" data-info="Área Jurídica, Social y Administrativa">
+                    <div class="offer__block offer__block--juridica offer__block--hover">
                         <img src="./assets/img/juridica.webp" alt="Área Jurídica, Social y Administrativa" class="offer__block-image">
-                        <div class="offer__block-title">
-                            <h3>Facultad<br>Jurídica, Social<br>y Administrativa</h3>
-                        </div>
-                        <div class="offer__block-info">
-                            <h3>Área Jurídica y Social</h3>
-                            <p>Carreras enfocadas en ciencias jurídicas, sociales y administrativas para el desarrollo institucional.</p>
-                        </div>
                     </div>
-                    <div class="offer__block offer__block--distancia offer__block--hover" data-info="Modalidad de Estudios a Distancia">
+                    <div class="offer__block offer__block--distancia offer__block--hover">
                         <img src="./assets/img/distancia.webp" alt="Modalidad de Estudios a Distancia" class="offer__block-image">
-                        <div class="offer__block-title">
-                            <h3>Unidad de<br>Educación a<br>Distancia</h3>
-                        </div>
-                        <div class="offer__block-info">
-                            <h3>Estudios a Distancia</h3>
-                            <p>Modalidad flexible que permite estudiar desde cualquier lugar con calidad académica garantizada.</p>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Oferta Académica - Versión Modal (Click) -->
-        <section class="offer offer--modal" aria-labelledby="offer-modal-title">
-            <div class="container">
-                <h2 id="offer-modal-title" class="offer__title">OFERTA ACADÉMICA - Versión Modal</h2>
-                <p class="offer__subtitle">Haz click en las imágenes para ver información detallada</p>
-                <div class="offer__grid">
-                    <button class="offer__block offer__block--agropecuaria offer__block--clickable" 
-                            data-modal="agropecuaria" 
-                            aria-label="Ver información del Área Agropecuaria">
-                        <img src="./assets/img/agropecuaria.webp" alt="Área Agropecuaria y de Recursos Naturales Renovables" class="offer__block-image">
-                        <span class="offer__block-text">Click para más info</span>
-                    </button>
-                    <button class="offer__block offer__block--salud offer__block--clickable" 
-                            data-modal="salud" 
-                            aria-label="Ver información del Área de la Salud">
-                        <img src="./assets/img/salud.webp" alt="Área de la Salud Humana" class="offer__block-image">
-                        <span class="offer__block-text">Click para más info</span>
-                    </button>
-                    <button class="offer__block offer__block--energia offer__block--clickable" 
-                            data-modal="energia" 
-                            aria-label="Ver información del Área de Energía">
-                        <img src="./assets/img/energianorenovable.webp" alt="Área de la Energía, las Industrias y los Recursos Naturales no Renovables" class="offer__block-image">
-                        <span class="offer__block-text">Click para más info</span>
-                    </button>
-                    <button class="offer__block offer__block--arte offer__block--clickable" 
-                            data-modal="arte" 
-                            aria-label="Ver información del Área de Educación y Arte">
-                        <img src="./assets/img/arte.webp" alt="Área de la Educación, el Arte y la Comunicación" class="offer__block-image">
-                        <span class="offer__block-text">Click para más info</span>
-                    </button>
-                    <button class="offer__block offer__block--juridica offer__block--clickable" 
-                            data-modal="juridica" 
-                            aria-label="Ver información del Área Jurídica">
-                        <img src="./assets/img/juridica.webp" alt="Área Jurídica, Social y Administrativa" class="offer__block-image">
-                        <span class="offer__block-text">Click para más info</span>
-                    </button>
-                    <button class="offer__block offer__block--distancia offer__block--clickable" 
-                            data-modal="distancia" 
-                            aria-label="Ver información de Estudios a Distancia">
-                        <img src="./assets/img/distancia.webp" alt="Modalidad de Estudios a Distancia" class="offer__block-image">
-                        <span class="offer__block-text">Click para más info</span>
-                    </button>
-                </div>
-            </div>
-        </section>
 
         <!-- Sección UNL Conoce + -->
         <section class="discover" aria-labelledby="discover-title">
@@ -811,109 +740,542 @@
                     </div>
                 </div>
 
+
+                  <!-- Próximos eventos -->
+                    <section id="eventos" class="eventos-section">
+                        <div class="eventos-header">
+                            <h2>Próximos eventos</h2>
+                            <a href="#" class="eventos-link">Descubre más eventos <span style="font-size:1.2em;">→</span></a>
+                        </div>
+                        <h3 class="eventos-mes">Septiembre, 2025 <button class="eventos-mes-btn" style="background:none;border:none;cursor:pointer;font-size:1.2em;line-height:1;">→</button></h3>
+                        <div class="eventos-grid"></div>
+                        <div class="eventos-modal-bg">
+                            <div class="eventos-modal">
+                                <button class="eventos-modal-close">&times;</button>
+                                <div class="eventos-modal-top">
+                                    <div class="eventos-modal-fecha">
+                                        <span class="eventos-modal-dia"></span>
+                                        <span class="eventos-modal-mes"></span>
+                                    </div>
+                                    <div class="eventos-modal-info-top">
+                                        <span class="eventos-modal-destacado">DESTACADO</span>
+                                        <h4 class="eventos-modal-titulo"></h4>
+                                        <div class="eventos-modal-desc"></div>
+                                        <div class="eventos-modal-meta"></div>
+                                    </div>
+                                </div>
+                                <img class="eventos-modal-img" src="" alt="">
+                                <div class="eventos-modal-detalles">
+                                    <h5>DETALLES DEL EVENTO</h5>
+                                    <div class="eventos-modal-detalles-content"></div>
+                                    <div class="eventos-modal-extra">
+                                        <div class="eventos-modal-hora"></div>
+                                        <div class="eventos-modal-ubicacion"></div>
+                                    </div>
+                                    <div class="eventos-modal-calendario">
+                                        <button class="eventos-modal-btncal">CALENDARIO</button>
+                                        <button class="eventos-modal-btngcal">GOOGLE CALENDAR</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <style>
+                        .eventos-section {margin-bottom:3rem;}
+                        .eventos-header {display:flex;align-items:center;justify-content:space-between;}
+                        .eventos-header h2 {font-size:2.5rem;font-weight:bold;}
+                        .eventos-link {font-size:1.1rem;text-decoration:none;color:#222;display:flex;align-items:center;gap:0.3em;font-weight:500;}
+                        .eventos-mes {font-size:2rem;font-weight:500;margin:1.5rem 0 2rem 0;display:flex;align-items:center;gap:0.3em;}
+                        .eventos-mes-btn {background:none;border:none;cursor:pointer;font-size:1.2em;line-height:1;}
+                        .eventos-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem;}
+                        .eventos-card {background:#fff;border-radius:1rem;box-shadow:0 2px 12px rgba(0,0,0,0.07);overflow:hidden;transition:box-shadow .2s;cursor:pointer;display:flex;flex-direction:column;}
+                        .eventos-card:hover {box-shadow:0 4px 24px rgba(0,0,0,0.13);}
+                        .eventos-card-img {width:100%;height:180px;object-fit:cover;}
+                        .eventos-card-badge {position:absolute;top:1rem;left:1rem;background:#ffd600;color:#222;font-size:0.85rem;font-weight:700;padding:0.2em 0.7em;border-radius:0.5em;box-shadow:0 1px 4px rgba(0,0,0,0.08);}
+                        .eventos-card-fecha {font-size:2rem;font-weight:700;line-height:1;}
+                        .eventos-card-dia {font-size:2rem;font-weight:700;}
+                        .eventos-card-mes {font-size:1rem;letter-spacing:2px;}
+                        .eventos-card-content {padding:1.2rem 1.2rem 0.7rem 1.2rem;display:flex;flex-direction:column;gap:0.5rem;}
+                        .eventos-card-titulo {font-size:1.15rem;font-weight:600;}
+                        .eventos-card-meta {display:flex;align-items:center;gap:0.7em;font-size:1rem;color:#666;}
+                        .eventos-card-meta span {display:flex;align-items:center;gap:0.3em;}
+                        .eventos-card-bar {height:6px;background:#f5f5f5;border-radius:3px;margin-top:1.2rem;overflow:hidden;}
+                        .eventos-card-bar-inner {height:100%;background:#e74c3c;width:60%;border-radius:3px;transition:width .3s;}
+                        /* Modal */
+                        .eventos-modal-bg {display:none;position:fixed;z-index:1000;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;}
+                        .eventos-modal {background:#fff;border-radius:1rem;max-width:430px;width:95vw;box-shadow:0 8px 32px rgba(0,0,0,0.18);position:relative;padding:0;overflow:hidden;}
+                        .eventos-modal-close {position:absolute;top:0.7rem;right:1rem;background:none;border:none;font-size:2rem;line-height:1;color:#222;cursor:pointer;z-index:2;}
+                        .eventos-modal-top {background:#e74c3c;color:#fff;padding:1.2rem 1.2rem 0.7rem 1.2rem;display:flex;gap:1.2rem;align-items:flex-start;}
+                        .eventos-modal-fecha {display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:48px;}
+                        .eventos-modal-dia {font-size:2rem;font-weight:700;line-height:1;}
+                        .eventos-modal-mes {font-size:1rem;letter-spacing:2px;}
+                        .eventos-modal-destacado {background:#ffd600;color:#222;font-size:0.85rem;font-weight:700;padding:0.2em 0.7em;border-radius:0.5em;margin-bottom:0.5em;display:inline-block;}
+                        .eventos-modal-titulo {font-size:1.1rem;font-weight:700;margin-bottom:0.5em;}
+                        .eventos-modal-desc {font-size:1rem;line-height:1.4;margin-bottom:0.5em;}
+                        .eventos-modal-meta {font-size:0.98rem;display:flex;flex-direction:column;gap:0.2em;}
+                        .eventos-modal-img {width:100%;height:180px;object-fit:cover;display:block;}
+                        .eventos-modal-detalles {padding:1.2rem;}
+                        .eventos-modal-detalles h5 {font-size:1rem;font-weight:700;margin-bottom:0.7em;letter-spacing:1px;}
+                        .eventos-modal-detalles-content {font-size:1rem;color:#333;margin-bottom:1em;}
+                        .eventos-modal-extra {display:flex;gap:1em;margin-bottom:1em;}
+                        .eventos-modal-hora, .eventos-modal-ubicacion {background:#f5f5f5;padding:0.7em 1em;border-radius:0.7em;font-size:1rem;flex:1;display:flex;align-items:center;gap:0.5em;}
+                        .eventos-modal-calendario {display:flex;gap:1em;justify-content:flex-start;}
+                        .eventos-modal-btncal, .eventos-modal-btngcal {background:#eee;border:none;padding:0.6em 1.2em;border-radius:0.7em;font-size:1rem;cursor:pointer;font-weight:600;transition:background .2s;}
+                        .eventos-modal-btncal:hover, .eventos-modal-btngcal:hover {background:#e0e0e0;}
+                    </style>
+                    <script>
+                    const eventos = [
+                        {
+                            id: 1,
+                            titulo: "Charla: Oportunidades de Financiamiento",
+                            fecha: "08 Sep 2025",
+                            hora: "09:30 - 18:00",
+                            lugar: "Sede Aula Magna",
+                            descripcion: "Dirección de Innovación",
+                            imagen: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80",
+                            destacado: true,
+                            enVivo: true,
+                            detalles: {hora: "09:30", lugar: "Aula Magna - Computación"}
+                        },
+                        {
+                            id: 2,
+                            titulo: "Mesa de Capital Humano y Género de Energía",
+                            fecha: "08 Sep 2025",
+                            hora: "10:30 - 18:00",
+                            lugar: "Facultad de Enegía",
+                            descripcion: "Encuentro académico para discutir energía, desarrollo humano y equidad de género.",
+                            imagen: "https://images.unsplash.com/photo-1503424886301-943af3f99b07?auto=format&fit=crop&w=1200&q=80",
+                            destacado: true,
+                            enVivo: false,
+                            detalles: {hora: "10:30", lugar: "Aula Magna"}
+                        },
+                        {
+                            id: 3,
+                            titulo: "Charla magistral: 'Educational Responsibility: Generative AI, Irreversibility and Genetic Showing'",
+                            fecha: "10 Sep 2025",
+                            hora: "16:00 - 18:00",
+                            lugar: "Sala de Simulación Pedagógica",
+                            descripcion: "Conferencia internacional sobre responsabilidad educativa frente a la IA generativa.",
+                            imagen: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80",
+                            destacado: true,
+                            enVivo: false,
+                            detalles: {hora: "16:00", lugar: "Sala de Simulación Pedagógica"}
+                        },
+                    ];
+
+                    function getDiaMes(fecha) {
+                        const [dia, mes, anio] = fecha.split(' ');
+                        return {dia, mes: mes.toUpperCase()};
+                    }
+
+                    let eventosPagina = 0;
+                    const eventosPorPagina = 3;
+                    function renderEventos() {
+                        const grid = document.querySelector('.eventos-grid');
+                        if (!grid) return;
+                        grid.innerHTML = '';
+                        const inicio = eventosPagina * eventosPorPagina;
+                        const fin = inicio + eventosPorPagina;
+                        const eventosMostrar = eventos.slice(inicio, fin);
+                        eventosMostrar.forEach(ev => {
+                            const {dia, mes} = getDiaMes(ev.fecha);
+                            const card = document.createElement('div');
+                            card.className = 'eventos-card';
+                            card.innerHTML = `
+                                <div style="position:relative;">
+                                    <img class="eventos-card-img" src="${ev.imagen}" alt="${ev.titulo}">
+                                    <span class="eventos-card-badge">${ev.destacado ? 'DESTACADO' : ''}</span>
+                                </div>
+                                <div class="eventos-card-content">
+                                    <div style="display:flex;align-items:center;gap:1.2em;">
+                                        <div class="eventos-card-fecha">
+                                            <span class="eventos-card-dia">${dia}</span><br>
+                                            <span class="eventos-card-mes">${mes}</span>
+                                        </div>
+                                        <div style="flex:1;">
+                                            <div class="eventos-card-titulo">${ev.titulo}</div>
+                                            <div class="eventos-card-meta">
+                                                <span>🕒 ${ev.hora}</span>
+                                                <span>📍 ${ev.lugar}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="eventos-card-bar" style="background:#f5f5f5;">
+                                        <div class="eventos-card-bar-inner" style="background:${ev.enVivo ? '#e74c3c' : '#f5f5f5'};width:60%;"></div>
+                                    </div>
+                                </div>
+                            `;
+                            card.onclick = () => mostrarModal(ev);
+                            grid.appendChild(card);
+                        });
+                    }
+
+                    function mostrarModal(ev) {
+                        const modalBg = document.querySelector('.eventos-modal-bg');
+                        const modal = document.querySelector('.eventos-modal');
+                        if (!modalBg || !modal) return;
+                        // Fecha
+                        const {dia, mes} = getDiaMes(ev.fecha);
+                        modal.querySelector('.eventos-modal-dia').textContent = dia;
+                        modal.querySelector('.eventos-modal-mes').textContent = mes;
+                        // Destacado
+                        modal.querySelector('.eventos-modal-destacado').style.display = ev.destacado ? 'inline-block' : 'none';
+                        // Título y descripción
+                        modal.querySelector('.eventos-modal-titulo').textContent = ev.titulo;
+                        modal.querySelector('.eventos-modal-desc').textContent = ev.descripcion;
+                        // Meta
+                        modal.querySelector('.eventos-modal-meta').innerHTML = `🕒 ${ev.hora}<br>📍 ${ev.lugar}`;
+                        // Imagen
+                        modal.querySelector('.eventos-modal-img').src = ev.imagen;
+                        modal.querySelector('.eventos-modal-img').alt = ev.titulo;
+                        // Detalles
+                        modal.querySelector('.eventos-modal-detalles-content').innerHTML = `<b>Hora:</b> ${ev.detalles?.hora || ev.hora}<br><b>Lugar:</b> ${ev.detalles?.lugar || ev.lugar}`;
+                        // Extra
+                        modal.querySelector('.eventos-modal-hora').innerHTML = `🕒 <b>Hora:</b> ${ev.hora}`;
+                        modal.querySelector('.eventos-modal-ubicacion').innerHTML = `📍 <b>Ubicación:</b> ${ev.lugar}`;
+                        // Mostrar
+                        modalBg.style.display = 'flex';
+                    }
+
+                    function cerrarModal() {
+                        const modalBg = document.querySelector('.eventos-modal-bg');
+                        if (modalBg) modalBg.style.display = 'none';
+                    }
+
+                    document.addEventListener('DOMContentLoaded', () => {
+                        renderEventos();
+                        // Cerrar modal
+                        document.querySelector('.eventos-modal-close').onclick = cerrarModal;
+                        document.querySelector('.eventos-modal-bg').onclick = e => { if (e.target.classList.contains('eventos-modal-bg')) cerrarModal(); };
+
+                        // Solo el enlace "Descubre más eventos" funcional
+                        const link = document.querySelector('.eventos-link');
+                        if(link) {
+                            link.onclick = (e) => {
+                                e.preventDefault();
+                                if((eventosPagina+1)*eventosPorPagina < eventos.length) {
+                                    eventosPagina++;
+                                    renderEventos();
+                                } else {
+                                    eventosPagina = 0;
+                                    renderEventos();
+                                }
+                            };
+                        }
+
+                        // Flecha junto a "Septiembre, 2025" funcional
+                        const mesBtn = document.querySelector('.eventos-mes-btn');
+                        if(mesBtn) {
+                            mesBtn.onclick = (e) => {
+                                e.preventDefault();
+                                eventosPagina = 0;
+                                renderEventos();
+                            };
+                        }
+                    });
+                    </script>
+
                 <!-- Sitios de Interés -->
                 <div class="interest-sites">
                     <h3 class="interest-sites__title">Sitios de interés</h3>
-                    <div class="interest-sites__grid">
-                        <!-- Gaceta Oficial -->
-                        <div class="interest-sites__card">
-                            <a href="#" class="interest-sites__link" aria-label="Acceder a Gaceta Oficial">
-                                <div class="interest-sites__header">
-                                    <div class="interest-sites__icon">
-                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 2 2h12c1.11 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 12h8v2H8v-2zm0 3h8v2H8v-2zm0-6h5v2H8V9z"/>
-                                        </svg>
+                    <div class="interest-sites__carousel" data-carousel="interest-sites">
+                        <div class="interest-sites__track">
+                            <!-- Gaceta Oficial -->
+                            <div class="interest-sites__card">
+                                <a href="#" class="interest-sites__link" aria-label="Acceder a Gaceta Oficial">
+                                    <div class="interest-sites__header">
+                                        <div class="interest-sites__icon">
+                                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 2 2h12c1.11 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 12h8v2H8v-2zm0 3h8v2H8v-2zm0-6h5v2H8V9z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="interest-sites__text">
+                                            <h4 class="interest-sites__name">GACETA</h4>
+                                            <h4 class="interest-sites__name">OFICIAL</h4>
+                                        </div>
                                     </div>
-                                    <div class="interest-sites__text">
-                                        <h4 class="interest-sites__name">GACETA</h4>
-                                        <h4 class="interest-sites__name">OFICIAL</h4>
+                                    <div class="interest-sites__footer">
+                                        <span class="interest-sites__cta">Conoce más</span>
+                                        <div class="interest-sites__arrow">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="interest-sites__footer">
-                                    <span class="interest-sites__cta">Conoce más</span>
-                                    <div class="interest-sites__arrow">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
 
-                        <!-- Comunicados Oficiales -->
-                        <div class="interest-sites__card">
-                            <a href="#" class="interest-sites__link" aria-label="Ver comunicados oficiales">
-                                <div class="interest-sites__header">
-                                    <div class="interest-sites__icon">
-                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
-                                        </svg>
+                            <!-- Comunicados Oficiales -->
+                            <div class="interest-sites__card">
+                                <a href="#" class="interest-sites__link" aria-label="Ver comunicados oficiales">
+                                    <div class="interest-sites__header">
+                                        <div class="interest-sites__icon">
+                                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="interest-sites__text">
+                                            <h4 class="interest-sites__name">COMUNICADOS</h4>
+                                            <h4 class="interest-sites__name">OFICIALES</h4>
+                                        </div>
                                     </div>
-                                    <div class="interest-sites__text">
-                                        <h4 class="interest-sites__name">COMUNICADOS</h4>
-                                        <h4 class="interest-sites__name">OFICIALES</h4>
+                                    <div class="interest-sites__footer">
+                                        <span class="interest-sites__cta">Conoce más</span>
+                                        <div class="interest-sites__arrow">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="interest-sites__footer">
-                                    <span class="interest-sites__cta">Conoce más</span>
-                                    <div class="interest-sites__arrow">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
 
-                        <!-- Servicios a la Sociedad -->
-                        <div class="interest-sites__card">
-                            <a href="#" class="interest-sites__link" aria-label="Servicios a la sociedad">
-                                <div class="interest-sites__header">
-                                    <div class="interest-sites__icon">
-                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M16 4c0-.55-.45-1-1-1s-1 .45-1 1 .45 1 1 1 1-.45 1-1zm4 2v-.5C20 4.12 18.88 3 17.5 3S15 4.12 15 5.5V6H9c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h10c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1h-4zM12 15.5c-1.25 0-2.27-.86-2.27-2.14 0-1.28 1.02-2.36 2.27-2.36s2.27 1.08 2.27 2.36c0 1.28-1.02 2.14-2.27 2.14z"/>
-                                        </svg>
+                            <!-- Servicios a la Sociedad -->
+                            <div class="interest-sites__card">
+                                <a href="#" class="interest-sites__link" aria-label="Servicios a la sociedad">
+                                    <div class="interest-sites__header">
+                                        <div class="interest-sites__icon">
+                                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M16 4c0-.55-.45-1-1-1s-1 .45-1 1 .45 1 1 1 1-.45 1-1zm4 2v-.5C20 4.12 18.88 3 17.5 3S15 4.12 15 5.5V6H9c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h10c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1h-4zM12 15.5c-1.25 0-2.27-.86-2.27-2.14 0-1.28 1.02-2.36 2.27-2.36s2.27 1.08 2.27 2.36c0 1.28-1.02 2.14-2.27 2.14z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="interest-sites__text">
+                                            <h4 class="interest-sites__name">SERVICIOS</h4>
+                                            <h4 class="interest-sites__name">A LA SOCIEDAD</h4>
+                                        </div>
                                     </div>
-                                    <div class="interest-sites__text">
-                                        <h4 class="interest-sites__name">SERVICIOS</h4>
-                                        <h4 class="interest-sites__name">A LA SOCIEDAD</h4>
+                                    <div class="interest-sites__footer">
+                                        <span class="interest-sites__cta">Conoce más</span>
+                                        <div class="interest-sites__arrow">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="interest-sites__footer">
-                                    <span class="interest-sites__cta">Conoce más</span>
-                                    <div class="interest-sites__arrow">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                                        </svg>
+                                </a>
+                            </div>
+
+                            <!-- Sitio 4 -->
+                            <div class="interest-sites__card">
+                                <a href="#" class="interest-sites__link" aria-label="Sitio de ejemplo 4">
+                                    <div class="interest-sites__header">
+                                        <div class="interest-sites__icon">
+                                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="interest-sites__text">
+                                            <h4 class="interest-sites__name">SITIO</h4>
+                                            <h4 class="interest-sites__name">4</h4>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                    <div class="interest-sites__footer">
+                                        <span class="interest-sites__cta">Conoce más</span>
+                                        <div class="interest-sites__arrow">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Sitio 5 -->
+                            <div class="interest-sites__card">
+                                <a href="#" class="interest-sites__link" aria-label="Sitio de ejemplo 5">
+                                    <div class="interest-sites__header">
+                                        <div class="interest-sites__icon">
+                                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="interest-sites__text">
+                                            <h4 class="interest-sites__name">SITIO</h4>
+                                            <h4 class="interest-sites__name">5</h4>
+                                        </div>
+                                    </div>
+                                    <div class="interest-sites__footer">
+                                        <span class="interest-sites__cta">Conoce más</span>
+                                        <div class="interest-sites__arrow">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Sitio 6 -->
+                            <div class="interest-sites__card">
+                                <a href="#" class="interest-sites__link" aria-label="Sitio de ejemplo 6">
+                                    <div class="interest-sites__header">
+                                        <div class="interest-sites__icon">
+                                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="interest-sites__text">
+                                            <h4 class="interest-sites__name">SITIO</h4>
+                                            <h4 class="interest-sites__name">6</h4>
+                                        </div>
+                                    </div>
+                                    <div class="interest-sites__footer">
+                                        <span class="interest-sites__cta">Conoce más</span>
+                                        <div class="interest-sites__arrow">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Sitio 7 -->
+                            <div class="interest-sites__card">
+                                <a href="#" class="interest-sites__link" aria-label="Sitio de ejemplo 7">
+                                    <div class="interest-sites__header">
+                                        <div class="interest-sites__icon">
+                                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2-7h-3V2h-4v2H8V2c0-.55-.45-1-1-1s-1 .45-1 1v2H3c-.55 0-1 .45-1 1s.45 1 1 1h1v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6h1c.55 0 1-.45 1-1s-.45-1-1-1z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="interest-sites__text">
+                                            <h4 class="interest-sites__name">SITIO</h4>
+                                            <h4 class="interest-sites__name">7</h4>
+                                        </div>
+                                    </div>
+                                    <div class="interest-sites__footer">
+                                        <span class="interest-sites__cta">Conoce más</span>
+                                        <div class="interest-sites__arrow">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Sitio 8 -->
+                            <div class="interest-sites__card">
+                                <a href="#" class="interest-sites__link" aria-label="Sitio de ejemplo 8">
+                                    <div class="interest-sites__header">
+                                        <div class="interest-sites__icon">
+                                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="interest-sites__text">
+                                            <h4 class="interest-sites__name">SITIO</h4>
+                                            <h4 class="interest-sites__name">8</h4>
+                                        </div>
+                                    </div>
+                                    <div class="interest-sites__footer">
+                                        <span class="interest-sites__cta">Conoce más</span>
+                                        <div class="interest-sites__arrow">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Repetir desde el inicio: Gaceta Oficial -->
+                            <div class="interest-sites__card">
+                                <a href="#" class="interest-sites__link" aria-label="Acceder a Gaceta Oficial">
+                                    <div class="interest-sites__header">
+                                        <div class="interest-sites__icon">
+                                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 2 2h12c1.11 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 12h8v2H8v-2zm0 3h8v2H8v-2zm0-6h5v2H8V9z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="interest-sites__text">
+                                            <h4 class="interest-sites__name">GACETA</h4>
+                                            <h4 class="interest-sites__name">OFICIAL</h4>
+                                        </div>
+                                    </div>
+                                    <div class="interest-sites__footer">
+                                        <span class="interest-sites__cta">Conoce más</span>
+                                        <div class="interest-sites__arrow">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Comunicados Oficiales (repetir) -->
+                            <div class="interest-sites__card">
+                                <a href="#" class="interest-sites__link" aria-label="Ver comunicados oficiales">
+                                    <div class="interest-sites__header">
+                                        <div class="interest-sites__icon">
+                                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="interest-sites__text">
+                                            <h4 class="interest-sites__name">COMUNICADOS</h4>
+                                            <h4 class="interest-sites__name">OFICIALES</h4>
+                                        </div>
+                                    </div>
+                                    <div class="interest-sites__footer">
+                                        <span class="interest-sites__cta">Conoce más</span>
+                                        <div class="interest-sites__arrow">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Servicios a la Sociedad (repetir) -->
+                            <div class="interest-sites__card">
+                                <a href="#" class="interest-sites__link" aria-label="Servicios a la sociedad">
+                                    <div class="interest-sites__header">
+                                        <div class="interest-sites__icon">
+                                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M16 4c0-.55-.45-1-1-1s-1 .45-1 1 .45 1 1 1 1-.45 1-1zm4 2v-.5C20 4.12 18.88 3 17.5 3S15 4.12 15 5.5V6H9c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h10c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1h-4zM12 15.5c-1.25 0-2.27-.86-2.27-2.14 0-1.28 1.02-2.36 2.27-2.36s2.27 1.08 2.27 2.36c0 1.28-1.02 2.14-2.27 2.14z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="interest-sites__text">
+                                            <h4 class="interest-sites__name">SERVICIOS</h4>
+                                            <h4 class="interest-sites__name">A LA SOCIEDAD</h4>
+                                        </div>
+                                    </div>
+                                    <div class="interest-sites__footer">
+                                        <span class="interest-sites__cta">Conoce más</span>
+                                        <div class="interest-sites__arrow">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Indicadores de carrusel -->
-                    <div class="interest-sites__indicators">
-                        <button class="interest-sites__nav-arrow interest-sites__nav-arrow--prev" aria-label="Anterior">
+                    <!-- Controles de navegación -->
+                    <div class="interest-sites__controls">
+                        <button class="interest-sites__nav-arrow interest-sites__nav-arrow--prev" aria-label="Anterior" data-carousel-prev="interest-sites">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
                             </svg>
                         </button>
                         <div class="interest-sites__dots">
-                            <span class="interest-sites__dot"></span>
-                            <span class="interest-sites__dot"></span>
-                            <span class="interest-sites__dot"></span>
-                            <span class="interest-sites__dot"></span>
-                            <span class="interest-sites__dot"></span>
-                            <span class="interest-sites__dot"></span>
-                            <span class="interest-sites__dot interest-sites__dot--active"></span>
-                            <span class="interest-sites__dot"></span>
-                            <span class="interest-sites__dot"></span>
-                            <span class="interest-sites__dot"></span>
-                            <span class="interest-sites__dot"></span>
-                            <span class="interest-sites__dot"></span>
-                            <span class="interest-sites__dot"></span>
+                            <button class="interest-sites__dot interest-sites__dot--active" data-slide-to="0" aria-label="Ir a slide 1"></button>
+                            <button class="interest-sites__dot" data-slide-to="1" aria-label="Ir a slide 2"></button>
+                            <button class="interest-sites__dot" data-slide-to="2" aria-label="Ir a slide 3"></button>
+                            <button class="interest-sites__dot" data-slide-to="3" aria-label="Ir a slide 4"></button>
+                            <button class="interest-sites__dot" data-slide-to="4" aria-label="Ir a slide 5"></button>
+                            <button class="interest-sites__dot" data-slide-to="5" aria-label="Ir a slide 6"></button>
+                            <button class="interest-sites__dot" data-slide-to="6" aria-label="Ir a slide 7"></button>
+                            <button class="interest-sites__dot" data-slide-to="7" aria-label="Ir a slide 8"></button>
+                            <button class="interest-sites__dot" data-slide-to="8" aria-label="Ir a slide 9"></button>
                         </div>
-                        <button class="interest-sites__nav-arrow interest-sites__nav-arrow--next" aria-label="Siguiente">
+                        <button class="interest-sites__nav-arrow interest-sites__nav-arrow--next" aria-label="Siguiente" data-carousel-next="interest-sites">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
                             </svg>
