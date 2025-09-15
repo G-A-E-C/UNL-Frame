@@ -2181,8 +2181,277 @@ document.addEventListener('DOMContentLoaded', function() {
     DiscoverModule.init(); // Initialize discover module
     OfferModule.init(); // Initialize offer module
     FacultyAnimationsModule.init(); // Initialize faculty animations module
+    TopsModule.init(); // Initialize tops module
     console.log('🚀 All modules initialized successfully');
   } catch (error) {
     console.error('❌ Error initializing modules:', error);
   }
 });
+
+// =================================================================
+// MÓDULO DE TOPS - NUEVAS PROPUESTAS
+// =================================================================
+
+const TopsModule = {
+  init() {
+    this.initVerticalIntegrated();
+    console.log('📊 Tops Module initialized');
+  },
+
+  initVerticalIntegrated() {
+    // Inicializar el primer item como activo
+    const firstItem = document.querySelector('.top-item[data-top="top1"]');
+    if (firstItem) {
+      firstItem.classList.add('active');
+    }
+  }
+};
+
+// Datos de contenido para cada top
+const topContents = {
+  top1: {
+    title: "TOP 10",
+    subtitle: "Mejores Universidades del Ecuador",
+    description: "La Universidad Nacional de Loja se posiciona orgullosamente entre las 10 mejores instituciones de educación superior del Ecuador. Este reconocimiento refleja nuestro compromiso continuo con la excelencia académica, la innovación en la enseñanza y la calidad de nuestros programas educativos.",
+    highlights: [
+      { icon: "fas fa-graduation-cap", text: "Excelencia Académica" },
+      { icon: "fas fa-trophy", text: "Reconocimiento Nacional" },
+      { icon: "fas fa-users", text: "Comunidad Estudiantil" }
+    ],
+    stats: [
+      { number: "165+", label: "Años de Historia" },
+      { number: "50,000+", label: "Graduados" },
+      { number: "15,000+", label: "Estudiantes Actuales" }
+    ]
+  },
+  top2: {
+    title: "TOP 2",
+    subtitle: "Producción Científica Individual",
+    description: "Ocupamos el segundo lugar nacional en producción científica individual, destacando por la calidad y cantidad de investigaciones publicadas en revistas indexadas. Nuestros docentes investigadores contribuyen significativamente al avance del conocimiento en diversas áreas del saber.",
+    highlights: [
+      { icon: "fas fa-microscope", text: "Investigación Avanzada" },
+      { icon: "fas fa-book", text: "Publicaciones Científicas" },
+      { icon: "fas fa-award", text: "Reconocimiento Académico" }
+    ],
+    stats: [
+      { number: "500+", label: "Publicaciones Anuales" },
+      { number: "200+", label: "Proyectos de Investigación" },
+      { number: "150+", label: "Investigadores Activos" }
+    ]
+  },
+  top3: {
+    title: "TOP 3",
+    subtitle: "Diversificación de Oferta Académica",
+    description: "Tercer lugar en diversificación de oferta académica a nivel nacional, con programas innovadores que responden a las necesidades del mercado laboral y el desarrollo social. Ofrecemos una amplia gama de carreras en diferentes modalidades de estudio.",
+    highlights: [
+      { icon: "fas fa-university", text: "Variedad de Programas" },
+      { icon: "fas fa-laptop", text: "Modalidades Flexibles" },
+      { icon: "fas fa-globe", text: "Alcance Nacional" }
+    ],
+    stats: [
+      { number: "60+", label: "Carreras de Grado" },
+      { number: "40+", label: "Programas de Posgrado" },
+      { number: "8", label: "Áreas de Conocimiento" }
+    ]
+  },
+  top4: {
+    title: "TOP 4",
+    subtitle: "Universidad Pública de Excelencia",
+    description: "Cuarta universidad pública de excelencia del Ecuador, comprometida con la educación de calidad y accesible para todos. Mantenemos altos estándares académicos mientras garantizamos el acceso equitativo a la educación superior de calidad.",
+    highlights: [
+      { icon: "fas fa-balance-scale", text: "Educación Equitativa" },
+      { icon: "fas fa-heart", text: "Compromiso Social" },
+      { icon: "fas fa-star", text: "Calidad Garantizada" }
+    ],
+    stats: [
+      { number: "100%", label: "Gratuidad" },
+      { number: "85%", label: "Empleabilidad" },
+      { number: "95%", label: "Satisfacción Estudiantil" }
+    ]
+  }
+};
+
+// Función para seleccionar un top y cambiar el contenido
+function selectTop(topId) {
+  // Remover clase active de todos los items
+  document.querySelectorAll('.top-item').forEach(item => {
+    item.classList.remove('active');
+  });
+  
+  // Agregar clase active al item seleccionado
+  const selectedItem = document.querySelector(`[data-top="${topId}"]`);
+  if (selectedItem) {
+    selectedItem.classList.add('active');
+  }
+  
+  // Actualizar el contenido
+  const content = topContents[topId];
+  if (content) {
+    updateContent(content);
+  }
+}
+
+// Función para actualizar el contenido dinámicamente
+function updateContent(content) {
+  // Agregar animación de salida
+  const contentArea = document.querySelector('.tops-content');
+  if (contentArea) {
+    contentArea.style.opacity = '0';
+    contentArea.style.transform = 'translateX(30px)';
+    
+    setTimeout(() => {
+      // Actualizar título y contenido
+      const titleElement = document.getElementById('content-title');
+      const bodyElement = document.getElementById('content-body');
+      
+      if (titleElement) titleElement.textContent = content.title;
+      
+      if (bodyElement) {
+        bodyElement.innerHTML = `
+          <h3 class="content-animate" data-animate="fade-up">${content.subtitle}</h3>
+          <p class="content-animate" data-animate="fade-up" data-delay="100">${content.description}</p>
+          
+          <div class="content-highlights content-animate" data-animate="fade-up" data-delay="200">
+            ${content.highlights.map(highlight => `
+              <div class="highlight-item">
+                <i class="${highlight.icon}"></i>
+                <span>${highlight.text}</span>
+              </div>
+            `).join('')}
+          </div>
+          
+          <div class="content-stats content-animate" data-animate="fade-up" data-delay="300">
+            ${content.stats.map(stat => `
+              <div class="stat-item">
+                <span class="stat-number">${stat.number}</span>
+                <span class="stat-label">${stat.label}</span>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+      
+      // Agregar animación de entrada al contenedor
+      contentArea.style.opacity = '1';
+      contentArea.style.transform = 'translateX(0)';
+      
+      // Animar los elementos del contenido con delay
+      setTimeout(() => {
+        animateContentElements();
+      }, 100);
+    }, 300);
+  }
+}
+
+// Función para animar los elementos del contenido
+function animateContentElements() {
+  const contentElements = document.querySelectorAll('.content-animate');
+  contentElements.forEach((element, index) => {
+    const delay = element.dataset.delay ? parseInt(element.dataset.delay) : index * 100;
+    
+    setTimeout(() => {
+      element.classList.add('animate-in');
+    }, delay);
+  });
+}
+
+// Función para alternar la información de los tops (otras propuestas)
+function toggleTopInfo(topId) {
+  const infoElement = document.getElementById(topId);
+  if (infoElement) {
+    const isActive = infoElement.classList.contains('active');
+    
+    // Cerrar todos los demás elementos activos en la misma sección
+    const section = infoElement.closest('.tops-section, .tops-vertical-panel');
+    if (section) {
+      const allInfoElements = section.querySelectorAll('.top-card__info, .top-hexagon__info, .top-diamond__info, .tops-vertical__info');
+      allInfoElements.forEach(el => el.classList.remove('active'));
+    }
+    
+    // Alternar el elemento actual
+    if (!isActive) {
+      infoElement.classList.add('active');
+    }
+  }
+}
+
+// Función para alternar información vertical específica (versión anterior)
+function toggleVerticalInfo(verticalId) {
+  const infoElement = document.getElementById(verticalId);
+  if (infoElement) {
+    const isActive = infoElement.classList.contains('active');
+    
+    // Cerrar todos los demás elementos activos en el panel vertical
+    const panel = document.querySelector('.tops-vertical-panel');
+    if (panel) {
+      const allInfoElements = panel.querySelectorAll('.tops-vertical__info');
+      allInfoElements.forEach(el => el.classList.remove('active'));
+    }
+    
+    // Alternar el elemento actual
+    if (!isActive) {
+      infoElement.classList.add('active');
+    }
+  }
+}
+
+// Función para alternar el panel vertical completo (versión anterior)
+function toggleVerticalPanel() {
+  const panel = document.querySelector('.tops-vertical-panel');
+  if (panel) {
+    const isActive = panel.classList.contains('active');
+    panel.classList.toggle('active', !isActive);
+    
+    // Guardar estado en localStorage
+    localStorage.setItem('verticalPanelOpen', !isActive);
+    
+    // Rotar el icono del botón
+    const icon = panel.querySelector('.tops-vertical__toggle i');
+    if (icon) {
+      icon.style.transform = !isActive ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+  }
+}
+
+// Cargar estado del panel vertical al inicializar (versión anterior)
+document.addEventListener('DOMContentLoaded', function() {
+  const panel = document.querySelector('.tops-vertical-panel');
+  const savedState = localStorage.getItem('verticalPanelOpen');
+  
+  if (panel && savedState === 'true') {
+    panel.classList.add('active');
+    const icon = panel.querySelector('.tops-vertical__toggle i');
+    if (icon) {
+      icon.style.transform = 'rotate(180deg)';
+    }
+  }
+});
+
+// Efectos de animación al hacer scroll para las nuevas secciones de tops
+function observeTopsElements() {
+  const topsElements = document.querySelectorAll('.top-card--circular, .top-hexagon, .top-diamond, .top-item');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }, index * 100);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  topsElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.6s ease';
+    observer.observe(el);
+  });
+}
+
+// Inicializar observador cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', observeTopsElements);
