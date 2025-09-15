@@ -1,6 +1,47 @@
 html, body {
   overflow-x: hidden !important;
 }
+
+/* ==========================================================================
+   BACKGROUND LOGO UNL - MARCA DE AGUA
+   ========================================================================== */
+
+body {
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/icons/logo unl-NC-01-Background.png');
+  background-size: 800px auto; /* Tamaño controlado del logo */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Se mueve con el scroll */
+  opacity: 0.03; /* Muy sutil para marca de agua */
+  z-index: -1; /* Detrás de todo el contenido */
+  pointer-events: none; /* No interfiere con la navegación */
+  filter: blur(0.5px) grayscale(20%); /* Difuminado sutil y menos saturación */
+}
+
+/* Variante alternativa para dispositivos móviles */
+@media (max-width: 768px) {
+  body::before {
+    background-size: 600px auto; /* Más pequeño en móviles */
+    opacity: 0.025; /* Aún más sutil en móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  body::before {
+    background-size: 400px auto; /* Más pequeño en pantallas muy pequeñas */
+    opacity: 0.02;
+  }
+}
 /* ===== Autoridad Vicerrectora (igual a ejemplo) ===== */
 .autoridad-section {
   margin-top: 40px;
