@@ -327,7 +327,7 @@
             <div class="container">
                 <div class="header__main-content">
                     <a href="#" class="header__logo" aria-label="Inicio - Universidad Nacional">
-                        <img src="./assets/img/logogris_0.png" alt="Logo Universidad Nacional" width="40" height="40">
+                        <img src="./assets/img/logogris_0.png" alt="Logo Universidad Nacional" width="60" height="60">
                     </a>
 
                     <nav class="header__nav" aria-label="Navegación principal">
@@ -336,16 +336,22 @@
                                 <a href="#" class="header__nav-link" aria-current="page">INICIO</a>
                             </li>
                             <li class="header__nav-item">
-                                <a href="universidad.html" class="header__nav-link">UNIVERSIDAD</a>
-                            </li>
-                            <li class="header__nav-item">
                                 <a href="#" class="header__nav-link">OFERTA ACADÉMICA</a>
                             </li>
                             <li class="header__nav-item">
                                 <a href="#" class="header__nav-link">INVESTIGACIÓN</a>
                             </li>
-                            <li class="header__nav-item">
-                                <a href="#" class="header__nav-link">NOTICIAS</a>
+                            <li class="header__nav-item header__nav-item--dropdown">
+                                <a href="#" class="header__nav-link header__nav-dropdown-toggle" aria-expanded="false">
+                                    DOCENCIA
+                                    <span class="header__dropdown-arrow">▼</span>
+                                </a>
+                                <ul class="header__dropdown-menu">
+                                    <li><a href="calendario-academico.html" class="header__dropdown-link">Calendario Académico</a></li>
+                                    <li><a href="requisitos-matricula.html" class="header__dropdown-link">Requisitos de Matrícula</a></li>
+                                    <li><a href="#" class="header__dropdown-link">Carreras</a></li>
+                                    <li><a href="#" class="header__dropdown-link">Modalidades</a></li>
+                                </ul>
                             </li>
                             <li class="header__nav-item">
                                 <a href="#" class="header__nav-link">SERVICIOS</a>
@@ -419,7 +425,15 @@
                     <li><a href="#" class="header__mobile-nav-link" aria-current="page">INICIO</a></li>
                     <li><a href="#" class="header__mobile-nav-link">OFERTA ACADÉMICA</a></li>
                     <li><a href="#" class="header__mobile-nav-link">INVESTIGACIÓN</a></li>
-                    <li><a href="#" class="header__mobile-nav-link">NOTICIAS</a></li>
+                    <li class="header__mobile-nav-dropdown">
+                        <a href="#" class="header__mobile-nav-link header__mobile-dropdown-toggle">DOCENCIA</a>
+                        <ul class="header__mobile-dropdown-menu">
+                            <li><a href="calendario-academico.html" class="header__mobile-nav-sublink">Calendario Académico</a></li>
+                            <li><a href="requisitos-matricula.html" class="header__mobile-nav-sublink">Requisitos de Matrícula</a></li>
+                            <li><a href="#" class="header__mobile-nav-sublink">Carreras</a></li>
+                            <li><a href="#" class="header__mobile-nav-sublink">Modalidades</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#" class="header__mobile-nav-link">SERVICIOS</a></li>
                     <li><a href="./autoridades.html" class="header__mobile-nav-link">CONTACTO</a></li>
                 </ul>
