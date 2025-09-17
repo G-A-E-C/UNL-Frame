@@ -2,109 +2,309 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinculación - Universidad Nacional de Loja</title>
-    <meta name="description"
-        content="Establecemos vínculos efectivos con la sociedad para transferir conocimiento y contribuir al desarrollo regional y nacional.">
+  <!-- ================== META BÁSICA ================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vinculación - Universidad Nacional de Loja</title>
+  <meta name="description"
+    content="Vinculación con la Sociedad de la UNL: ámbitos, programas, proyectos y mapa interactivo de facultades." />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/vinculacion.css">
-    <script src="./js/vinculacion.js"></script>
-  
-    <link rel="stylesheet" href="./css/styles.css">
+  <!-- ================== Leaflet (mapa) con SRI ================== -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- ================== FUENTES (1 sola solicitud) ================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- ================== ESTILOS ================== -->
+  <link rel="stylesheet" href="./css/styles.css"><!-- global -->
+  <link rel="stylesheet" href="./css/vinculacion.css"><!-- específicos de esta página -->
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="header" role="banner">
-        <div class="header__main">
-            <div class="container">
-                <div class="header__main-content">
-                    <a href="./index.html" class="header__logo" aria-label="Inicio - Universidad Nacional">
-                        <img src="./assets/img/logogris_0.png" alt="Logo Universidad Nacional" width="40" height="40">
-                    </a>
+  <!-- =========================================================
+       HEADER / NAVBAR
+       ========================================================= -->
+  <header class="header" role="banner">
+    <div class="header__main">
+      <div class="container">
+        <div class="header__main-content">
+          <a href="./index.html" class="header__logo" aria-label="Inicio - Universidad Nacional">
+            <img src="./assets/img/logogris_0.png" alt="Logo Universidad Nacional" width="40" height="40">
+          </a>
 
-                    <nav class="header__nav" aria-label="Navegación principal">
-                        <ul class="header__nav-list">
-                            <li class="header__nav-item">
-                                <a href="./index.html" class="header__nav-link">INICIO</a>
-                            </li>
-                            <li class="header__nav-item">
-                                <a href="#" class="header__nav-link">OFERTA ACADÉMICA</a>
-                            </li>
-                            <li class="header__nav-item">
-                                <a href="./investigacion.html" class="header__nav-link">INVESTIGACIÓN</a>
-                            </li>
-                            <li class="header__nav-item">
-                                <a href="./vinculacion.html" class="header__nav-link"
-                                    aria-current="page">VINCULACIÓN</a>
-                            </li>
-                            <li class="header__nav-item">
-                                <a href="#" class="header__nav-link">SERVICIOS</a>
-                            </li>
-                            <li class="header__nav-item">
-                                <a href="#" class="header__nav-link">CONTACTO</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+          <nav class="header__nav" aria-label="Navegación principal">
+            <ul class="header__nav-list">
+              <li class="header__nav-item"><a href="./index.html" class="header__nav-link">INICIO</a></li>
+              <li class="header__nav-item"><a href="./docencia.html" class="header__nav-link">DOCENCIA</a></li>
+              <li class="header__nav-item"><a href="./investigacion.html" class="header__nav-link">INVESTIGACIÓN</a>
+              </li>
+              <li class="header__nav-item"><a href="#" class="header__nav-link">NOTICIAS</a></li>
+              <li class="header__nav-item"><a href="#" class="header__nav-link">SERVICIOS</a></li>
+              <li class="header__nav-item">
+                <a href="./vinculacion.html" class="header__nav-link" aria-current="page">VINCULACIÓN</a>
+              </li>
+              <li class="header__nav-item"><a href="#" class="header__nav-link">CONTACTO</a></li>
+            </ul>
+          </nav>
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <!-- ...existing code... -->
-        <section class="vinculacion-sociedad">
-            <div class="vinculacion-bg">
-                <img src="./assets/img/imagenprincipalv.jpg" alt="Vinculación con la sociedad" class="vinculacion-bg-img">
-                <div class="vinculacion-marco">
-                    <h2>VINCULACION<br>CON LA SOCIEDAD</h2>
-                </div>
-            </div>
-            <div class="vinculacion-info">
-                <div class="vinculacion-texto">
-                    <p>
-                        La UNL integra docencia, investigación y vinculación con la sociedad, orientando la generación y
-                        transferencia de conocimiento, innovación y tecnología, para atender necesidades regionales,
-                        impulsar desarrollo sostenible y garantizar transformación social, conforme a principios de
-                        pertinencia, equidad y responsabilidad institucional.
-                    </p>
-                    <div class="vinculacion-contacto">
-                        <strong>Contáctanos</strong><br>
-                        <span>Email:</span> vinculacion.sociedad@unl.edu.ec<br>
-                        <span>Atención:</span> Lunes a viernes<br>
-                        <span>Horario:</span> 08:00 a 12:00 | 15:00 a 18:00
-                    </div>
-                </div>
-                <div class="vinculacion-img-secundaria">
-                    <img src="./assets/img/imagenv1.webp" alt="Atención Vinculación"
-                        class="vinculacion-sec-img">
-                </div>
-            </div>
-        </section>
-        
-    </main>
+  <!-- =========================================================
+       CONTENIDO PRINCIPAL
+       ========================================================= -->
+  <main>
+    <!-- ============ HERO (full) ============ -->
+    <section class="page-hero page-hero--vinculacion full" aria-labelledby="hero-title">
+      <div class="page-hero__bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="page-hero__content">
+          <h1 id="hero-title" class="page-hero__title">VINCULACIÓN CON<br>LA SOCIEDAD</h1>
+        </div>
+      </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="footer-red" role="contentinfo">
-        <div class="footer-red__video-bg">
-            <video autoplay loop muted playsinline>
-                <source src="./assets/video/UNL.mp4" type="video/mp4">
-            </video>
+    <!-- ============ SECCIÓN 2 — Sobre Vinculación + Contacto (full) ============ -->
+    <section class="vincu-about full" aria-labelledby="about-title">
+      <div class="container vincu-about__grid">
+        <!-- Texto -->
+        <div class="vincu-about__text">
+          <!-- Si no tienes clase .sr-only en styles.css, te la paso luego -->
+          <h2 id="about-title" class="sr-only">Sobre Vinculación</h2>
+          <p class="vincu-about__lead">
+            La UNL integra docencia, investigación y vinculación con la sociedad, orientando la
+            generación y transferencia de conocimiento, innovación y tecnología, para atender
+            necesidades regionales, impulsar desarrollo sostenible y garantizar transformación social,
+            conforme a principios de pertinencia, equidad y responsabilidad institucional.
+          </p>
+
+          <div class="vincu-about__contact">
+            <h3>Contáctenos</h3>
+            <p><strong>Email:</strong> vinculacion.sociedad@unl.edu.ec</p>
+            <p><strong>Atención:</strong> Lunes a viernes</p>
+            <p><strong>Horario:</strong> 08:00 a 13:00 | 15:00 a 18:00</p>
+          </div>
         </div>
-        <div class="footer-red__overlay"></div>
-        <div class="footer-red__content">
-            <div class="container">
-                <p>&copy; 2025 Universidad Nacional de Loja. Todos los derechos reservados.</p>
+
+        <!-- Imágenes -->
+        <div class="vincu-about__media" aria-hidden="true">
+          <div class="vincu-about__img-rect"></div>
+          <div class="vincu-about__img-circle"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECCIÓN 3 — Ámbitos con pestañas (full) ============ -->
+    <section class="vincu-ambitos full" id="ambitos" aria-labelledby="ambitos-title">
+      <div class="container">
+        <h2 id="ambitos-title" class="vincu-ambitos__title">ÁMBITOS DE VINCULACIÓN</h2>
+
+        <div class="vincu-tabs">
+          <!-- Menú izquierdo (buttons como tabs) -->
+          <aside class="vincu-tabs__menu" role="tablist" aria-label="Ámbitos" aria-orientation="vertical">
+            <!-- type="button" evita submit por defecto -->
+            <button id="tab-divulgacion" class="vincu-tabs__btn is-active" type="button" role="tab" aria-selected="true"
+              aria-controls="ambitosPanel" data-key="divulgacion">
+              Divulgación<br>Científica
+            </button>
+
+            <button id="tab-educacion" class="vincu-tabs__btn" type="button" role="tab" aria-selected="false"
+              aria-controls="ambitosPanel" data-key="educacion">
+              Educación<br>Continua
+            </button>
+
+            <button id="tab-practicas" class="vincu-tabs__btn" type="button" role="tab" aria-selected="false"
+              aria-controls="ambitosPanel" data-key="practicas">
+              Prácticas<br>preprofesionales
+            </button>
+          </aside>
+
+          <!-- Ventana 2×2 (el JS inyecta aquí los 4 items) -->
+          <div class="vincu-tabs__panel" id="ambitosPanel" role="tabpanel" aria-labelledby="tab-divulgacion">
+            <div class="features-grid" id="ambitosGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECCIÓN 4 — MAPA (Leaflet) ============ -->
+    <section class="vincu-map full" id="mapa-facultades" aria-label="Mapa de facultades UNL">
+      <div class="container">
+        <div class="map-wrap">
+          <div id="lojaMap" class="leaflet-map"></div>
+
+          <!-- Overlay de pantalla completa -->
+          <div class="map-overlay" id="overlayPanel" aria-live="polite">
+            <!-- Tarjeta con título/desc/botones -->
+            <div class="map-overlay__card">
+              <h2 class="map-overlay__title">Proyectos de Vinculación con la Sociedad</h2>
+              <p class="map-overlay__desc">
+                Los programas y proyectos de vinculación de la UNL fortalecen la formación académica
+                y responden a necesidades sociales mediante iniciativas en servicios comunitarios,
+                innovación y servicios especializados.
+              </p>
+              <div class="map-overlay__actions">
+                <a href="#" class="btn-line">FORMATOS</a>
+                <a href="#" class="btn-line">PROYECTOS DE VINCULACIÓN EN CIFRAS</a>
+              </div>
             </div>
+          </div>
+
+          <!-- Botón para ocultar/mostrar overlay (lo mantenemos) -->
+          <button id="mapToggle" class="map-toggle" type="button" aria-controls="overlayPanel" aria-expanded="true"
+            title="Ocultar panel">
+            <span class="chev">‹</span>
+          </button>
         </div>
-    </footer>
+      </div>
+    </section>
+
+    <!-- ============ SECCIÓN 6 — ALUMNI ============ -->
+    <section class="vincu-alumni full" id="alumni" aria-labelledby="alumni-title">
+      <div class="container alumni-grid">
+        <!-- Imagen (de fondo) -->
+        <figure class="alumni-media" aria-hidden="true"></figure>
+
+        <!-- Texto + CTA -->
+        <div class="alumni-content">
+          <h2 id="alumni-title" class="alumni-title">ALUMNI</h2>
+          <p class="alumni-sub">Donde la salud de la mujer es primero</p>
+
+          <a href="#" class="alumni-cta">
+            <span class="alumni-cta__dot" aria-hidden="true">›</span>
+            <span class="alumni-cta__text">Ver más</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ============ SECCIÓN 7 — LÍNEAS OPERATIVAS (grilla 2x2) ============ -->
+    <section class="vincu-lines full" id="lineas-operativas" aria-labelledby="lines-title">
+      <div class="container">
+        <h2 id="lines-title" class="lines__title">NUESTRAS LÍNEAS OPERATIVAS</h2>
+
+        <div class="lines-grid">
+          <!-- Card 1 -->
+          <article class="stat-card" style="--bg:url('../assets/imgVinculacion/2seccion2.png')">
+            <a href="#" class="stat-card__link">
+              <div class="stat-card__overlay"></div>
+              <div class="stat-card__content">
+                <p class="stat-card__kicker">114 proyectos de vinculación</p>
+                <p class="stat-card__desc">Equipo docente y estudiantil <span class="em">ha impulsado estas
+                    iniciativas</span> en territorio.</p>
+              </div>
+            </a>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="stat-card" style="--bg:url('../assets/imgVinculacion/alumni.png')">
+            <a href="#" class="stat-card__link">
+              <div class="stat-card__overlay"></div>
+              <div class="stat-card__content">
+                <p class="stat-card__kicker">236 docentes de distintas áreas</p>
+                <p class="stat-card__desc"><span class="em">Han liderado estos proyectos</span> con impacto social.</p>
+              </div>
+            </a>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="stat-card" style="--bg:url('../assets/imgVinculacion/2seccion.png')">
+            <a href="#" class="stat-card__link">
+              <div class="stat-card__overlay"></div>
+              <div class="stat-card__content">
+                <p class="stat-card__kicker">3017 estudiantes</p>
+                <p class="stat-card__desc">De modalidad presencial y a distancia se han vinculado activamente.</p>
+              </div>
+            </a>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="stat-card" style="--bg:url('../assets/imgVinculacion/alumni.png')">
+            <a href="#" class="stat-card__link">
+              <div class="stat-card__overlay"></div>
+              <div class="stat-card__content">
+                <p class="stat-card__kicker">7 provincias del Ecuador</p>
+                <p class="stat-card__desc">Cobertura territorial de los programas y <span class="em">servicios
+                    especializados</span>.</p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- =========================
+     SECCIÓN 8 — CONVENIOS
+     ========================= -->
+    <section class="vincu-convenios full" id="convenios">
+      <div class="container convenios-grid">
+
+        <!-- Título de sección -->
+        <header class="convenios-header">
+          <h2 class="convenios-title">Nuestros convenios</h2>
+        </header>
+
+        <!-- Carrusel de logos -->
+        <div class="convenios-carousel" aria-label="Convenios">
+          <button class="cc-arrow prev" type="button" aria-label="Anterior">‹</button>
+
+          <ul class="cc-track" id="ccTrack" tabindex="0">
+            <li class="cc-slide is-active" data-key="municipio">
+              <img src="./assets/imgVinculacion/municipio.png" alt="Municipio de Loja">
+            </li>
+            <li class="cc-slide" data-key="ecu">
+              <img src="./assets/imgVinculacion/ecu.png" alt="ECU 911">
+            </li>
+            <li class="cc-slide" data-key="titanus">
+              <img src="./assets/imgVinculacion/titanus.png" alt="Titanus">
+            </li>
+            <li class="cc-slide" data-key="active">
+              <img src="./assets/imgVinculacion/active.png" alt="Active">
+            </li>
+          </ul>
+
+          <button class="cc-arrow next" type="button" aria-label="Siguiente">›</button>
+        </div>
+
+        <!-- Panel de detalle -->
+        <aside class="convenios-detail" aria-live="polite">
+          <h3 id="cvTitle">Municipio de Loja</h3>
+          <div id="cvRows" class="cv-rows">
+            <!-- filas se inyectan por JS -->
+          </div>
+        </aside>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER (video de fondo)
+       ========================================================= -->
+  <footer class="footer-red" role="contentinfo">
+    <div class="footer-red__video-bg" aria-hidden="true">
+      <video autoplay loop muted playsinline>
+        <source src="./assets/video/UNL.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="footer-red__overlay" aria-hidden="true"></div>
+    <div class="footer-red__content">
+      <div class="container">
+        <p>&copy; 2025 Universidad Nacional de Loja. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================== SCRIPTS ================== -->
+  <script defer src="./js/vinculacion.js"></script>
 </body>
 
 </html>
