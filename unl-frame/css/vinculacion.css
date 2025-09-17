@@ -1,0 +1,715 @@
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+:root{
+  --header-h: 80px;          /* alto del header (el JS lo recalcula) */
+  --brand-red: #e01111;      /* rojo institucional */
+  --map-pin-size: 18px;      /* tamaño de los pines de Leaflet */
+}
+
+/* Utilidad por si no existe en styles.css */
+.sr-only{
+  position:absolute!important; width:1px;height:1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;
+  clip-path: inset(50%); border:0; padding:0; margin:-1px;
+}
+
+/* =========================================================
+   BASE + NAVBAR FIJO
+   ========================================================= */
+html, body { height: 100%; }
+body { margin: 0; }
+
+.header{
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 1000; background: #fff;
+}
+.header .header__main{ min-height: var(--header-h); }
+.header.is-scrolled{ box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+
+/* Empuja el contenido para que el header fijo no lo tape */
+main{ padding-top: var(--header-h); }
+
+/* =========================================================
+   HERO — VINCULACIÓN (full)
+   ========================================================= */
+.page-hero--vinculacion.full{
+  position: relative; min-height: 100vh; overflow: hidden;
+}
+.page-hero--vinculacion .page-hero__bg{
+  position: absolute; inset: 0;
+  background: url("../assets/imgVinculacion/fondoHero.png") center/cover no-repeat;
+  z-index: 0;
+}
+.page-hero--vinculacion.full::before{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(rgba(0,0,0,.10), rgba(0,0,0,.22));
+  z-index:1;
+}
+.page-hero--vinculacion .page-hero__content{
+  position:absolute; right:1vw; bottom:20vh; z-index:2;
+  background: rgba(255,255,255,.65);
+  padding:1.6rem 2.4rem; border-radius:10px;
+  box-shadow:0 12px 28px rgba(0,0,0,.15);
+  max-width:min(800px,92%);
+  backdrop-filter:saturate(120%) blur(2px);
+  transition:all .3s ease;
+}
+.page-hero--vinculacion .page-hero__title{
+  margin:0;
+  font-family:"Merriweather",serif; font-weight:900;
+  text-transform:uppercase; letter-spacing:.4px;
+  line-height:1.15; font-size:clamp(24px,4.6vw,48px);
+  color:#1c1c1c;
+}
+@media (min-width: 992px){
+  .page-hero--vinculacion .page-hero__content{
+    right:6vw; bottom:22vh; background:rgba(255,255,255,.6);
+    padding:2rem 3rem;
+  }
+  .page-hero--vinculacion .page-hero__title{ font-size:clamp(28px,4vw,54px); }
+}
+
+/* =========================================================
+   SECCIÓN 2 — “Sobre Vinculación / Contacto” (full)
+   ========================================================= */
+.vincu-about{ padding:clamp(32px,6vw,64px) 0; background:#fff; }
+
+.vincu-about__grid{
+  display:grid; grid-template-columns:1.1fr 1fr;
+  gap:clamp(20px,4vw,48px); align-items:center;
+}
+.vincu-about__lead{
+  font-size:clamp(16px,2.2vw,20px); line-height:1.7;
+  margin:0 0 24px; color:#333;
+}
+.vincu-about__contact h3{
+  margin:0 0 8px; font-size:clamp(18px,2.4vw,22px); color:#254019;
+}
+.vincu-about__contact p{ margin:4px 0; font-size:clamp(15px,2vw,18px); color:#2d2d2d; }
+
+.vincu-about__media{ position:relative; min-height:clamp(260px,40vw,420px); }
+.vincu-about__img-rect{
+  position:absolute; inset:0;
+  background:url("../assets/imgVinculacion/2seccion.png") center/cover no-repeat;
+  border-radius:6px; box-shadow:0 8px 24px rgba(0,0,0,.12);
+}
+.vincu-about__img-circle{
+  position:absolute; left:-10%; bottom:-18%;
+  width:clamp(130px,32vw,230px); height:clamp(130px,32vw,230px);
+  background:url("../assets/imgVinculacion/2seccion2.png") center/cover no-repeat;
+  border-radius:50%; box-shadow:0 12px 28px rgba(0,0,0,.18);
+  outline:6px solid rgba(255,255,255,.9); outline-offset:-3px;
+}
+
+@media (max-width:900px){
+  .vincu-about__grid{ grid-template-columns:1fr; }
+  .vincu-about__media{ margin-top:8px; min-height:clamp(240px,52vw,360px); }
+  .vincu-about__img-circle{
+    left:-4%; bottom:-14%;
+    width:clamp(160px,44vw,260px); height:clamp(160px,44vw,260px);
+  }
+}
+
+/* Full height */
+.vincu-about.full{
+  min-height:100vh; display:flex; align-items:center;
+  overflow:visible; padding:clamp(24px,4vw,48px) 0;
+}
+.vincu-about.full .vincu-about__grid{ width:100%; }
+
+@media (max-height:720px){ .vincu-about.full .vincu-about__img-circle{ bottom:-10%; } }
+@media (max-width:900px){
+  .vincu-about.full{ padding:clamp(20px,5vw,32px) 0; }
+  .vincu-about.full .vincu-about__media{ min-height:clamp(260px,56vw,380px); }
+}
+
+/* =========================================================
+   SECCIÓN 3 — ÁMBITOS (Tabs izq + grilla 2×2)
+   ========================================================= */
+.vincu-ambitos.full{
+  min-height:100vh; display:flex; align-items:flex-start; /* arriba */
+  padding:clamp(10px,3vw,24px) 0 clamp(24px,4vw,48px);
+}
+.vincu-ambitos.full .container{ width:100%; }
+
+.vincu-ambitos__title{
+  font-family:"Merriweather",serif; font-weight:700;
+  font-size:clamp(22px,3.2vw,40px);
+  margin:0 0 clamp(16px,2.2vw,28px); color:#2b2b2b;
+}
+
+/* Layout: menú | ventana */
+.vincu-tabs{
+  display:grid; grid-template-columns:260px 1fr;
+  gap:clamp(16px,3vw,28px); align-items:start;
+}
+
+/* Menú izquierdo */
+.vincu-tabs__menu{ display:grid; gap:clamp(16px,2.2vw,22px); }
+.vincu-tabs__btn{
+  text-align:left; background:transparent; border:0;
+  padding:8px 0 8px 14px;             /* separa del filo rojo */
+  font-weight:700; color:#2b2b2b; line-height:1.2; cursor:pointer;
+  border-left:3px solid transparent;
+}
+.vincu-tabs__btn.is-active{ border-left-color:var(--brand-red); color:#000; }
+.vincu-tabs__btn:hover{ color:#000; }
+
+/* Ventana 2×2 */
+.vincu-tabs__panel{ width:100%; }
+.features-grid{
+  display:grid; grid-template-columns:1fr 1fr;
+  grid-auto-rows:1fr; gap:clamp(14px,2vw,20px);
+}
+
+/* Tarjeta (mitad texto | mitad imagen) */
+.feature{
+  display:grid; grid-template-columns:1fr 1fr;
+  align-items:stretch; min-height:220px;
+  border:1px solid #e7e7e7; background:#fff;
+}
+
+/* Texto */
+.feature__text, .feature__img{ display:grid; place-items:center; }
+.feature__text{ padding:18px; text-align:center; }
+.feature__title{
+  margin:0 0 6px; font-weight:700; color:#222;
+  font-size:clamp(16px,2vw,22px);
+}
+
+/* Imagen (cover + contenedor del efecto) */
+.feature__img{
+  position:relative; overflow:hidden;
+  background-size:cover; background-position:center; background-repeat:no-repeat;
+}
+
+/* Zoom de imagen + overlay rojo */
+.feature__img::before{
+  content:""; position:absolute; inset:0;
+  background:inherit; transform:scale(1);
+  transform-origin:center; transition:transform .4s ease;
+  will-change:transform; pointer-events:none;
+}
+.feature__img::after{
+  content:""; position:absolute; inset:0;
+  background:rgba(224,17,17,.22);
+  opacity:0; transition:opacity .3s ease; pointer-events:none;
+}
+.feature:hover .feature__img::before,
+.feature:focus-within .feature__img::before{ transform:scale(1.08); }
+.feature:hover .feature__img::after,
+.feature:focus-within .feature__img::after{ opacity:1; }
+
+/* Título al pasar el mouse */
+.feature__text:hover .feature__title,
+.feature__title:hover{ color:var(--brand-red); transition:color .2s ease; }
+
+/* Orden fijo: Título | Imagen (sin alternancias) */
+.features-grid .feature .feature__text{ order:1 !important; }
+.features-grid .feature .feature__img{  order:2 !important; }
+
+/* ---------- Responsive ---------- */
+@media (max-width:1024px){
+  .vincu-tabs{ grid-template-columns:220px 1fr; }
+  .feature{ min-height:200px; }
+}
+@media (max-width:820px){
+  .vincu-tabs{ grid-template-columns:1fr; }
+  .vincu-tabs__menu{
+    grid-auto-flow:column; grid-auto-columns:1fr;
+    overflow-x:auto; padding-bottom:6px;
+  }
+}
+@media (max-width:680px){
+  .features-grid{ grid-template-columns:1fr; }  /* 4 filas */
+  .feature{ grid-template-columns:1fr; min-height:180px; }
+  .feature__img{ min-height:140px; }
+}
+
+/* =========================================================
+   SECCIÓN 4 — MAPA DE FACULTADES (Leaflet)
+   ========================================================= */
+
+/* Contenedor general de mapa */
+.vincu-map.full{
+  min-height: 100vh; display: flex; align-items: center;
+  padding: clamp(24px, 4vw, 48px) 0;
+}
+.vincu-map .container{ width: 100%; }
+
+.leaflet-map{
+  height: clamp(420px, 70vh, 680px);
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 26px rgba(0,0,0,.12);
+}
+
+/* Posicionador general para overlay + toggle */
+.map-wrap{ position: relative; }
+
+/* === OVERLAY de pantalla completa sobre el mapa === */
+.map-overlay{
+  position:absolute; inset:0;
+  background: rgba(0,0,0,.48);
+  border-radius: inherit;
+  z-index: 500;
+  opacity: 1; visibility: visible;
+  transition: opacity .28s ease, visibility .28s ease;
+  display: grid; place-items: start;
+}
+
+/* Tarjeta del overlay */
+.map-overlay__card{
+  margin: clamp(16px, 4vw, 48px);
+  max-width: min(560px, 52%);
+  background: rgba(0,0,0,.36);
+  color:#fff;
+  padding: clamp(16px, 2.2vw, 28px);
+  border-radius: 16px;
+  backdrop-filter: blur(2px);
+}
+.map-overlay__title{
+  margin:0 0 10px;
+  font-family:"Merriweather",serif;
+  font-weight:900; line-height:1.1;
+  font-size: clamp(22px, 4.2vw, 44px);
+  color:#111;                        /* ← título negro como pediste */
+}
+.map-overlay__desc{
+  margin:0 0 14px; line-height:1.6;
+  font-size: clamp(14px, 2.2vw, 16px);
+  color:#f2f2f2;
+}
+.map-overlay__actions{ display:flex; gap:16px; flex-wrap:wrap; }
+
+/* Botón minimal: texto blanco + subrayado rojo */
+.btn-line{
+  --line-w: 84px;
+  position: relative; display: inline-block;
+  color: #fff; font-weight: 800; letter-spacing: .02em;
+  text-decoration: none; padding: 6px 2px;
+  transition: color .2s ease;
+}
+.btn-line::after{
+  content: ""; position: absolute; left: 0; bottom: -6px;
+  height: 2px; width: var(--line-w);
+  background: var(--brand-red); border-radius: 2px;
+  transition: width .25s ease, background .2s ease;
+}
+.btn-line:hover::after{ width: 100%; background: #ff2b2b; }
+.btn-line:focus-visible{
+  outline: none; box-shadow: 0 0 0 2px rgba(255,255,255,.55) inset; border-radius: 4px;
+}
+
+/* Ocultar overlay cuando el contenedor tiene is-collapsed */
+.map-wrap.is-collapsed .map-overlay{
+  opacity: 0; visibility: hidden; pointer-events: none;
+}
+
+/* === Botón flecha (toggle) – rojo con halo blanco === */
+.map-toggle{
+  position: absolute; left: 18px; top: 50%;
+  transform: translateY(-50%);
+  width: 46px; height: 46px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  background: var(--brand-red); color: #fff;
+  border: none; cursor: pointer;
+  box-shadow:
+    0 0 0 3px rgba(255,255,255,.95),
+    0 10px 20px rgba(0,0,0,.35);
+  transition: transform .12s ease, background .15s ease, box-shadow .2s ease;
+}
+.map-toggle .chev{
+  font-size: 24px; line-height: 1; color: #fff;
+  transition: transform .2s ease;
+}
+.map-toggle:hover{
+  background: #ff2b2b; transform: translateY(-50%) scale(1.06);
+}
+.map-toggle:focus-visible{
+  outline: 2px solid #fff; outline-offset: 2px;
+}
+/* Cuando está colapsado, la flecha gira (‹ → ›) */
+.map-wrap.is-collapsed .map-toggle .chev{ transform: rotate(180deg); }
+
+@media (max-width: 780px){
+  .map-overlay{ place-items: end start; }
+  .map-overlay__card{
+    width: min(720px, calc(100% - 24px));
+    margin: 0 0 12px 12px;
+  }
+  .map-toggle{
+    left: 12px; top: auto; bottom: 96px; transform: none;
+  }
+  .map-toggle:hover{ transform: scale(1.06); }
+}
+
+/* === Pin rojo con pulso (Leaflet divIcon) === */
+.pin-icon .pin-dot{
+  display:block;
+  width: var(--map-pin-size);
+  height: var(--map-pin-size);
+  background:#e01111; border-radius:50%;
+  border:2px solid #fff; box-shadow:0 0 0 2px rgba(0,0,0,.12);
+  position:relative;
+}
+.pin-icon .pin-dot::after{
+  content:""; position:absolute; inset:-6px;
+  border:2px solid rgba(224,17,17,.6); border-radius:50%;
+  animation:pulse 1.6s infinite ease-out; opacity:.9;
+}
+
+/* ÚNICA animación pulse (evita duplicados) */
+@keyframes pulse{
+  0%{ transform:scale(.7); opacity:.85; }
+  100%{ transform:scale(1.35); opacity:0; }
+}
+
+/* Pequeño ajuste al crédito de Leaflet */
+.leaflet-control-attribution{ font-size:11px; }
+/* --- FIX: botón toggle siempre visible sobre el overlay del mapa --- */
+.map-wrap > .map-toggle{
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--brand-red, #e01111);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 700 !important;                 /* por encima del overlay (500) */
+  box-shadow:
+    0 0 0 3px rgba(255,255,255,.95),
+    0 10px 20px rgba(0,0,0,.35);
+}
+.map-wrap > .map-toggle .chev{
+  font-size: 24px;
+  line-height: 1;
+  color: #fff;
+  transition: transform .2s ease;
+}
+.map-wrap.is-collapsed > .map-toggle .chev{ transform: rotate(180deg); }
+
+@media (max-width: 780px){
+  .map-wrap > .map-toggle{
+    left: 12px;
+    top: auto;
+    bottom: 96px;
+    transform: none;
+  }
+}
+
+
+/* ===============================
+   SECCIÓN 6 — ALUMNI (imagen completa, sin efecto)
+   =============================== */
+
+/* Anula por si quedó el pseudo-elemento del “mordisco” */
+.alumni-media::after{ content:none !important; }
+
+/* Foto a todo el bloque, sin recortes */
+.alumni-media{
+  position: relative;
+  /*height: clamp(360px, 52vw, 620px);*/
+  height: clamp(420px, 58vw, 680px);
+  background: url("../assets/imgVinculacion/alumni.png") center / cover no-repeat;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(0,0,0,.15);
+}
+
+/* Mantén el layout y textos como estaban */
+.vincu-alumni.full{
+  min-height: 100vh;
+  display:flex; align-items:center;
+  padding: clamp(32px, 6vw, 72px) 0;
+  background:#fff;
+}
+.alumni-grid{
+  display:grid;
+  /*grid-template-columns: 1.1fr 1fr;   /* foto | texto */
+   grid-template-columns: minmax(540px, 1.5fr) 0.5fr;
+  gap: clamp(24px, 4vw, 64px);
+  align-items:center;
+}
+.alumni-title{
+  margin:0 0 12px;
+  font-family:"Merriweather",serif;
+  font-weight:900;
+  font-size: clamp(28px, 5vw, 64px);
+  color:#2c2c2c;
+}
+.alumni-sub{
+  margin:0 0 28px;
+  color:#16324a;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height:1.5;
+}
+
+/* CTA redondo + texto (igual que antes) */
+.alumni-cta{
+  display:inline-flex; align-items:center; gap:12px;
+  text-decoration:none; color:#222; font-weight:800;
+}
+.alumni-cta__dot{
+  display:grid; place-items:center;
+  width:52px; height:52px; border-radius:999px;
+  background: var(--brand-red, #e01111); color:#fff; font-size:28px;
+  box-shadow: 0 10px 24px rgba(224,17,17,.35);
+  transition: transform .18s ease, background .2s ease;
+}
+.alumni-cta__text{ font-size: clamp(16px, 1.9vw, 20px); }
+.alumni-cta:hover .alumni-cta__dot{ background:#ff2b2b; transform: translateX(2px) scale(1.05); }
+
+/* Responsive: apila en una columna */
+@media (max-width: 900px){
+  .alumni-grid{ grid-template-columns: 1fr; }
+  .alumni-media{ height: clamp(280px, 56vw, 460px); }
+}
+/* =========================================================
+   SECCIÓN 7 — Nuestras líneas operativas (grilla 2×2)
+   Texto negro en negrita + velo rojo suave + hover elevado
+   ========================================================= */
+.vincu-lines{
+  padding: clamp(28px, 4vw, 56px) 0;
+  background: #fff;
+}
+.lines-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(18px, 2.4vw, 28px);
+}
+@media (max-width: 860px){
+  .lines-grid{ grid-template-columns: 1fr; }
+}
+
+/* Tarjeta */
+.stat-card{
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(0,0,0,.18);
+  background: #000; /* fallback */
+}
+
+/* Imagen (usa --bg en el HTML) */
+.stat-card::before{
+  content:"";
+  position:absolute; inset:0;
+  background: var(--bg) center/cover no-repeat;
+  transform: scale(1);
+  transition: transform .6s ease;
+}
+.stat-card:hover::before,
+.stat-card:focus-within::before{
+  transform: scale(1.06);
+}
+
+/* Velo rojo SUAVE con aclarado para que el negro resalte */
+.stat-card__overlay{
+  position:absolute; inset:0;
+  /* mezcla de blanco (aclara) + tinte rojo institucional */
+  background: linear-gradient(
+    to top,
+    rgba(255,255,255,.74) 0%,
+    rgba(255,255,255,.58) 28%,
+    rgba(224,17,17,.22) 60%,
+    rgba(224,17,17,.10) 100%
+  );
+  opacity: .72;
+  transition: opacity .25s ease;
+}
+.stat-card:hover .stat-card__overlay,
+.stat-card:focus-within .stat-card__overlay{
+  opacity: .85; /* un poco más presente al hover */
+}
+
+/* Contenido (sube un poco más en hover) */
+.stat-card__content{
+  position:absolute; left:0; right:0; bottom:0;
+  padding: clamp(12px,2vw,18px) clamp(14px,2.2vw,20px);
+  color:#111;                          /* texto negro */
+  transform: translateY(14px);         /* posición base */
+  transition: transform .28s ease;
+}
+.stat-card:hover .stat-card__content,
+.stat-card:focus-within .stat-card__content{
+  transform: translateY(-26px);        /* ↑ más elevación */
+}
+
+/* Tipografías: negro y negrita */
+.stat-card__kicker{
+  margin:0;
+  font-weight: 800;
+  font-size: clamp(14px, 1.4vw, 15px);
+  color:#111;
+}
+.stat-card__title{
+  margin: 4px 0 0;
+  font-weight: 900;
+  font-size: clamp(15px, 1.6vw, 18px);
+  color:#111;
+}
+.stat-card__desc{
+  margin: 4px 0 0;
+  font-size: clamp(12px, 1.3vw, 14px);
+  line-height: 1.35;
+  color:#111;                          /* también negro */
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .28s ease, transform .28s ease;
+}
+.stat-card:hover .stat-card__desc,
+.stat-card:focus-within .stat-card__desc{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Texto destacado (si lo usas dentro de la desc) */
+.stat-card .em{
+  font-weight: 900;
+  color:#111;
+}
+/* =========================
+   SECCIÓN 8 — CONVENIOS
+   ========================= */
+
+/* Contenedor general */
+.vincu-convenios.full{
+  min-height:100vh;
+  padding:clamp(32px,6vw,72px) 0;
+  background:#fff;
+  display:flex; align-items:center;
+}
+
+/* Grid principal */
+.vincu-convenios .convenios-grid{
+  width:100%;
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:clamp(24px,4vw,72px);
+  align-items:center;
+}
+
+/* Título */
+.vincu-convenios .convenios-header{
+  grid-column:1 / -1;
+  text-align:center;
+  margin-bottom:clamp(24px,4vw,48px);
+}
+.vincu-convenios .convenios-title{
+  font-size:clamp(28px,4vw,48px);
+}
+
+/* Carrusel */
+.vincu-convenios .convenios-carousel{
+  position:relative; overflow:hidden;
+  --cc-size: clamp(260px, 44vh, 520px);
+}
+.vincu-convenios .cc-track{
+  display:flex; gap:clamp(16px,2vw,28px);
+  padding:10px 64px; border-radius:16px;
+  overflow-x:auto; -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.vincu-convenios .cc-track::-webkit-scrollbar{ display:none; }
+.vincu-convenios .cc-track:focus-visible{
+  outline:2px dashed rgba(224,17,17,.6); outline-offset:4px;
+}
+
+/* Slides circulares */
+.vincu-convenios .cc-slide{
+  flex:0 0 auto; scroll-snap-align:center;
+  width:var(--cc-size); height:var(--cc-size);
+  aspect-ratio:1 / 1; border-radius:50%;
+  display:grid; place-items:center; position:relative;
+  cursor:pointer;
+}
+
+/* >>> Glow rojo MÁS NOTORIO alrededor del círculo */
+.vincu-convenios .cc-slide::before{
+  content:"";
+  position:absolute; inset:-22%;
+  border-radius:50%;
+  background: radial-gradient(closest-side, rgba(224,17,17,.46), transparent 72%);
+  filter: blur(18px);
+  opacity: .98;
+  pointer-events:none;
+}
+
+
+/* Logo */
+.vincu-convenios .cc-slide img{
+  display:block;
+  width:86%; height:86%;
+  object-fit:contain;
+  background:#fff; border-radius:50%;
+  padding:clamp(10px,1.6vw,16px);
+
+  /* halo blanco + sombra base + leve glow rojo */
+  box-shadow:
+    0 0 0 8px rgba(255,255,255,.95),
+    0 14px 30px rgba(0,0,0,.18),
+    0 0 36px rgba(224,17,17,.22);
+
+  transition: transform .18s ease, box-shadow .22s ease;
+  z-index:1;
+}
+
+/* Activo: más grande, glow rojo potente */
+.vincu-convenios .cc-slide.is-active img{
+  transform: scale(1.06);
+  box-shadow:
+    0 0 0 10px rgba(255,255,255,.98),
+    0 18px 42px rgba(0,0,0,.22),
+    0 0 68px rgba(224,17,17,.45);
+}
+
+/* Flechas */
+.vincu-convenios .cc-arrow{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:44px; height:44px; border-radius:999px;
+  background:#fff; color:#111; border:2px solid rgba(0,0,0,.08);
+  display:grid; place-items:center; cursor:pointer;
+  box-shadow:0 10px 26px rgba(0,0,0,.15); z-index:2;
+}
+.vincu-convenios .cc-arrow:hover{ background:#fafafa; }
+.vincu-convenios .cc-arrow.prev{ left:0; }
+.vincu-convenios .cc-arrow.next{ right:0; }
+
+/* Panel detalle */
+.vincu-convenios .convenios-detail{
+  align-self:stretch; display:flex; flex-direction:column;
+  justify-content:center; padding:clamp(8px,2vw,20px);
+}
+.vincu-convenios .convenios-detail h3{
+  margin:0 0 12px; font-size:clamp(26px,4vw,44px);
+}
+.vincu-convenios .cv-rows{
+  display:grid; grid-template-columns:auto 1fr;
+  column-gap:clamp(16px,3vw,36px); row-gap:8px;
+}
+.vincu-convenios .cv-rows .k{
+  color:#6b7280; text-transform:uppercase; letter-spacing:.12em;
+  font-size:clamp(12px,1.6vw,13px);
+}
+.vincu-convenios .cv-rows .v{
+  color:#111; font-weight:700; font-size:clamp(13px,1.9vw,16px);
+}
+
+/* Responsive */
+@media (max-width:980px){
+  .vincu-convenios .convenios-grid{ grid-template-columns:1fr; }
+  .vincu-convenios .convenios-detail{ margin-top:8px; }
+  .vincu-convenios .convenios-carousel{ --cc-size: clamp(220px, 48vw, 380px); }
+  .vincu-convenios .cc-track{ padding:10px 56px; }
+}
