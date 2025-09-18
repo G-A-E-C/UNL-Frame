@@ -2486,3 +2486,36 @@ function observeTopsElements() {
 
 // Inicializar observador cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', observeTopsElements);
+
+// Función para posicionar dinámicamente el dropdown
+function positionDropdown() {
+  const dropdowns = document.querySelectorAll('.header__dropdown-menu');
+  const header = document.querySelector('.header');
+  
+  if (header && dropdowns.length > 0) {
+    const headerRect = header.getBoundingClientRect();
+    const headerBottom = headerRect.bottom;
+    
+    dropdowns.forEach(dropdown => {
+      dropdown.style.setProperty('--dropdown-top', `${headerBottom}px`);
+    });
+  }
+}
+
+// Posicionar dropdown al cargar y al redimensionar
+document.addEventListener('DOMContentLoaded', positionDropdown);
+window.addEventListener('resize', positionDropdown);
+window.addEventListener('scroll', positionDropdown);
+
+// Mejorar el hover del dropdown
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdownToggles = document.querySelectorAll('.header__nav-item--dropdown');
+  
+  dropdownToggles.forEach(toggle => {
+    const menu = toggle.querySelector('.header__dropdown-menu');
+    
+    toggle.addEventListener('mouseenter', function() {
+      positionDropdown();
+    });
+  });
+});
