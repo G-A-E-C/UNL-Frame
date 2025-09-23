@@ -54,13 +54,7 @@
       { title: 'Foros Académicos',    img: IMG },
       { title: 'Ferias Científicas',  img: IMG }
     ],
-    educacion: [
-      { title: 'Cursos de Actualización', img: IMG },
-      { title: 'Diplomados',              img: IMG },
-      { title: 'Seminarios',              img: IMG },
-      { title: 'Talleres',                img: IMG }
-    ],
-    practicas: [
+    practicas : [
       { title: 'Prácticas en Comunidad',     img: IMG },
       { title: 'Vinculación Sector Público', img: IMG },
       { title: 'Convenios con Empresas',     img: IMG },
