@@ -38,44 +38,17 @@
       </header>
 
     <!-- Hero Section -->
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <section class="hero">
-          <div class="hero__container">
-            <div class="hero__hexagons">
-              <div class="hexagon">
-                <div class="hexagon__inner">
-                  <img src="assets/img/Investigacion.png" alt="Investigación 1" class="hexagon__image">
-                </div>
-              </div>
-              <div class="hexagon">
-                <div class="hexagon__inner">
-                  <img src="assets/img/GETES_0.png" alt="Investigación 2" class="hexagon__image">
-                </div>
-              </div>
-              <div class="hexagon">
-                <div class="hexagon__inner">
-                  <img src="assets/img/GRUPAL_0.png" alt="Investigación 3" class="hexagon__image">
-                </div>
-              </div>
-              <div class="hexagon">
-                <div class="hexagon__inner">
-                  <img src="assets/img/CLIIE_0.png" alt="Investigación 4" class="hexagon__image">
-                </div>
-              </div>
-              <div class="hexagon">
-                <div class="hexagon__inner">
-                  <img src="assets/img/Grupal2_0.png" alt="Investigación 5" class="hexagon__image">
-                </div>
-              </div>
+    <section class="hero hero--investigacion">
+        <div class="hero__background">
+            <img src="assets/img/imgInvestigacion/Investigacion.png" alt="Investigación UNL" class="hero__bg-image">
+            <div class="hero__overlay hero__overlay--gradient"></div>
+        </div>
+        <div class="hero__container">
+            <div class="hero__content">
+                <h1 class="hero__title">Investigación</h1>
             </div>
-          </div>
-        </section>
-    </body>
+        </div>
+    </section>
 
 
     <!-- About Section -->
@@ -217,7 +190,7 @@
     </section>
 
     <!-- Research Groups Section -->
-    <section class="research-groups animate-on-scroll">
+    <!-- <section class="research-groups animate-on-scroll">
         <div class="research-groups__container">
             <h2 class="section-title">Grupos de Investigación</h2>
             <div class="carousel groups-carousel" id="groupsCarousel">
@@ -343,7 +316,7 @@
             </div>
         </div>
     </section>
-
+ -->
     <!-- Full-Width Image Carousel Section -->
     <section class="image-carousel-section animate-on-scroll">
         <div class="image-carousel-container">
@@ -558,6 +531,51 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Slide 16 -->
+                <div class="hero__slide hero__slide--groups" data-slide="15">
+                    <div class="hero__background">
+                        <img src="assets/img/imgInvestigacion/CLIE.png" alt="CLIIE - Innovación Educativa UNL" class="hero__bg-image">
+                        <div class="hero__overlay hero__overlay--research"></div>
+                    </div>
+                    <div class="container">
+                        <div class="hero__content hero__content--research">
+                            <h3 class="hero__title hero__title--research">CLIIE - Innovación Educativa UNL</h3>
+                            <p class="hero__subtitle hero__subtitle--research">Club estudiantil de investigación en informática y pedagogía que impulsa la formación científica y el desarrollo educativo en Ecuador.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 17 -->
+                <div class="hero__slide hero__slide--groups" data-slide="16">
+                    <div class="hero__background">
+                        <img src="assets/img/imgInvestigacion/GITIC.png" alt="GITIC - Tecnologías de la Información UNL" class="hero__bg-image">
+                        <div class="hero__overlay hero__overlay--research"></div>
+                    </div>
+                    <div class="container">
+                        <div class="hero__content hero__content--research">
+                            <h3 class="hero__title hero__title--research">GITIC - Tecnologías de la Información UNL</h3>
+                            <p class="hero__subtitle hero__subtitle--research">Investigación en tecnologías de la información y computación para fortalecer la formación académica, la innovación y la vinculación social.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 18 -->
+                <div class="hero__slide hero__slide--groups" data-slide="17">
+                    <div class="hero__background">
+                        <img src="assets/img/imgInvestigacion/GINM.png" alt="GINM - Nuevos Materiales UNL" class="hero__bg-image">
+                        <div class="hero__overlay hero__overlay--research"></div>
+                    </div>
+                    <div class="container">
+                        <div class="hero__content hero__content--research">
+                            <h3 class="hero__title hero__title--research">GINM - Nuevos Materiales UNL</h3>
+                            <p class="hero__subtitle hero__subtitle--research">Investigación en ciencia e ingeniería de materiales para desarrollar soluciones sostenibles, formar investigadores y transferir tecnología al sector productivo.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </div>
 
             <!-- Controles del Carousel -->
@@ -591,12 +609,15 @@
                 <button class="hero__indicator" data-slide-to="12" role="tab" aria-selected="false" aria-label="Slide 13: GIMARN"></button>
                 <button class="hero__indicator" data-slide-to="13" role="tab" aria-selected="false" aria-label="Slide 14: GIESDCOM"></button>
                 <button class="hero__indicator" data-slide-to="14" role="tab" aria-selected="false" aria-label="Slide 15: GICIR"></button>
+                <button class="hero__indicator" data-slide-to="15" role="tab" aria-selected="false" aria-label="Slide 16: Grupo de Investigación"></button>
+                <button class="hero__indicator" data-slide-to="16" role="tab" aria-selected="false" aria-label="Slide 17: Grupo de Investigación"></button>
+                <button class="hero__indicator" data-slide-to="17" role="tab" aria-selected="false" aria-label="Slide 18: Grupo de Investigación"></button>
+
             </div>
         </div>
     </section>
 
     <!-- Featured Projects Section -->
-  <!-- Featured Projects Section -->
   <section class="featured-projects animate-on-scroll">
     <div class="research-groups__container">
         <h2 class="section-title">Proyectos Destacados</h2>
@@ -728,74 +749,14 @@
             setInterval(nextSlide, 5000);
         }
 
-        // Custom logic for groups carousel: 3 visible, slide by 1
-        (function initGroupsCarousel(){
-          const viewport = document.querySelector('#groupsCarousel .groups-viewport');
-          const track = document.getElementById('groupsTrack');
-          const items = Array.from(track.querySelectorAll('.group-item'));
-          const prev = document.getElementById('groupsPrev');
-          const next = document.getElementById('groupsNext');
-          const indicators = document.getElementById('groupsIndicators');
-
-          let currentIndex = 0;
-
-          function getVisibleCount(){
-            if (window.innerWidth <= 640) return 1;
-            if (window.innerWidth <= 992) return 2;
-            return 3;
-          }
-
-          function createDots(){
-            const visible = getVisibleCount();
-            const slideCount = Math.max(1, items.length - visible + 1);
-            indicators.innerHTML = '';
-            for (let i=0; i<slideCount; i++){
-              const dot = document.createElement('div');
-              dot.className = 'carousel__indicator' + (i===currentIndex ? ' active' : '');
-              dot.addEventListener('click', ()=>{ currentIndex = i; update(); });
-              indicators.appendChild(dot);
+        // Projects carousel auto-play
+        setInterval(() => {
+            if (document.getElementById('projectsNext')) {
+                document.getElementById('projectsNext').click();
             }
-          }
+        }, 5000);
 
-          function update(){
-            const visible = getVisibleCount();
-            const gap = 24;
-            const viewportWidth = viewport.clientWidth;
-            const itemWidth = (viewportWidth - gap*(visible-1)) / visible;
-            items.forEach(el => el.style.flexBasis = itemWidth + 'px');
-
-            const maxIndex = Math.max(0, items.length - visible);
-            currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
-            track.style.transform = `translateX(-${(itemWidth+gap) * currentIndex}px)`;
-
-            // animate visible
-            const start = currentIndex;
-            const end = currentIndex + visible;
-            items.forEach((card, idx)=>{
-              if (idx>=start && idx<end) {
-                card.classList.add('animated');
-              }
-            });
-
-            // update dots
-            const dots = indicators.querySelectorAll('.carousel__indicator');
-            dots.forEach((d,i)=> d.classList.toggle('active', i===currentIndex));
-          }
-
-          function nextSlide(){ currentIndex += 1; update(); }
-          function prevSlide(){ currentIndex -= 1; update(); }
-
-          next.addEventListener('click', nextSlide);
-          prev.addEventListener('click', prevSlide);
-          window.addEventListener('resize', ()=>{ createDots(); update(); });
-
-          createDots();
-          update();
-          setTimeout(()=>{ items.forEach((c,i)=> setTimeout(()=> c.classList.add('animated'), i*80)); }, 200);
-        })();
-
-        // Initialize carousels
-        initCarousel('groupsCarousel', 'groupsTrack', 'groupsPrev', 'groupsNext', 'groupsIndicators');
+        // Initialize only projects carousel (groups carousel has its own implementation)
         initCarousel('projectsCarousel', 'projectsTrack', 'projectsPrev', 'projectsNext', 'projectsIndicators');
 
         // Animate group cards on slide change as well
@@ -914,56 +875,73 @@
                 this.isAutoPlaying = true;
                 this.autoPlayInterval = null;
                 
+                console.log('Groups Carousel Init:', {
+                    carousel: !!this.carousel,
+                    slides: this.slides.length,
+                    prevBtn: !!this.prevBtn,
+                    nextBtn: !!this.nextBtn,
+                    indicators: this.indicators.length
+                });
+                
                 if (this.carousel && this.slides.length > 0) {
                     this.bindEvents();
+                    this.updateSlideDisplay();
                     this.startAutoPlay();
+                    console.log('Groups carousel initialized successfully');
+                } else {
+                    console.error('Groups carousel elements not found');
                 }
             },
 
             bindEvents() {
                 // Navigation buttons
                 if (this.prevBtn) {
-                    this.prevBtn.addEventListener('click', () => this.previousSlide());
+                    this.prevBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('Previous button clicked');
+                        this.previousSlide();
+                    });
                 }
                 
                 if (this.nextBtn) {
-                    this.nextBtn.addEventListener('click', () => this.nextSlide());
+                    this.nextBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('Next button clicked');
+                        this.nextSlide();
+                    });
                 }
 
                 // Indicators
                 this.indicators.forEach((indicator, index) => {
-                    indicator.addEventListener('click', () => this.goToSlide(index));
-                });
-
-                // Keyboard navigation
-                document.addEventListener('keydown', (e) => {
-                    if (e.target.closest('.image-carousel-section')) {
-                        switch (e.key) {
-                            case 'ArrowLeft':
-                                e.preventDefault();
-                                this.previousSlide();
-                                break;
-                            case 'ArrowRight':
-                                e.preventDefault();
-                                this.nextSlide();
-                                break;
-                        }
-                    }
+                    indicator.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('Indicator clicked:', index);
+                        this.goToSlide(index);
+                    });
                 });
 
                 // Pause auto-play on hover
-                this.carousel.addEventListener('mouseenter', () => this.pauseAutoPlay());
-                this.carousel.addEventListener('mouseleave', () => this.resumeAutoPlay());
-
-                // Pause auto-play on focus
-                this.carousel.addEventListener('focusin', () => this.pauseAutoPlay());
-                this.carousel.addEventListener('focusout', () => this.resumeAutoPlay());
+                if (this.carousel) {
+                    this.carousel.addEventListener('mouseenter', () => {
+                        console.log('Mouse enter - pausing autoplay');
+                        this.pauseAutoPlay();
+                    });
+                    this.carousel.addEventListener('mouseleave', () => {
+                        console.log('Mouse leave - resuming autoplay');
+                        this.resumeAutoPlay();
+                    });
+                }
 
                 // Touch/swipe support
                 this.setupTouchEvents();
             },
 
             setupTouchEvents() {
+                if (!this.carousel) return;
+                
                 let startX = 0;
                 let endX = 0;
 
@@ -990,38 +968,57 @@
                 }
             },
 
+            updateSlideDisplay() {
+                console.log('Updating slide display, current slide:', this.currentSlide);
+                
+                // Remove all active states
+                this.slides.forEach((slide, index) => {
+                    slide.classList.remove('hero__slide--active');
+                });
+                
+                this.indicators.forEach((indicator, index) => {
+                    indicator.classList.remove('hero__indicator--active');
+                    indicator.setAttribute('aria-selected', 'false');
+                });
+
+                // Add active state to current slide
+                if (this.slides[this.currentSlide]) {
+                    this.slides[this.currentSlide].classList.add('hero__slide--active');
+                }
+                
+                if (this.indicators[this.currentSlide]) {
+                    this.indicators[this.currentSlide].classList.add('hero__indicator--active');
+                    this.indicators[this.currentSlide].setAttribute('aria-selected', 'true');
+                }
+            },
+
             goToSlide(index) {
                 if (index === this.currentSlide || index < 0 || index >= this.slides.length) return;
 
+                console.log('Going to slide:', index);
                 this.pauseAutoPlay();
                 
-                // Remove active states
-                this.slides[this.currentSlide].classList.remove('hero__slide--active');
-                this.indicators[this.currentSlide].classList.remove('hero__indicator--active');
-                this.indicators[this.currentSlide].setAttribute('aria-selected', 'false');
-
                 this.currentSlide = index;
-
-                // Add active states
-                this.slides[this.currentSlide].classList.add('hero__slide--active');
-                this.indicators[this.currentSlide].classList.add('hero__indicator--active');
-                this.indicators[this.currentSlide].setAttribute('aria-selected', 'true');
+                this.updateSlideDisplay();
 
                 this.resumeAutoPlay();
             },
 
             nextSlide() {
                 const nextIndex = (this.currentSlide + 1) % this.slides.length;
+                console.log('Next slide:', nextIndex);
                 this.goToSlide(nextIndex);
             },
 
             previousSlide() {
                 const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+                console.log('Previous slide:', prevIndex);
                 this.goToSlide(prevIndex);
             },
 
             startAutoPlay() {
-                if (this.isAutoPlaying) {
+                if (this.isAutoPlaying && !this.autoPlayInterval) {
+                    console.log('Starting autoplay');
                     this.autoPlayInterval = setInterval(() => {
                         this.nextSlide();
                     }, 5000);
@@ -1030,6 +1027,7 @@
 
             pauseAutoPlay() {
                 if (this.autoPlayInterval) {
+                    console.log('Pausing autoplay');
                     clearInterval(this.autoPlayInterval);
                     this.autoPlayInterval = null;
                 }
@@ -1037,13 +1035,24 @@
 
             resumeAutoPlay() {
                 if (this.isAutoPlaying && !this.autoPlayInterval) {
+                    console.log('Resuming autoplay');
                     this.startAutoPlay();
                 }
             }
         };
 
         // Initialize Groups Image Carousel
-        GroupsImageCarousel.init();
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(() => {
+                    GroupsImageCarousel.init();
+                }, 100);
+            });
+        } else {
+            setTimeout(() => {
+                GroupsImageCarousel.init();
+            }, 100);
+        }
 
         console.log('🎉 Investigación UNL - Página cargada con animaciones completas');
     </script>

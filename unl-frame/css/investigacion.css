@@ -4,49 +4,87 @@ body {
     padding: 0;
     background-color: #f0f0f0;
   }
-  .hero {
-    background-color: #ff9999; /* Fondo rojo suave para toda la sección */
-    padding: 40px 0;
-    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+
+  /* Hero Section - Investigación */
+  .hero--investigacion {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
+
+  .hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero__bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero__overlay--gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+      rgba(182, 58, 54, 0.8) 0%, 
+      rgba(182, 58, 54, 0.6) 30%, 
+      rgba(182, 58, 54, 0.4) 60%, 
+      rgba(182, 58, 54, 0.2) 80%, 
+      rgba(182, 58, 54, 0.1) 100%);
+    z-index: 2;
+  }
+
   .hero__container {
+    position: relative;
+    z-index: 3;
+    text-align: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
-  .hero__hexagons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Espacio entre hexágonos */
+
+  .hero__content {
+    color: white;
   }
-  .hexagon {
-    display: inline-flex;
+
+  .hero__title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
-  .hexagon__inner {
-    background-color: #ff8080; /* Fondo rojo claro para los hexágonos */
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); /* Forma hexagonal */
-    width: 200px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero--investigacion {
+      height: 50vh;
+      min-height: 300px;
+    }
+    
+    .hero__title {
+      font-size: 2.5rem;
+    }
   }
-  .hexagon__inner:hover {
-    transform: scale(1.1); /* Escala al pasar el ratón */
-    background-color: #ff6666; /* Rojo ligeramente más oscuro para el hover */
-  }
-  .hexagon__image {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-    opacity: 0;
-    transform: scale(0.8);
-    animation: fadeInScale 1s ease-out forwards; /* Animación de entrada */
+
+  @media (max-width: 480px) {
+    .hero__title {
+      font-size: 2rem;
+    }
   }
   @keyframes fadeInScale {
     to {
@@ -69,6 +107,7 @@ body {
 :root {
   --color-rojo: #b63a36;
   --color-rojo-dark: #a01018;
+  --color-primary: #b63a36;
   --color-gris-100: #f8f9fa;
   --color-gris-200: #e9ecef;
   --color-gris-300: #dee2e6;
@@ -253,11 +292,13 @@ body {
   opacity: 0;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
   z-index: 1;
+  visibility: hidden;
 }
 
 .hero__slide--groups.hero__slide--active {
   opacity: 1;
   z-index: 2;
+  visibility: visible;
 }
 
 .hero__slide--groups .hero__background {
