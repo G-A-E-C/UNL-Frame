@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GISTEAM - Ciencia y Tecnología UNL - Universidad Nacional de Loja</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/investigacion.css">
+    <link rel="stylesheet" href="./css/grupo-investigacion.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header__main">
+            <div class="container">
+                <div class="header__main-content">
+                    <a href="./index.html" class="header__logo" aria-label="Inicio - Universidad Nacional">
+                        <img src="./assets/img/logogris_0.png" alt="Logo Universidad Nacional" width="40" height="40">
+                    </a>
+        
+                    <nav class="header__nav" aria-label="Navegación principal">
+                        <ul class="header__nav-list">
+                            <li class="header__nav-item"><a href="./index.html" class="header__nav-link">INICIO</a></li>
+                            <li class="header__nav-item"><a href="./docencia.html" class="header__nav-link">DOCENCIA</a></li>
+                            <li class="header__nav-item">
+                                <a href="./investigacion.html" class="header__nav-link">INVESTIGACIÓN</a>
+                            </li>
+                            <li class="header__nav-item"><a href="#" class="header__nav-link">NOTICIAS</a></li>
+                            <li class="header__nav-item"><a href="#" class="header__nav-link">SERVICIOS</a></li>
+                            <li class="header__nav-item"><a href="./vinculacion.html" class="header__nav-link">VINCULACIÓN</a></li>
+                            <li class="header__nav-item"><a href="#" class="header__nav-link">CONTACTO</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero hero--grupo">
+        <div class="hero__background">
+            <img src="assets/img/imgInvestigacion/GISTEAM.jpg" alt="GISTEAM - Ciencia y Tecnología UNL" class="hero__bg-image">
+            <div class="hero__overlay hero__overlay--gradient"></div>
+        </div>
+        <div class="hero__container">
+            <div class="hero__content">
+                <div class="breadcrumb-hero">Investigación / Grupos de Investigación</div>
+                <h1 class="hero__title">GISTEAM - Ciencia y Tecnología UNL</h1>
+                <p class="hero__subtitle">Grupo de investigación en ciencias aplicadas, tecnología e innovación para el desarrollo científico.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <section class="grupo-nav">
+        <div class="grupo-nav__container">
+            <nav class="grupo-nav__tabs">
+                <button class="grupo-nav__tab grupo-nav__tab--active" data-tab="conocenos">
+                    <i class="fas fa-info-circle"></i>
+                    Conócenos
+                </button>
+                <button class="grupo-nav__tab" data-tab="equipo">
+                    <i class="fas fa-users"></i>
+                    Equipo de Investigadores
+                </button>
+                <button class="grupo-nav__tab" data-tab="proyectos">
+                    <i class="fas fa-project-diagram"></i>
+                    Proyectos de Investigación
+                </button>
+                <button class="grupo-nav__tab" data-tab="produccion">
+                    <i class="fas fa-file-alt"></i>
+                    Producción Científica
+                </button>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <main class="grupo-content">
+        <!-- Conócenos Section -->
+        <section class="content-section" id="conocenos">
+            <div class="content-container">
+                <div class="section-header">
+                    <h2 class="section-title">Conócenos</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="objetivos-grid">
+                    <div class="objetivo-card">
+                        <div class="objetivo-icon">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <h3>Objetivo General</h3>
+                        <p>Desarrollar investigación científica y tecnológica de alto nivel en áreas estratégicas de las ciencias aplicadas, promoviendo la innovación y el desarrollo tecnológico para el progreso de la sociedad.</p>
+                    </div>
+                    
+                    <div class="objetivos-especificos">
+                        <h3>Objetivos Específicos</h3>
+                        <ul class="objetivos-list">
+                            <li>
+                                <i class="fas fa-microscope"></i>
+                                Realizar investigación básica y aplicada en ciencias naturales y exactas
+                            </li>
+                            <li>
+                                <i class="fas fa-cogs"></i>
+                                Desarrollar tecnologías innovadoras con aplicación industrial
+                            </li>
+                            <li>
+                                <i class="fas fa-graduation-cap"></i>
+                                Formar recursos humanos especializados en ciencia y tecnología
+                            </li>
+                            <li>
+                                <i class="fas fa-handshake"></i>
+                                Establecer vínculos con sector productivo y académico nacional e internacional
+                            </li>
+                            <li>
+                                <i class="fas fa-lightbulb"></i>
+                                Generar conocimiento científico de impacto regional y nacional
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipo Section -->
+        <section class="content-section" id="equipo" style="display: none;">
+            <div class="content-container">
+                <div class="section-header">
+                    <h2 class="section-title">Equipo de Investigadores</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="equipo-grid">
+                    <div class="investigador-card">
+                        <div class="investigador-photo">
+                            <img src="assets/img/placeholder-researcher.svg" alt="Dr. Investigador">
+                        </div>
+                        <div class="investigador-info">
+                            <h3>Dr. Eduardo Martínez</h3>
+                            <p class="cargo">Director del Grupo</p>
+                            <p class="especialidad">Especialista en Física Aplicada</p>
+                            <div class="contacto">
+                                <p><i class="fas fa-envelope"></i> eduardo.martinez@unl.edu.ec</p>
+                                <p><i class="fas fa-phone"></i> +593 7 254-8000 ext. 3101</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Facultad de Ciencias Exactas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="investigador-card">
+                        <div class="investigador-photo">
+                            <img src="assets/img/placeholder-researcher.svg" alt="Dra. Investigadora">
+                        </div>
+                        <div class="investigador-info">
+                            <h3>Dra. María González</h3>
+                            <p class="cargo">Co-investigadora</p>
+                            <p class="especialidad">Especialista en Química Analítica</p>
+                            <div class="contacto">
+                                <p><i class="fas fa-envelope"></i> maria.gonzalez@unl.edu.ec</p>
+                                <p><i class="fas fa-phone"></i> +593 7 254-8000 ext. 3102</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Facultad de Ciencias Exactas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="investigador-card">
+                        <div class="investigador-photo">
+                            <img src="assets/img/placeholder-researcher.svg" alt="Investigador">
+                        </div>
+                        <div class="investigador-info">
+                            <h3>PhD. Juan Pérez</h3>
+                            <p class="cargo">Investigador Asociado</p>
+                            <p class="especialidad">Especialista en Matemáticas Aplicadas</p>
+                            <div class="contacto">
+                                <p><i class="fas fa-envelope"></i> juan.perez@unl.edu.ec</p>
+                                <p><i class="fas fa-phone"></i> +593 7 254-8000 ext. 3103</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Facultad de Ciencias Exactas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="investigador-card">
+                        <div class="investigador-photo">
+                            <img src="assets/img/placeholder-researcher.svg" alt="Investigadora">
+                        </div>
+                        <div class="investigador-info">
+                            <h3>Dra. Carmen Torres</h3>
+                            <p class="cargo">Investigadora Junior</p>
+                            <p class="especialidad">Especialista en Biología Molecular</p>
+                            <div class="contacto">
+                                <p><i class="fas fa-envelope"></i> carmen.torres@unl.edu.ec</p>
+                                <p><i class="fas fa-phone"></i> +593 7 254-8000 ext. 3104</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Facultad de Ciencias Exactas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyectos Section -->
+        <section class="content-section" id="proyectos" style="display: none;">
+            <div class="content-container">
+                <div class="section-header">
+                    <h2 class="section-title">Proyectos de Investigación</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="proyectos-grid">
+                    <div class="proyecto-card">
+                        <div class="proyecto-status activo">Activo</div>
+                        <h3>Nanomateriales para Aplicaciones Biomédicas</h3>
+                        <p class="proyecto-descripcion">Síntesis y caracterización de nanomateriales con propiedades antimicrobianas para aplicaciones en medicina y biotecnología.</p>
+                        <div class="proyecto-meta">
+                            <p><i class="fas fa-calendar"></i> <strong>Duración:</strong> 2024 - 2027</p>
+                            <p><i class="fas fa-dollar-sign"></i> <strong>Financiamiento:</strong> SENESCYT</p>
+                            <p><i class="fas fa-user"></i> <strong>Investigador Principal:</strong> Dr. Eduardo Martínez</p>
+                        </div>
+                        <div class="proyecto-tags">
+                            <span class="tag">Nanotecnología</span>
+                            <span class="tag">Biomedicina</span>
+                            <span class="tag">Caracterización</span>
+                        </div>
+                    </div>
+
+                    <div class="proyecto-card">
+                        <div class="proyecto-status activo">Activo</div>
+                        <h3>Análisis Químico de Aguas Residuales Industriales</h3>
+                        <p class="proyecto-descripcion">Desarrollo de métodos analíticos para la determinación de contaminantes en aguas residuales de la industria minera.</p>
+                        <div class="proyecto-meta">
+                            <p><i class="fas fa-calendar"></i> <strong>Duración:</strong> 2023 - 2025</p>
+                            <p><i class="fas fa-dollar-sign"></i> <strong>Financiamiento:</strong> UNL - Ministerio del Ambiente</p>
+                            <p><i class="fas fa-user"></i> <strong>Investigador Principal:</strong> Dra. María González</p>
+                        </div>
+                        <div class="proyecto-tags">
+                            <span class="tag">Química Analítica</span>
+                            <span class="tag">Medio Ambiente</span>
+                            <span class="tag">Contaminación</span>
+                        </div>
+                    </div>
+
+                    <div class="proyecto-card">
+                        <div class="proyecto-status activo">Activo</div>
+                        <h3>Modelado Matemático de Fenómenos Biológicos</h3>
+                        <p class="proyecto-descripcion">Aplicación de ecuaciones diferenciales y métodos numéricos para modelar dinámicas poblacionales y procesos epidemiológicos.</p>
+                        <div class="proyecto-meta">
+                            <p><i class="fas fa-calendar"></i> <strong>Duración:</strong> 2024 - 2026</p>
+                            <p><i class="fas fa-dollar-sign"></i> <strong>Financiamiento:</strong> UNL</p>
+                            <p><i class="fas fa-user"></i> <strong>Investigador Principal:</strong> PhD. Juan Pérez</p>
+                        </div>
+                        <div class="proyecto-tags">
+                            <span class="tag">Matemáticas Aplicadas</span>
+                            <span class="tag">Biología</span>
+                            <span class="tag">Modelado</span>
+                        </div>
+                    </div>
+
+                    <div class="proyecto-card">
+                        <div class="proyecto-status finalizado">Finalizado</div>
+                        <h3>Marcadores Moleculares en Especies Vegetales Nativas</h3>
+                        <p class="proyecto-descripcion">Identificación y caracterización de marcadores genéticos en especies vegetales endémicas del sur del Ecuador.</p>
+                        <div class="proyecto-meta">
+                            <p><i class="fas fa-calendar"></i> <strong>Duración:</strong> 2021 - 2023</p>
+                            <p><i class="fas fa-dollar-sign"></i> <strong>Financiamiento:</strong> SENESCYT</p>
+                            <p><i class="fas fa-user"></i> <strong>Investigador Principal:</strong> Dra. Carmen Torres</p>
+                        </div>
+                        <div class="proyecto-tags">
+                            <span class="tag">Biología Molecular</span>
+                            <span class="tag">Genética</span>
+                            <span class="tag">Biodiversidad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Producción Científica Section -->
+        <section class="content-section" id="produccion" style="display: none;">
+            <div class="content-container">
+                <div class="section-header">
+                    <h2 class="section-title">Producción Científica</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="produccion-tabs">
+                    <button class="produccion-tab produccion-tab--active" data-tipo="articulos">
+                        <i class="fas fa-file-alt"></i>
+                        Artículos Científicos
+                    </button>
+                    <button class="produccion-tab" data-tipo="libros">
+                        <i class="fas fa-book"></i>
+                        Libros y Capítulos
+                    </button>
+                    <button class="produccion-tab" data-tipo="tesis">
+                        <i class="fas fa-graduation-cap"></i>
+                        Tesis Dirigidas
+                    </button>
+                    <button class="produccion-tab" data-tipo="eventos">
+                        <i class="fas fa-calendar-alt"></i>
+                        Participación en Eventos
+                    </button>
+                </div>
+
+                <div class="produccion-content">
+                    <div class="produccion-list" id="articulos">
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2024</div>
+                            <div class="publicacion-info">
+                                <h4>Synthesis and Characterization of Silver Nanoparticles for Antimicrobial Applications</h4>
+                                <p class="autores">Martínez, E., González, M., Torres, C.</p>
+                                <p class="revista"><em>Materials Science and Engineering C</em>, 142: 112587</p>
+                                <div class="publicacion-links">
+                                    <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                                    <a href="#" class="btn-link"><i class="fas fa-download"></i> PDF</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2024</div>
+                            <div class="publicacion-info">
+                                <h4>Analytical Methods for Heavy Metal Detection in Industrial Wastewater</h4>
+                                <p class="autores">González, M., Martínez, E.</p>
+                                <p class="revista"><em>Environmental Chemistry Letters</em>, 22(4): 1789-1805</p>
+                                <div class="publicacion-links">
+                                    <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                                    <a href="#" class="btn-link"><i class="fas fa-download"></i> PDF</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2023</div>
+                            <div class="publicacion-info">
+                                <h4>Mathematical Modeling of COVID-19 Transmission Dynamics in Ecuador</h4>
+                                <p class="autores">Pérez, J., Martínez, E.</p>
+                                <p class="revista"><em>Mathematical Biosciences</em>, 365: 108865</p>
+                                <div class="publicacion-links">
+                                    <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                                    <a href="#" class="btn-link"><i class="fas fa-download"></i> PDF</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2023</div>
+                            <div class="publicacion-info">
+                                <h4>Genetic Diversity of Endemic Plant Species in Southern Ecuador</h4>
+                                <p class="autores">Torres, C., González, M., Martínez, E.</p>
+                                <p class="revista"><em>Plant Systematics and Evolution</em>, 309: 28</p>
+                                <div class="publicacion-links">
+                                    <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                                    <a href="#" class="btn-link"><i class="fas fa-download"></i> PDF</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produccion-list" id="libros" style="display: none;">
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2024</div>
+                            <div class="publicacion-info">
+                                <h4>Fundamentos de Nanotecnología y Aplicaciones</h4>
+                                <p class="autores">Martínez, E. (Editor)</p>
+                                <p class="revista">Editorial Universidad Nacional de Loja, 345 pp.</p>
+                                <div class="publicacion-links">
+                                    <a href="#" class="btn-link"><i class="fas fa-book"></i> Ver Libro</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2023</div>
+                            <div class="publicacion-info">
+                                <h4>Capítulo: Métodos Cromatográficos en Análisis Ambiental</h4>
+                                <p class="autores">González, M., Torres, C.</p>
+                                <p class="revista">En: Técnicas Analíticas Modernas. Ed. Científica, pp. 156-189</p>
+                                <div class="publicacion-links">
+                                    <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> Ver Capítulo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2022</div>
+                            <div class="publicacion-info">
+                                <h4>Matemáticas Aplicadas a las Ciencias Biológicas</h4>
+                                <p class="autores">Pérez, J.</p>
+                                <p class="revista">Editorial Técnica, 280 pp.</p>
+                                <div class="publicacion-links">
+                                    <a href="#" class="btn-link"><i class="fas fa-book"></i> Ver Libro</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produccion-list" id="tesis" style="display: none;">
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2024</div>
+                            <div class="publicacion-info">
+                                <h4>Síntesis verde de nanopartículas metálicas usando extractos vegetales</h4>
+                                <p class="autores">Estudiante: Ana Jiménez</p>
+                                <p class="revista">Tesis de Maestría - Química</p>
+                                <p class="director">Director: Dr. Eduardo Martínez</p>
+                            </div>
+                        </div>
+
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2024</div>
+                            <div class="publicacion-info">
+                                <h4>Determinación de metales pesados en suelos agrícolas mediante ICP-MS</h4>
+                                <p class="autores">Estudiante: Carlos Mendoza</p>
+                                <p class="revista">Tesis de Pregrado - Química</p>
+                                <p class="director">Director: Dra. María González</p>
+                            </div>
+                        </div>
+
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2023</div>
+                            <div class="publicacion-info">
+                                <h4>Modelos estocásticos para la propagación de enfermedades infecciosas</h4>
+                                <p class="autores">Estudiante: Luis Rivera</p>
+                                <p class="revista">Tesis de Maestría - Matemáticas</p>
+                                <p class="director">Director: PhD. Juan Pérez</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produccion-list" id="eventos" style="display: none;">
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2024</div>
+                            <div class="publicacion-info">
+                                <h4>Congreso Internacional de Nanotecnología</h4>
+                                <p class="autores">Martínez, E. (Conferencia Magistral)</p>
+                                <p class="revista">Ciudad de México, México</p>
+                                <p class="titulo-presentacion">"Nanotecnología verde: síntesis sostenible de nanomateriales"</p>
+                            </div>
+                        </div>
+
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2024</div>
+                            <div class="publicacion-info">
+                                <h4>Simposio de Química Analítica</h4>
+                                <p class="autores">González, M. (Presentación Oral)</p>
+                                <p class="revista">Buenos Aires, Argentina</p>
+                                <p class="titulo-presentacion">"Nuevas metodologías para análisis de contaminantes emergentes"</p>
+                            </div>
+                        </div>
+
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2023</div>
+                            <div class="publicacion-info">
+                                <h4>Congreso de Matemáticas Aplicadas</h4>
+                                <p class="autores">Pérez, J. (Mesa Redonda)</p>
+                                <p class="revista">São Paulo, Brasil</p>
+                                <p class="titulo-presentacion">"Modelado matemático en epidemiología"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-red" role="contentinfo">
+        <div class="footer-red__video-bg" aria-hidden="true">
+            <video autoplay loop muted playsinline>
+                <source src="./assets/video/UNL.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="footer-red__overlay" aria-hidden="true"></div>
+        <div class="footer-red__content">
+            <div class="container">
+                <p>&copy; 2025 Universidad Nacional de Loja. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navTabs = document.querySelectorAll('.grupo-nav__tab');
+            const contentSections = document.querySelectorAll('.content-section');
+            const produccionTabs = document.querySelectorAll('.produccion-tab');
+            const produccionLists = document.querySelectorAll('.produccion-list');
+
+            // Navigation tabs
+            navTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetTab = this.dataset.tab;
+                    
+                    // Remove active class from all tabs and sections
+                    navTabs.forEach(t => t.classList.remove('grupo-nav__tab--active'));
+                    contentSections.forEach(s => s.style.display = 'none');
+                    
+                    // Add active class to clicked tab and show corresponding section
+                    this.classList.add('grupo-nav__tab--active');
+                    document.getElementById(targetTab).style.display = 'block';
+                });
+            });
+
+            // Producción científica tabs
+            produccionTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetType = this.dataset.tipo;
+                    
+                    // Remove active class from all tabs and hide all lists
+                    produccionTabs.forEach(t => t.classList.remove('produccion-tab--active'));
+                    produccionLists.forEach(l => l.style.display = 'none');
+                    
+                    // Add active class to clicked tab and show corresponding list
+                    this.classList.add('produccion-tab--active');
+                    document.getElementById(targetType).style.display = 'block';
+                });
+            });
+
+            // Smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

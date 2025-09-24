@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMDUS - Electro Movilidad UNL - Universidad Nacional de Loja</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/investigacion.css">
+    <link rel="stylesheet" href="./css/grupo-investigacion.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header__main">
+            <div class="container">
+                <div class="header__main-content">
+                    <a href="./index.html" class="header__logo" aria-label="Inicio - Universidad Nacional">
+                        <img src="./assets/img/logogris_0.png" alt="Logo Universidad Nacional" width="40" height="40">
+                    </a>
+        
+                    <nav class="header__nav" aria-label="Navegación principal">
+                        <ul class="header__nav-list">
+                            <li class="header__nav-item"><a href="./index.html" class="header__nav-link">INICIO</a></li>
+                            <li class="header__nav-item"><a href="./docencia.html" class="header__nav-link">DOCENCIA</a></li>
+                            <li class="header__nav-item">
+                                <a href="./investigacion.html" class="header__nav-link">INVESTIGACIÓN</a>
+                            </li>
+                            <li class="header__nav-item"><a href="#" class="header__nav-link">NOTICIAS</a></li>
+                            <li class="header__nav-item"><a href="#" class="header__nav-link">SERVICIOS</a></li>
+                            <li class="header__nav-item"><a href="./vinculacion.html" class="header__nav-link">VINCULACIÓN</a></li>
+                            <li class="header__nav-item"><a href="#" class="header__nav-link">CONTACTO</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero hero--grupo">
+        <div class="hero__background">
+            <img src="assets/img/imgInvestigacion/EMDUS.jpg" alt="EMDUS - Electro Movilidad UNL" class="hero__bg-image">
+            <div class="hero__overlay hero__overlay--gradient"></div>
+        </div>
+        <div class="hero__container">
+            <div class="hero__content">
+                <div class="breadcrumb-hero">Investigación / Grupos de Investigación</div>
+                <h1 class="hero__title">EMDUS - Electro Movilidad UNL</h1>
+                <p class="hero__subtitle">Investigación y desarrollo de soluciones en transporte eléctrico y urbanismo sostenible.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <section class="grupo-nav">
+        <div class="grupo-nav__container">
+            <nav class="grupo-nav__tabs">
+                <button class="grupo-nav__tab grupo-nav__tab--active" data-tab="conocenos">
+                    <i class="fas fa-info-circle"></i>
+                    Conócenos
+                </button>
+                <button class="grupo-nav__tab" data-tab="equipo">
+                    <i class="fas fa-users"></i>
+                    Equipo de Investigadores
+                </button>
+                <button class="grupo-nav__tab" data-tab="proyectos">
+                    <i class="fas fa-project-diagram"></i>
+                    Proyectos de Investigación
+                </button>
+                <button class="grupo-nav__tab" data-tab="produccion">
+                    <i class="fas fa-file-alt"></i>
+                    Producción Científica
+                </button>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <main class="grupo-content">
+        <!-- Conócenos Section -->
+        <section class="content-section" id="conocenos">
+            <div class="content-container">
+                <div class="section-header">
+                    <h2 class="section-title">Conócenos</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="objetivos-grid">
+                    <div class="objetivo-card">
+                        <div class="objetivo-icon">
+                            <i class="fas fa-car-battery"></i>
+                        </div>
+                        <h3>Objetivo General</h3>
+                        <p>Desarrollar tecnologías y soluciones innovadoras en electromovilidad y urbanismo sostenible para contribuir a la transición energética y la movilidad limpia en el Ecuador y la región.</p>
+                    </div>
+                    
+                    <div class="objetivos-especificos">
+                        <h3>Objetivos Específicos</h3>
+                        <ul class="objetivos-list">
+                            <li>
+                                <i class="fas fa-charging-station"></i>
+                                Investigar y desarrollar sistemas de carga para vehículos eléctricos
+                            </li>
+                            <li>
+                                <i class="fas fa-battery-three-quarters"></i>
+                                Estudiar tecnologías de almacenamiento de energía para movilidad eléctrica
+                            </li>
+                            <li>
+                                <i class="fas fa-route"></i>
+                                Diseñar soluciones de movilidad urbana sostenible
+                            </li>
+                            <li>
+                                <i class="fas fa-solar-panel"></i>
+                                Integrar energías renovables en sistemas de transporte eléctrico
+                            </li>
+                            <li>
+                                <i class="fas fa-city"></i>
+                                Promover el desarrollo de ciudades inteligentes y sostenibles
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipo Section -->
+        <section class="content-section" id="equipo" style="display: none;">
+            <div class="content-container">
+                <div class="section-header">
+                    <h2 class="section-title">Equipo de Investigadores</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="equipo-grid">
+                    <div class="investigador-card">
+                        <div class="investigador-photo">
+                            <img src="assets/img/placeholder-researcher.svg" alt="Dr. Investigador">
+                        </div>
+                        <div class="investigador-info">
+                            <h3>Dr. Carlos Vásquez</h3>
+                            <p class="cargo">Director del Grupo</p>
+                            <p class="especialidad">Especialista en Sistemas Eléctricos de Potencia</p>
+                            <div class="contacto">
+                                <p><i class="fas fa-envelope"></i> carlos.vasquez@unl.edu.ec</p>
+                                <p><i class="fas fa-phone"></i> +593 7 254-8000 ext. 2101</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Facultad de la Energía</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="investigador-card">
+                        <div class="investigador-photo">
+                            <img src="assets/img/placeholder-researcher.svg" alt="Dra. Investigadora">
+                        </div>
+                        <div class="investigador-info">
+                            <h3>Dra. Ana Morales</h3>
+                            <p class="cargo">Co-investigadora</p>
+                            <p class="especialidad">Especialista en Movilidad Urbana Sostenible</p>
+                            <div class="contacto">
+                                <p><i class="fas fa-envelope"></i> ana.morales@unl.edu.ec</p>
+                                <p><i class="fas fa-phone"></i> +593 7 254-8000 ext. 2102</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Facultad de la Energía</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="investigador-card">
+                        <div class="investigador-photo">
+                            <img src="assets/img/placeholder-researcher.svg" alt="Investigador">
+                        </div>
+                        <div class="investigador-info">
+                            <h3>MSc. Roberto Silva</h3>
+                            <p class="cargo">Investigador Asociado</p>
+                            <p class="especialidad">Especialista en Energías Renovables</p>
+                            <div class="contacto">
+                                <p><i class="fas fa-envelope"></i> roberto.silva@unl.edu.ec</p>
+                                <p><i class="fas fa-phone"></i> +593 7 254-8000 ext. 2103</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Facultad de la Energía</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyectos Section -->
+        <section class="content-section" id="proyectos" style="display: none;">
+            <div class="content-container">
+                <div class="section-header">
+                    <h2 class="section-title">Proyectos de Investigación</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="proyectos-grid">
+                    <div class="proyecto-card">
+                        <div class="proyecto-status activo">Activo</div>
+                        <h3>Estación de Carga Solar para Vehículos Eléctricos</h3>
+                        <p class="proyecto-descripcion">Desarrollo de una estación de carga rápida alimentada por energía solar fotovoltaica para vehículos eléctricos en la ciudad de Loja.</p>
+                        <div class="proyecto-meta">
+                            <p><i class="fas fa-calendar"></i> <strong>Duración:</strong> 2024 - 2026</p>
+                            <p><i class="fas fa-dollar-sign"></i> <strong>Financiamiento:</strong> SENESCYT</p>
+                            <p><i class="fas fa-user"></i> <strong>Investigador Principal:</strong> Dr. Carlos Vásquez</p>
+                        </div>
+                        <div class="proyecto-tags">
+                            <span class="tag">Electromovilidad</span>
+                            <span class="tag">Energía Solar</span>
+                            <span class="tag">Sostenibilidad</span>
+                        </div>
+                    </div>
+
+                    <div class="proyecto-card">
+                        <div class="proyecto-status activo">Activo</div>
+                        <h3>Microbus Eléctrico Universitario</h3>
+                        <p class="proyecto-descripcion">Conversión e implementación de un sistema de transporte eléctrico para el campus universitario de la UNL.</p>
+                        <div class="proyecto-meta">
+                            <p><i class="fas fa-calendar"></i> <strong>Duración:</strong> 2023 - 2025</p>
+                            <p><i class="fas fa-dollar-sign"></i> <strong>Financiamiento:</strong> UNL</p>
+                            <p><i class="fas fa-user"></i> <strong>Investigador Principal:</strong> Dra. Ana Morales</p>
+                        </div>
+                        <div class="proyecto-tags">
+                            <span class="tag">Transporte Eléctrico</span>
+                            <span class="tag">Campus Sostenible</span>
+                            <span class="tag">Innovación</span>
+                        </div>
+                    </div>
+
+                    <div class="proyecto-card">
+                        <div class="proyecto-status planificado">Planificado</div>
+                        <h3>Red Inteligente de Movilidad Urbana</h3>
+                        <p class="proyecto-descripcion">Diseño de una red inteligente para la gestión optimizada del tráfico y promoción de la movilidad eléctrica en Loja.</p>
+                        <div class="proyecto-meta">
+                            <p><i class="fas fa-calendar"></i> <strong>Duración:</strong> 2025 - 2027</p>
+                            <p><i class="fas fa-dollar-sign"></i> <strong>Financiamiento:</strong> En gestión</p>
+                            <p><i class="fas fa-user"></i> <strong>Investigador Principal:</strong> MSc. Roberto Silva</p>
+                        </div>
+                        <div class="proyecto-tags">
+                            <span class="tag">Smart Cities</span>
+                            <span class="tag">IoT</span>
+                            <span class="tag">Gestión Tráfico</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Producción Científica Section -->
+        <section class="content-section" id="produccion" style="display: none;">
+            <div class="content-container">
+                <div class="section-header">
+                    <h2 class="section-title">Producción Científica</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="produccion-tabs">
+                    <button class="produccion-tab produccion-tab--active" data-tipo="articulos">
+                        <i class="fas fa-file-alt"></i>
+                        Artículos Científicos
+                    </button>
+                    <button class="produccion-tab" data-tipo="libros">
+                        <i class="fas fa-book"></i>
+                        Libros y Capítulos
+                    </button>
+                    <button class="produccion-tab" data-tipo="tesis">
+                        <i class="fas fa-graduation-cap"></i>
+                        Tesis Dirigidas
+                    </button>
+                    <button class="produccion-tab" data-tipo="eventos">
+                        <i class="fas fa-calendar-alt"></i>
+                        Participación en Eventos
+                    </button>
+                </div>
+
+                <div class="produccion-content">
+                    <div class="produccion-list" id="articulos">
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2024</div>
+                            <div class="publicacion-info">
+                                <h4>Análisis de Factibilidad Técnico-Económica de Estaciones de Carga Solar</h4>
+                                <p class="autores">Vásquez, C., Morales, A., Silva, R.</p>
+                                <p class="revista"><em>Renewable Energy Systems</em>, 18(3): 234-251</p>
+                                <div class="publicacion-links">
+                                    <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                                    <a href="#" class="btn-link"><i class="fas fa-download"></i> PDF</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2023</div>
+                            <div class="publicacion-info">
+                                <h4>Integration of Electric Vehicles in Smart Grids: A Case Study in Ecuador</h4>
+                                <p class="autores">Morales, A., Vásquez, C.</p>
+                                <p class="revista"><em>Electric Power Systems Research</em>, 210: 108156</p>
+                                <div class="publicacion-links">
+                                    <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                                    <a href="#" class="btn-link"><i class="fas fa-download"></i> PDF</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2023</div>
+                            <div class="publicacion-info">
+                                <h4>Sustainable Urban Mobility: Electric Bus Implementation in University Campus</h4>
+                                <p class="autores">Silva, R., Vásquez, C., Morales, A.</p>
+                                <p class="revista"><em>Transportation Research Part D</em>, 118: 103698</p>
+                                <div class="publicacion-links">
+                                    <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+                                    <a href="#" class="btn-link"><i class="fas fa-download"></i> PDF</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produccion-list" id="libros" style="display: none;">
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2024</div>
+                            <div class="publicacion-info">
+                                <h4>Electromovilidad en Ecuador: Fundamentos y Aplicaciones</h4>
+                                <p class="autores">Vásquez, C. (Editor)</p>
+                                <p class="revista">Editorial Universidad Nacional de Loja, 298 pp.</p>
+                                <div class="publicacion-links">
+                                    <a href="#" class="btn-link"><i class="fas fa-book"></i> Ver Libro</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2023</div>
+                            <div class="publicacion-info">
+                                <h4>Capítulo: Sistemas de Carga para Vehículos Eléctricos</h4>
+                                <p class="autores">Morales, A., Silva, R.</p>
+                                <p class="revista">En: Tecnologías Limpias para el Transporte. Ed. Técnica, pp. 89-124</p>
+                                <div class="publicacion-links">
+                                    <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> Ver Capítulo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produccion-list" id="tesis" style="display: none;">
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2024</div>
+                            <div class="publicacion-info">
+                                <h4>Optimización de redes de carga para vehículos eléctricos usando algoritmos genéticos</h4>
+                                <p class="autores">Estudiante: Diego Ramírez</p>
+                                <p class="revista">Tesis de Maestría - Ingeniería Eléctrica</p>
+                                <p class="director">Director: Dr. Carlos Vásquez</p>
+                            </div>
+                        </div>
+
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2023</div>
+                            <div class="publicacion-info">
+                                <h4>Análisis del impacto de la movilidad eléctrica en la red de distribución</h4>
+                                <p class="autores">Estudiante: Patricia López</p>
+                                <p class="revista">Tesis de Pregrado - Ingeniería Electrónica</p>
+                                <p class="director">Director: Dra. Ana Morales</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produccion-list" id="eventos" style="display: none;">
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2024</div>
+                            <div class="publicacion-info">
+                                <h4>Congreso Internacional de Electromovilidad</h4>
+                                <p class="autores">Vásquez, C. (Ponencia Magistral)</p>
+                                <p class="revista">Medellín, Colombia</p>
+                                <p class="titulo-presentacion">"Desafíos y oportunidades de la electromovilidad en países andinos"</p>
+                            </div>
+                        </div>
+
+                        <div class="publicacion-item">
+                            <div class="publicacion-año">2023</div>
+                            <div class="publicacion-info">
+                                <h4>Simposio de Energías Renovables y Transporte</h4>
+                                <p class="autores">Morales, A. (Presentación Oral)</p>
+                                <p class="revista">Lima, Perú</p>
+                                <p class="titulo-presentacion">"Integración de energía solar en sistemas de transporte eléctrico"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-red" role="contentinfo">
+        <div class="footer-red__video-bg" aria-hidden="true">
+            <video autoplay loop muted playsinline>
+                <source src="./assets/video/UNL.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="footer-red__overlay" aria-hidden="true"></div>
+        <div class="footer-red__content">
+            <div class="container">
+                <p>&copy; 2025 Universidad Nacional de Loja. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navTabs = document.querySelectorAll('.grupo-nav__tab');
+            const contentSections = document.querySelectorAll('.content-section');
+            const produccionTabs = document.querySelectorAll('.produccion-tab');
+            const produccionLists = document.querySelectorAll('.produccion-list');
+
+            // Navigation tabs
+            navTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetTab = this.dataset.tab;
+                    
+                    // Remove active class from all tabs and sections
+                    navTabs.forEach(t => t.classList.remove('grupo-nav__tab--active'));
+                    contentSections.forEach(s => s.style.display = 'none');
+                    
+                    // Add active class to clicked tab and show corresponding section
+                    this.classList.add('grupo-nav__tab--active');
+                    document.getElementById(targetTab).style.display = 'block';
+                });
+            });
+
+            // Producción científica tabs
+            produccionTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetType = this.dataset.tipo;
+                    
+                    // Remove active class from all tabs and hide all lists
+                    produccionTabs.forEach(t => t.classList.remove('produccion-tab--active'));
+                    produccionLists.forEach(l => l.style.display = 'none');
+                    
+                    // Add active class to clicked tab and show corresponding list
+                    this.classList.add('produccion-tab--active');
+                    document.getElementById(targetType).style.display = 'block';
+                });
+            });
+
+            // Smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
