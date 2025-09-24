@@ -657,16 +657,13 @@
   .authority__content {
     padding: 1rem;
   }
-  
   .authority__contact {
     flex-direction: column;
     gap: 0.75rem;
   }
-  
   .breadcrumb {
     padding: 0.75rem 0;
   }
-  
   .breadcrumb__list {
     font-size: 0.8rem;
   }
