@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requisitos de Matrícula - Universidad Nacional de Loja</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <!-- Barra principal de navegación -->
+        <div class="header__main">
+            <div class="container">
+                <div class="header__main-content">
+                    <a href="index.html" class="header__logo" aria-label="Inicio - Universidad Nacional">
+                        <img src="./assets/img/logogris_0.png" alt="Logo Universidad Nacional" width="60" height="60">
+                    </a>
+
+                    <nav class="header__nav" aria-label="Navegación principal">
+                        <ul class="header__nav-list">
+                            <li class="header__nav-item">
+                                <a href="index.html" class="header__nav-link">INICIO</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a href="#" class="header__nav-link">OFERTA ACADÉMICA</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a href="#" class="header__nav-link">INVESTIGACIÓN</a>
+                            </li>
+                            <li class="header__nav-item header__nav-item--dropdown">
+                                <a href="#" class="header__nav-link header__nav-dropdown-toggle" aria-expanded="false">
+                                    DOCENCIA
+                                    <span class="header__dropdown-arrow">▼</span>
+                                </a>
+                                <ul class="header__dropdown-menu">
+                                    <li><a href="calendario-academico.html" class="header__dropdown-link">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                                        </svg>
+                                        Calendario Académico
+                                    </a></li>
+                                    <li><a href="requisitos-matricula.html" class="header__dropdown-link">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                        </svg>
+                                        Requisitos de Matrícula
+                                    </a></li>
+                                    <li><a href="#" class="header__dropdown-link">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12,3L1,9L12,15L21,9V16H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+                                        </svg>
+                                        Carreras
+                                    </a></li>
+                                    <li><a href="#" class="header__dropdown-link">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"/>
+                                        </svg>
+                                        Modalidades
+                                    </a></li>
+                                    <li><a href="#" class="header__dropdown-link">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
+                                        </svg>
+                                        Horarios
+                                    </a></li>
+                                    <li><a href="#" class="header__dropdown-link">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M4,6H20V16H4M20,18A2,2 0 0,0 22,16V6C22,4.89 21.1,4 20,4H4C2.89,4 2,4.89 2,6V16A2,2 0 0,0 4,18H0V20H24V18H20Z"/>
+                                        </svg>
+                                        Aulas Virtuales
+                                    </a></li>
+                                    <li><a href="#" class="header__dropdown-link">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M19,3H5C3.9,3 3,3.9 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.9 20.1,3 19,3M19,19H5V5H19V19M17,12H7V10H17V12M15,16H7V14H15V16M17,8H7V6H17V8Z"/>
+                                        </svg>
+                                        Recursos Académicos
+                                    </a></li>
+                                </ul>
+                            </li>
+                            <li class="header__nav-item">
+                                <a href="#" class="header__nav-link">SERVICIOS</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a href="./autoridades.html" class="header__nav-link">CONTACTO</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="header__actions">
+                        <div class="header__search">
+                            <button class="header__search-toggle" aria-label="Abrir buscador">
+                                <svg class="header__search-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                </svg>
+                            </button>
+                            <div class="header__search-form" aria-hidden="true">
+                                <form role="search">
+                                    <div class="header__search-container">
+                                        <input type="search" 
+                                               class="header__search-input" 
+                                               placeholder="Buscar programas, noticias, servicios..." 
+                                               aria-label="Buscar en el sitio"
+                                               autocomplete="off">
+                                        <button type="submit" class="header__search-submit" aria-label="Realizar búsqueda">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Botón de accesibilidad -->
+                        <div class="header__accessibility">
+                            <button id="accessibility-btn" aria-label="Opciones de accesibilidad" title="Accesibilidad">
+                                <img src="./assets/icons/Pasted Graphic.png" alt="Accesibilidad" width="22" height="22">
+                            </button>
+                            <div id="accessibility-panel" class="accessibility-panel" aria-hidden="true">
+                                <h4>Accesibilidad</h4>
+                                <button class="accessibility-font-inc" aria-label="Aumentar tamaño de letra">A+</button>
+                                <button class="accessibility-font-dec" aria-label="Disminuir tamaño de letra">A-</button>
+                                <button class="accessibility-contrast" aria-label="Alto contraste">Alto contraste</button>
+                                <button class="accessibility-grayscale" aria-label="Escala de grises">Escala de grises</button>
+                                <button class="accessibility-underline-links" aria-label="Subrayar enlaces">Subrayar enlaces</button>
+                            </div>
+                        </div>
+                        <a href="#" class="header__access-btn" aria-label="Acceso de usuarios">
+                            <svg class="header__access-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                            <span>ACCESO</span>
+                        </a>
+                    </div>
+
+                    <!-- Menú móvil -->
+                    <button class="header__mobile-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                        <span class="header__mobile-toggle-line"></span>
+                        <span class="header__mobile-toggle-line"></span>
+                        <span class="header__mobile-toggle-line"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil desplegable -->
+        <nav class="header__mobile-nav" aria-label="Navegación móvil" aria-hidden="true">
+            <div class="container">
+                <ul class="header__mobile-nav-list">
+                    <li><a href="index.html" class="header__mobile-nav-link">INICIO</a></li>
+                    <li><a href="#" class="header__mobile-nav-link">OFERTA ACADÉMICA</a></li>
+                    <li><a href="#" class="header__mobile-nav-link">INVESTIGACIÓN</a></li>
+                    <li class="header__mobile-nav-dropdown">
+                        <a href="#" class="header__mobile-nav-link header__mobile-dropdown-toggle">DOCENCIA</a>
+                        <ul class="header__mobile-dropdown-menu">
+                            <li><a href="calendario-academico.html" class="header__mobile-nav-sublink">Calendario Académico</a></li>
+                            <li><a href="requisitos-matricula.html" class="header__mobile-nav-sublink">Requisitos de Matrícula</a></li>
+                            <li><a href="#" class="header__mobile-nav-sublink">Carreras</a></li>
+                            <li><a href="#" class="header__mobile-nav-sublink">Modalidades</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="header__mobile-nav-link">SERVICIOS</a></li>
+                    <li><a href="./autoridades.html" class="header__mobile-nav-link">CONTACTO</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="requirements-hero">
+            <div class="container">
+                <div class="requirements-hero__content">
+                    <div class="requirements-hero__text">
+                        <h1 class="requirements-hero__title scroll-fade-up">Requisitos de Matrícula</h1>
+                        <p class="requirements-hero__subtitle scroll-fade-up scroll-animate-delay-1">Guía completa para estudiantes de la Universidad Nacional de Loja</p>
+                        <p class="requirements-hero__description scroll-fade-up scroll-animate-delay-2">
+                            Encuentra toda la información necesaria para realizar tu matrícula según tu situación académica.
+                            Procesos claros y organizados para facilitar tu trámite.
+                        </p>
+                    </div>
+                    <div class="requirements-hero__image">
+                        <div class="requirements-hero__image-placeholder scroll-scale scroll-animate-delay-3">
+                            <img src="assets/img/placeholder-info.md" alt="Estudiantes universitarios" class="requirements-hero__img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Navigation -->
+        <section class="requirements-nav">
+            <div class="container">
+                <div class="requirements-nav__grid">
+                    <button class="requirements-nav__card scroll-fade-up scroll-animate-delay-1" data-section="primer-ciclo">
+                        <div class="requirements-nav__icon">🎓</div>
+                        <h3>Primer Ciclo</h3>
+                        <p>Estudiantes nuevos</p>
+                    </button>
+                    <button class="requirements-nav__card scroll-fade-up scroll-animate-delay-2" data-section="segunda-primera">
+                        <div class="requirements-nav__icon">📚</div>
+                        <h3>Segundo Ciclo+</h3>
+                        <p>Primera matrícula</p>
+                    </button>
+                    <button class="requirements-nav__card scroll-fade-up scroll-animate-delay-3" data-section="segunda-segunda">
+                        <div class="requirements-nav__icon">📋</div>
+                        <h3>Segunda Matrícula</h3>
+                        <p>Segundo ciclo en adelante</p>
+                    </button>
+                    <button class="requirements-nav__card scroll-fade-up scroll-animate-delay-4" data-section="tercera-matricula">
+                        <div class="requirements-nav__icon">⚠️</div>
+                        <h3>Tercera Matrícula</h3>
+                        <p>Casos especiales</p>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Requirements Sections -->
+        <div class="requirements-content">
+            <div class="container">
+                
+                <!-- Primer Ciclo -->
+                <section id="primer-ciclo" class="requirement-section" data-content="primer-ciclo" style="display: none;">
+                    <div class="requirement-section__header">
+                        <h2 class="requirement-section__title">
+                            <span class="requirement-section__icon emoji-circle">🎓</span>
+                            Primer Ciclo - Estudiantes Nuevos
+                        </h2>
+                        <div class="requirement-section__image">
+                            <div class="requirement-image-placeholder">📖</div>
+                        </div>
+                    </div>
+                    
+                    <div class="requirement-section__content">
+                        <h3 class="requirement-subsection__title scroll-fade-left">Pasos Principales</h3>
+                        <ol class="requirement-list requirement-list--numbered">
+                            <li class="requirement-item scroll-fade-up scroll-animate-delay-1">
+                                <div class="requirement-item__icon">1</div>
+                                <div class="requirement-item__content">
+                                    <h4>Registro en SGA Estudiantes</h4>
+                                    <p>Registrar matrícula en el SGA Estudiantes (ver manual SGA)</p>
+                                </div>
+                            </li>
+                            <li class="requirement-item scroll-fade-up scroll-animate-delay-2">
+                                <div class="requirement-item__icon">2</div>
+                                <div class="requirement-item__content">
+                                    <h4>Completar información</h4>
+                                    <p>En el SGA, completar/actualizar ficha socioeconómica y contestar encuesta de conectividad</p>
+                                </div>
+                            </li>
+                            <li class="requirement-item scroll-fade-up scroll-animate-delay-3">
+                                <div class="requirement-item__icon">3</div>
+                                <div class="requirement-item__content">
+                                    <h4>Módulo de Gestión de Trámites</h4>
+                                    <p>En el Módulo de Gestión de Trámites - SIAAF Aspirantes a primer ciclo:</p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <h3 class="requirement-subsection__title scroll-fade-left">Documentos Requeridos</h3>
+                        <ul class="requirement-list requirement-list--documents">
+                            <li class="requirement-item scroll-fade-right scroll-animate-delay-1">
+                                <div class="requirement-item__icon">📄</div>
+                                <div class="requirement-item__content">
+                                    <h4>Solicitud de matrícula</h4>
+                                    <p>Descargar, firmar, escanear y subir</p>
+                                </div>
+                            </li>
+                            <li class="requirement-item scroll-fade-right scroll-animate-delay-2">
+                                <div class="requirement-item__icon">🆔</div>
+                                <div class="requirement-item__content">
+                                    <h4>Documentos personales</h4>
+                                    <p>Cédula o pasaporte, certificado de votación (escaneados)</p>
+                                </div>
+                            </li>
+                            <li class="requirement-item scroll-fade-right scroll-animate-delay-3">
+                                <div class="requirement-item__icon">🎓</div>
+                                <div class="requirement-item__content">
+                                    <h4>Título de bachiller</h4>
+                                    <p>Escanear y subir (se aceptan títulos obtenidos en el extranjero, reconocidos por Ministerio de Educación y Relaciones Exteriores)</p>
+                                </div>
+                            </li>
+                            <li class="requirement-item scroll-fade-right scroll-animate-delay-4">
+                                <div class="requirement-item__icon">📷</div>
+                                <div class="requirement-item__content">
+                                    <h4>Fotografía digital</h4>
+                                    <p>Subir fotografía digital en tamaño carnet</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="requirement-alert requirement-alert--warning scroll-scale">
+                            <h4><span class="emoji-circle">📋</span> Obligatorio</h4>
+                            <p>Constar en la Matriz de Aceptación de Cupo, remitida por la SENESCYT a la UNL / Certificado de haber cumplido los requisitos del SNNA.</p>
+                        </div>
+
+                        <!-- Pérdida de Gratuidad -->
+                        <div class="requirement-special-case">
+                            <h3 class="requirement-subsection__title">En caso de pérdida de gratuidad</h3>
+                            <p class="requirement-special-case__intro">Se requiere adjuntar los siguientes requisitos adicionales:</p>
+                            
+                            <ul class="requirement-list requirement-list--special">
+                                <li class="requirement-item">
+                                    <div class="requirement-item__icon">💰</div>
+                                    <div class="requirement-item__content">
+                                        <h4>Solicitudes adicionales</h4>
+                                        <p>Solicitud de cálculo de valores a pagar (firmada y escaneada)</p>
+                                    </div>
+                                </li>
+                                <li class="requirement-item">
+                                    <div class="requirement-item__icon">📊</div>
+                                    <div class="requirement-item__content">
+                                        <h4>Ficha Socioeconómica</h4>
+                                        <p>Del SGA Estudiantes con firma del estudiante y financiador</p>
+                                    </div>
+                                </li>
+                                <li class="requirement-item">
+                                    <div class="requirement-item__icon">💼</div>
+                                    <div class="requirement-item__content">
+                                        <h4>Certificado laboral</h4>
+                                        <p>Certificado de trabajo, RUC, RISE o rol de pagos del financiador</p>
+                                        <div class="requirement-help">
+                                            <strong>💡 Ayuda:</strong> 
+                                            <a href="https://calculadoras.trabajo.gob.ec/dependencia" target="_blank" rel="noopener">
+                                                Descargar certificado del Ministerio de Trabajo
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="requirement-item">
+                                    <div class="requirement-item__icon">🏥</div>
+                                    <div class="requirement-item__content">
+                                        <h4>Certificado IESS</h4>
+                                        <p>Certificado de afiliación al IESS del financiador</p>
+                                        <div class="requirement-help">
+                                            <strong>💡 Ayuda:</strong> 
+                                            <a href="https://www.iess.gob.ec/afiliado-web/pages/opcionesGenerales/seleccionCertificadoDeAfiliacion.jsf" target="_blank" rel="noopener">
+                                                Generar certificado IESS
+                                            </a><br>
+                                            <small>Formato de fecha: 2019-07-17 (año-mes-día)</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="requirement-item">
+                                    <div class="requirement-item__icon">🎓</div>
+                                    <div class="requirement-item__content">
+                                        <h4>Título profesional</h4>
+                                        <p>Copia del título profesional</p>
+                                    </div>
+                                </li>
+                                <li class="requirement-item">
+                                    <div class="requirement-item__icon">💳</div>
+                                    <div class="requirement-item__content">
+                                        <h4>Pago de aranceles</h4>
+                                        <p>Realizar el pago y subir comprobante según corresponda</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="requirement-notes">
+                            <h4><span class="emoji-highlight">📝</span> Notas Importantes</h4>
+                            <ul>
+                                <li>Se habilitará usuario (correo institucional) y contraseña, notificado al correo registrado en SENESCYT</li>
+                                <li>Si no se hace uso del cupo asignado, se perderá y no podrá participar en el siguiente proceso</li>
+                                <li><strong>Los requisitos NO deben ser enviados por correo electrónico</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Segundo ciclo primera matrícula -->
+                <section id="segunda-primera" class="requirement-section" data-content="segunda-primera" style="display: none;">
+                    <div class="requirement-section__header">
+                        <h2 class="requirement-section__title">
+                            <span class="requirement-section__icon emoji-circle">📚</span>
+                            Segundo Ciclo en Adelante (Primera Matrícula)
+                        </h2>
+                        <div class="requirement-section__image">
+                            <div class="requirement-image-placeholder">📊</div>
+                        </div>
+                    </div>
+                    
+                    <div class="requirement-section__content">
+                        <div class="requirement-alert requirement-alert--info">
+                            <h4><span class="emoji-border">✅</span> Requisito Principal</h4>
+                            <p>Aprobar el 60% del total de asignaturas, créditos u horas del período académico ordinario (ciclo) anterior (comprobación automática en el SGA)</p>
+                        </div>
+
+                        <ol class="requirement-list requirement-list--numbered">
+                            <li class="requirement-item">
+                                <div class="requirement-item__icon">1</div>
+                                <div class="requirement-item__content">
+                                    <h4>Registro de solicitud</h4>
+                                    <p>Registrar solicitud de matrícula en el SGA Estudiantes (ver manual SGA)</p>
+                                </div>
+                            </li>
+                            <li class="requirement-item">
+                                <div class="requirement-item__icon">2</div>
+                                <div class="requirement-item__content">
+                                    <h4>Actualizar información</h4>
+                                    <p>Completar/actualizar ficha socioeconómica y contestar encuesta de conectividad</p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <div class="requirement-alert requirement-alert--success">
+                            <h4>✨ Proceso Automático</h4>
+                            <p>Finalizado el registro de solicitud de matrícula y si cumple todos los requisitos, Secretaría de Carrera procederá a legalizar la matrícula.</p>
+                        </div>
+
+                        <div class="requirement-notes">
+                            <h4><span class="emoji-circle">📝</span> Importante</h4>
+                            <p><strong>Los requisitos NO deben ser enviados a los correos de secretarías o cualquier otro funcionario de la UNL.</strong></p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Segunda matrícula -->
+                <section id="segunda-segunda" class="requirement-section" data-content="segunda-segunda" style="display: none;">
+                    <div class="requirement-section__header">
+                        <h2 class="requirement-section__title">
+                            <span class="requirement-section__icon emoji-circle">📋</span>
+                            Segundo Ciclo en Adelante (Segunda Matrícula)
+                        </h2>
+                        <div class="requirement-section__image">
+                            <div class="requirement-image-placeholder">📝</div>
+                        </div>
+                    </div>
+                    
+                    <div class="requirement-section__content">
+                        <h3 class="requirement-subsection__title">Pasos en SGA</h3>
+                        <ol class="requirement-list requirement-list--numbered">
+                            <li class="requirement-item">
+                                <div class="requirement-item__icon">1</div>
+                                <div class="requirement-item__content">
+                                    <h4>Registro de matrícula</h4>
+                                    <p>Registrar matrícula en el SGA Estudiantes (ver manual SGA)</p>
+                                </div>
+                            </li>
+                            <li class="requirement-item">
+                                <div class="requirement-item__icon">2</div>
+                                <div class="requirement-item__content">
+                                    <h4>Completar información</h4>
+                                    <p>Completar/actualizar ficha socioeconómica y contestar encuesta de conectividad</p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <h3 class="requirement-subsection__title">En el Módulo de Gestión de Trámites</h3>
+                        <ul class="requirement-list requirement-list--documents">
+                            <li class="requirement-item">
+                                <div class="requirement-item__icon">📄</div>
+                                <div class="requirement-item__content">
+                                    <h4>Solicitudes</h4>
+                                    <p>Solicitud de matrícula y solicitud de cálculo de valores a pagar (firmadas y escaneadas)</p>
+                                </div>
+                            </li>
+                            <li class="requirement-item">
+                                <div class="requirement-item__icon">📊</div>
+                                <div class="requirement-item__content">
+                                    <h4>Ficha Socioeconómica</h4>
+                                    <p>Del SGA Estudiantes con firmas del estudiante y financiador</p>
+                                </div>
+                            </li>
+                            <li class="requirement-item">
+                                <div class="requirement-item__icon">💼</div>
+                                <div class="requirement-item__content">
+                                    <h4>Documentación laboral</h4>
+                                    <p>Certificado de trabajo, RUC, RISE o rol de pagos del financiador</p>
+                                    <div class="requirement-help">
+                                        <strong>💡 Ayuda:</strong> 
+                                        <a href="https://calculadoras.trabajo.gob.ec/dependencia" target="_blank" rel="noopener">
+                                            Ministerio de Trabajo - Certificado
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="requirement-item">
+                                <div class="requirement-item__icon">🏥</div>
+                                <div class="requirement-item__content">
+                                    <h4>Certificado IESS</h4>
+                                    <p>Certificado de afiliación al IESS del financiador</p>
+                                    <div class="requirement-help">
+                                        <strong>💡 Ayuda:</strong> 
+                                        <a href="https://www.iess.gob.ec/afiliado-web/pages/opcionesGenerales/seleccionCertificadoDeAfiliacion.jsf" target="_blank" rel="noopener">
+                                            Plataforma IESS
+                                        </a><br>
+                                        <small>Formato fecha: 2019-07-17 (año-mes-día)</small>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="requirement-notes">
+                            <h4><span class="emoji-border">📝</span> Notas Importantes</h4>
+                            <ul>
+                                <li>El Decano autorizará segunda matrícula según normativa vigente</li>
+                                <li>Seguimiento disponible a través del Módulo de Gestión de Trámites</li>
+                                <li><strong>Los requisitos NO deben ser enviados por correo electrónico</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tercera matrícula -->
+                <section id="tercera-matricula" class="requirement-section" data-content="tercera-matricula" style="display: none;">
+                    <div class="requirement-section__header">
+                        <h2 class="requirement-section__title">
+                            <span class="requirement-section__icon emoji-highlight">⚠️</span>
+                            Segundo Ciclo en Adelante (Tercera Matrícula)
+                        </h2>
+                        <div class="requirement-section__image">
+                            <div class="requirement-image-placeholder">⚖️</div>
+                        </div>
+                    </div>
+                    
+                    <div class="requirement-section__content">
+                        <div class="requirement-alert requirement-alert--warning">
+                            <h4><span class="emoji-highlight">⚠️</span> Casos Excepcionales</h4>
+                            <p>La tercera matrícula requiere justificación de excepcionalidad según el Reglamento de Régimen Académico de la UNL.</p>
+                        </div>
+
+                        <h3 class="requirement-subsection__title">Pasos en SGA</h3>
+                        <ol class="requirement-list requirement-list--numbered">
+                            <li class="requirement-item">
+                                <div class="requirement-item__icon">1</div>
+                                <div class="requirement-item__content">
+                                    <h4>Registro de solicitud</h4>
+                                    <p>Registrar solicitud de matrícula en el SGA Estudiantes (ver manual SGA)</p>
+                                </div>
+                            </li>
+                            <li class="requirement-item">
+                                <div class="requirement-item__icon">2</div>
+                                <div class="requirement-item__content">
+                                    <h4>Completar información</h4>
+                                    <p>Completar/actualizar ficha socioeconómica y contestar encuesta de conectividad</p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <h3 class="requirement-subsection__title">En el Módulo de Gestión de Trámites</h3>
+                        <ul class="requirement-list requirement-list--documents">
+                            <li class="requirement-item">
+                                <div class="requirement-item__icon">📄</div>
+                                <div class="requirement-item__content">
+                                    <h4>Solicitudes dirigidas al Decano</h4>
+                                    <p>Solicitud de matrícula y solicitud de cálculo de valores dirigidas al Decano de la Facultad o Director de la UED</p>
+                                </div>
+                            </li>
+                            <li class="requirement-item">
+                                <div class="requirement-item__icon">📋</div>
+                                <div class="requirement-item__content">
+                                    <h4>Anexo de justificativos</h4>
+                                    <p>Subir Anexo de justificativos de excepcionalidad, conforme el art. 177 del Reglamento de Régimen académico del UNL</p>
+                                </div>
+                            </li>
+                            <li class="requirement-item">
+                                <div class="requirement-item__icon">📊</div>
+                                <div class="requirement-item__content">
+                                    <h4>Ficha Socioeconómica</h4>
+                                    <p>Del SGA Estudiantes con firmas del estudiante y financiador</p>
+                                </div>
+                            </li>
+                            <li class="requirement-item">
+                                <div class="requirement-item__icon">💼</div>
+                                <div class="requirement-item__content">
+                                    <h4>Certificado laboral</h4>
+                                    <p>Certificado de trabajo, RUC, RISE o rol de pagos del financiador</p>
+                                    <div class="requirement-help">
+                                        <strong>💡 Ayuda:</strong> 
+                                        <a href="https://calculadoras.trabajo.gob.ec/dependencia" target="_blank" rel="noopener">
+                                            Ministerio de Trabajo
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="requirement-item">
+                                <div class="requirement-item__icon">🏥</div>
+                                <div class="requirement-item__content">
+                                    <h4>Certificado IESS</h4>
+                                    <p>Certificado de afiliación al IESS del financiador</p>
+                                    <div class="requirement-help">
+                                        <strong>💡 Ayuda:</strong> 
+                                        <a href="https://www.iess.gob.ec/afiliado-web/pages/opcionesGenerales/seleccionCertificadoDeAfiliacion.jsf" target="_blank" rel="noopener">
+                                            Plataforma IESS
+                                        </a><br>
+                                        <small>Formato fecha: 2019-07-17 (año-mes-día)</small>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="requirement-notes">
+                            <h4>📝 Notas Importantes</h4>
+                            <ul>
+                                <li>El Decano autorizará tercera matrícula según normativa vigente</li>
+                                <li>Seguimiento disponible a través del Módulo de Gestión de Trámites</li>
+                                <li><strong>Los requisitos NO deben ser enviados por correo electrónico</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Support Section -->
+        <section class="requirements-support">
+            <div class="container">
+                <div class="requirements-support__content">
+                    <div class="requirements-support__text-content">
+                        <h2 class="requirements-support__title scroll-fade-up">
+                            <span class="emoji-circle">🆘</span>
+                            ¿Necesitas ayuda?
+                        </h2>
+                        <p class="requirements-support__subtitle scroll-fade-up scroll-animate-delay-1">
+                            Si tienes dudas sobre los requisitos de matrícula, contáctanos
+                        </p>
+                        
+                        <div class="support-contact scroll-fade-up scroll-animate-delay-2">
+                            <div class="support-contact__item">
+                                <span class="emoji-simple">📧</span>
+                                <div>
+                                    <strong>Correo:</strong> secretaria@unl.edu.ec
+                                </div>
+                            </div>
+                            <div class="support-contact__item">
+                                <span class="emoji-simple">📱</span>
+                                <div>
+                                    <strong>Teléfono:</strong> 07 2593550
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="requirements-support__actions scroll-fade-up scroll-animate-delay-3">
+                            <a href="#" class="btn btn--primary">Manual SGA</a>
+                            <a href="#" class="btn btn--secondary">Módulo de Trámites</a>
+                            <a href="#" class="btn btn--outline">FAQ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Botón volver a opciones -->
+    <button class="back-to-options" id="backToOptions" aria-label="Volver a las opciones" title="Volver a las opciones">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+    </button>
+
+    <!-- Footer Rojo Principal -->
+    <footer class="footer-red" role="contentinfo">
+        <!-- Video de fondo -->
+        <video class="footer-red__video" autoplay muted loop>
+            <source src="./assets/video/UNL.mp4" type="video/mp4">
+        </video>
+        <div class="footer-red__overlay"></div>
+        
+        <div class="container">
+            <div class="footer-red__content">
+                <!-- Newsletter Section -->
+                <div class="footer-red__newsletter">
+                    <h3 class="footer-red__newsletter-title">Suscríbete a nuestras noticias</h3>
+                    <form class="footer-red__newsletter-form">
+                        <input type="email" placeholder="Tu correo" class="footer-red__newsletter-input" required>
+                        <button type="submit" class="footer-red__newsletter-btn">
+                            Suscríbete 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Línea divisoria -->
+                <div class="footer-red__divider"></div>
+                
+                <!-- Información principal -->
+                <div class="footer-red__main">
+                    <div class="footer-red__info">
+                        <!-- Logo -->
+                        <div class="footer-red__logo">
+                            <img src="./assets/img/logogris_0.png" alt="Universidad Nacional de Loja" class="footer-red__logo-image">
+                        </div>
+                        
+                        <!-- Contacto -->
+                        <div class="footer-red__contact">
+                            <div class="footer-red__contact-item">
+                                <svg class="footer-red__contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span>Ciudad Universitaria Guillermo Falconí - Loja - Ecuador</span>
+                            </div>
+                            
+                            <div class="footer-red__contact-item">
+                                <svg class="footer-red__contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span>07 2593550 (Opción 1 - Modalidad Presencial)</span>
+                            </div>
+                            
+                            <div class="footer-red__contact-item">
+                                <svg class="footer-red__contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span>07 2593550 (Opción 2 - Modalidad Distancia)</span>
+                            </div>
+                            
+                            <div class="footer-red__contact-item">
+                                <svg class="footer-red__contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span><strong>Contáctanos:</strong> comunicacion@unl.edu.ec</span>
+                            </div>
+                            
+                            <div class="footer-red__contact-item">
+                                <a href="#" class="footer-red__map-link">Ver ubicación en el mapa</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Redes sociales -->
+                    <div class="footer-red__social">
+                        <h4 class="footer-red__social-title">Síguenos en redes</h4>
+                        <div class="footer-red__social-links">
+                            <a href="#" class="footer-red__social-link" aria-label="Facebook">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="footer-red__social-link" aria-label="Twitter">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="footer-red__social-link" aria-label="Instagram">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="footer-red__social-link" aria-label="YouTube">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Copyright -->
+                <div class="footer-red__copyright">
+                    <div class="footer-red__divider"></div>
+                    <p>©2025 Universidad Nacional de Loja. Todos los derechos reservados</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Galería -->
+    <div class="gallery-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-content">
+        <div class="gallery-modal__backdrop"></div>
+        <div class="gallery-modal__content">
+            <button class="gallery-modal__close" aria-label="Cerrar modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </button>
+            <img class="gallery-modal__image" src="" alt="" id="modal-content">
+            <h3 class="gallery-modal__title" id="modal-title"></h3>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="./js/faculty-unified.js"></script>
+    <script>
+        // Intersection Observer para animaciones de scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configurar el Intersection Observer
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, observerOptions);
+
+            // Observar todos los elementos con clases de animación
+            const animatedElements = document.querySelectorAll('.scroll-animate, .scroll-fade-up, .scroll-fade-left, .scroll-fade-right, .scroll-scale');
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Funcionalidad para mostrar/ocultar secciones de requisitos
+            const navCards = document.querySelectorAll('.requirements-nav__card');
+            const contentSections = document.querySelectorAll('[data-content]');
+            const backToOptionsBtn = document.getElementById('backToOptions');
+            const navSection = document.querySelector('.requirements-nav');
+            
+            navCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const targetSection = this.getAttribute('data-section');
+                    
+                    // Remover clase activa de todas las tarjetas
+                    navCards.forEach(c => c.classList.remove('active'));
+                    
+                    // Agregar clase activa a la tarjeta clickeada
+                    this.classList.add('active');
+                    
+                    // Ocultar todas las secciones
+                    contentSections.forEach(section => {
+                        section.style.display = 'none';
+                        section.classList.remove('requirement-section--active');
+                        
+                        // Resetear animaciones en la sección oculta
+                        const animatedInSection = section.querySelectorAll('.scroll-animate, .scroll-fade-up, .scroll-fade-left, .scroll-fade-right, .scroll-scale');
+                        animatedInSection.forEach(el => {
+                            el.classList.remove('in-view');
+                        });
+                    });
+                    
+                    // Mostrar la sección seleccionada
+                    const targetElement = document.querySelector(`[data-content="${targetSection}"]`);
+                    if (targetElement) {
+                        targetElement.style.display = 'block';
+                        
+                        // Pequeño delay para la animación
+                        setTimeout(() => {
+                            targetElement.classList.add('requirement-section--active');
+                            
+                            // Mostrar botón de volver arriba
+                            backToOptionsBtn.classList.add('show');
+                            
+                            // Scroll suave hacia la sección
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                            
+                            // Re-observar elementos animados en la nueva sección
+                            setTimeout(() => {
+                                const newAnimatedElements = targetElement.querySelectorAll('.scroll-animate, .scroll-fade-up, .scroll-fade-left, .scroll-fade-right, .scroll-scale');
+                                newAnimatedElements.forEach(element => {
+                                    observer.observe(element);
+                                });
+                            }, 500);
+                        }, 100);
+                    }
+                });
+            });
+            
+            // Funcionalidad del botón volver arriba
+            backToOptionsBtn.addEventListener('click', function() {
+                // Scroll suave hacia las opciones
+                navSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                
+                // Ocultar el botón después de un momento
+                setTimeout(() => {
+                    backToOptionsBtn.classList.remove('show');
+                }, 500);
+                
+                // Remover selección activa
+                navCards.forEach(c => c.classList.remove('active'));
+                
+                // Ocultar todas las secciones de contenido
+                contentSections.forEach(section => {
+                    section.classList.remove('requirement-section--active');
+                    setTimeout(() => {
+                        section.style.display = 'none';
+                    }, 400);
+                });
+            });
+            
+            // Activar la primera tarjeta por defecto
+            if (navCards.length > 0) {
+                navCards[0].click();
+            }
+            
+            // Mostrar/ocultar botón según scroll
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.pageYOffset;
+                const navPosition = navSection.offsetTop;
+                
+                // Si estamos muy abajo y hay una sección activa, mostrar el botón
+                if (scrollPosition > navPosition + 200 && document.querySelector('.requirements-nav__card.active')) {
+                    backToOptionsBtn.classList.add('show');
+                } else if (scrollPosition <= navPosition + 200) {
+                    backToOptionsBtn.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
