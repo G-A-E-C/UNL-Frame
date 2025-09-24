@@ -11,32 +11,151 @@
     <body>
         <!-- Header -->
         <header class="header" role="banner">
+            <!-- Barra principal de navegación -->
             <div class="header__main">
-              <div class="container">
-            <div class="header__main-content">
-              <a href="./index.html" class="header__logo" aria-label="Inicio - Universidad Nacional">
-                <img src="./assets/img/logogris_0.png" alt="Logo Universidad Nacional" width="40" height="40">
-              </a>
-    
-              <nav class="header__nav" aria-label="Navegación principal">
-                <ul class="header__nav-list">
-                  <li class="header__nav-item"><a href="./index.html" class="header__nav-link">INICIO</a></li>
-                  <li class="header__nav-item"><a href="./docencia.html" class="header__nav-link">DOCENCIA</a></li>
-                  <li class="header__nav-item">
-                    <a href="./investigacion.html" class="header__nav-link" aria-current="page">INVESTIGACIÓN</a>
-                  </li>
-                  <li class="header__nav-item"><a href="#" class="header__nav-link">NOTICIAS</a></li>
-                  <li class="header__nav-item"><a href="#" class="header__nav-link">SERVICIOS</a></li>
-                  <li class="header__nav-item"><a href="./vinculacion.html" class="header__nav-link">VINCULACIÓN</a>
-                  </li>
-                  <li class="header__nav-item"><a href="#" class="header__nav-link">CONTACTO</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </header>
+                <div class="container">
+                    <div class="header__main-content">
+                        <a href="#" class="header__logo" aria-label="Inicio - Universidad Nacional">
+                            <img src="./assets/img/logogris_0.png" alt="Logo Universidad Nacional" width="60" height="60">
+                        </a>
 
+                        <nav class="header__nav" aria-label="Navegación principal">
+                            <ul class="header__nav-list">
+                                <li class="header__nav-item">
+                                    <a href="#" class="header__nav-link" aria-current="page">INICIO</a>
+                                </li>
+                                <li class="header__nav-item header__nav-item--dropdown">
+                                    <a href="#" class="header__nav-link header__nav-dropdown-toggle" aria-expanded="false">
+                                        DOCENCIA
+                                        <span class="header__dropdown-arrow">▼</span>
+                                    </a>
+                                    <ul class="header__dropdown-menu">
+                                        <li><a href="oferta-grado.html" class="header__dropdown-link">Oferta de Grado</a></li>
+                                        <li><a href="calendario-academico.html" class="header__dropdown-link">Calendario Académico</a></li>
+                                        <li><a href="requisitos-matricula.html" class="header__dropdown-link">Requisitos de Matrícula</a></li>
+                                        <li><a href="#" class="header__dropdown-link">Carreras</a></li>
+                                        <li><a href="#" class="header__dropdown-link">Modalidades</a></li>
+                                    </ul>
+                                </li>
+                                <li class="header__nav-item">
+                                    <a href="#" class="header__nav-link">SERVICIOS</a>
+                                </li>
+                                <li class="header__nav-item">
+                                    <a href="./autoridades.html" class="header__nav-link">CONTACTO</a>
+                                </li>
+                                <li class="header__nav-item header__nav-item--dropdown">
+                                    <a href="#" class="header__nav-link header__nav-dropdown-toggle" aria-expanded="false">
+                                        ACCESO
+                                        <span class="header__dropdown-arrow">▼</span>
+                                    </a>
+                                    <ul class="header__dropdown-menu">
+                                        <li><a href="#" class="header__dropdown-link">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                            </svg>
+                                            Acceso P C D
+                                        </a></li>
+                                        <li><a href="#" class="header__dropdown-link">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                            </svg>
+                                            SGA Estudiantes
+                                        </a></li>
+                                        <li><a href="#" class="header__dropdown-link">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/>
+                                            </svg>
+                                            SIDOC
+                                        </a></li>
+                                        <li><a href="#" class="header__dropdown-link">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                            </svg>
+                                            SIAAF
+                                        </a></li>
+                                        <li><a href="#" class="header__dropdown-link">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 5.5V7.5L9 6.5V4H7V6.5L3 7.5V9.5L9 8.5V11L12 12L15 11V8.5L21 9Z"/>
+                                            </svg>
+                                            SGA Docentes
+                                        </a></li>
+                                        <li><a href="#" class="header__dropdown-link">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 3L1 9L12 15L21 9.31V16H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"/>
+                                            </svg>
+                                            EVA
+                                        </a></li>
+                                        <li><a href="#" class="header__dropdown-link">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M17,7H22V17H17V19A1,1 0 0,0 18,20H20V22H17.5C16.95,22 16,21.55 16,21C16,21.55 15.05,22 14.5,22H12V20H14A1,1 0 0,0 15,19V5A1,1 0 0,0 14,4H12V2H14.5C15.05,2 16,2.45 16,3C16,2.45 16.95,2 17.5,2H20V4H18A1,1 0 0,0 17,5V7Z"/>
+                                            </svg>
+                                            ELSA
+                                        </a></li>
+                                        <li><a href="#" class="header__dropdown-link">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                                            </svg>
+                                            Correo Institucional
+                                        </a></li>
+                                        <li><a href="#" class="header__dropdown-link">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M9,17H7V9H9V17M13,17H11V7H13V17M17,17H15V13H17V17Z"/>
+                                            </svg>
+                                            Gaceta Oficial UNL
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div class="header__actions">
+                            <!-- Botón de accesibilidad -->
+                            <div class="header__accessibility">
+                                <button id="accessibility-btn" aria-label="Opciones de accesibilidad" title="Accesibilidad">
+                                    <img src="./assets/icons/Pasted Graphic.png" alt="Accesibilidad" width="22" height="22">
+                                </button>
+                                <div id="accessibility-panel" class="accessibility-panel" aria-hidden="true">
+                                    <h4>Accesibilidad</h4>
+                                    <button class="accessibility-font-inc" aria-label="Aumentar tamaño de letra">A+</button>
+                                    <button class="accessibility-font-dec" aria-label="Disminuir tamaño de letra">A-</button>
+                                    <button class="accessibility-contrast" aria-label="Alto contraste">Alto contraste</button>
+                                    <button class="accessibility-grayscale" aria-label="Escala de grises">Escala de grises</button>
+                                    <button class="accessibility-underline-links" aria-label="Subrayar enlaces">Subrayar enlaces</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menú móvil -->
+                        <button class="header__mobile-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                            <span class="header__mobile-toggle-line"></span>
+                            <span class="header__mobile-toggle-line"></span>
+                            <span class="header__mobile-toggle-line"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menú móvil desplegable -->
+            <nav class="header__mobile-nav" aria-label="Navegación móvil" aria-hidden="true">
+                <div class="container">
+                    <ul class="header__mobile-nav-list">
+                        <li><a href="#" class="header__mobile-nav-link" aria-current="page">INICIO</a></li>
+                        <li class="header__mobile-nav-dropdown">
+                            <a href="#" class="header__mobile-nav-link header__mobile-dropdown-toggle">DOCENCIA</a>
+                            <ul class="header__mobile-dropdown-menu">
+                                <li><a href="oferta-grado.html" class="header__mobile-nav-sublink">Oferta de Grado</a></li>
+                                <li><a href="calendario-academico.html" class="header__mobile-nav-sublink">Calendario Académico</a></li>
+                                <li><a href="requisitos-matricula.html" class="header__mobile-nav-sublink">Requisitos de Matrícula</a></li>
+                                <li><a href="#" class="header__mobile-nav-sublink">Carreras</a></li>
+                                <li><a href="#" class="header__mobile-nav-sublink">Modalidades</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="header__mobile-nav-link">SERVICIOS</a></li>
+                        <li><a href="./autoridades.html" class="header__mobile-nav-link">CONTACTO</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
     <!-- Hero Section -->
     <section class="hero hero--investigacion">
         <div class="hero__background">
@@ -54,7 +173,11 @@
     <!-- About Section -->
     <section class="about">
         <div class="about__container">
-            <div class="breadcrumb">Inicio / Investigación</div>
+            <div class="breadcrumb" style="font-size:1.1em;display:flex;align-items:center;gap:8px;">
+                <a href="index.html" style="color:#b63a36;font-weight:600;text-decoration:none;transition:color 0.2s;">Inicio</a>
+                <span style="color:#888;font-size:1.2em;">/</span>
+                <span style="color:#222;font-weight:500;">Investigación</span>
+            </div>
             <h1 class="about__title">Quiénes somos</h1>
             <p class="about__description">
                 La Universidad Nacional de Loja se compromete a estimular, guiar y perfeccionar los procesos de investigación e innovación 
@@ -169,12 +292,18 @@
                 </div>
                 <div class="category-card animate-on-scroll">
                     <h3 class="category-card__title">Guías de Investigación</h3>
-                    <p class="category-card__description">
+                    <p class="category-card__description" id="guides-desc" style="cursor:pointer;">
                         Guías de investigación para Integración Curricular y Titulación.
                     </p>
-                    <a href="#" class="category-card__button">
-                        Conoce las Guías <i class="fas fa-arrow-right"></i>
+                    <a id="guides-show-btn" class="category-card__button" style="cursor:pointer;" tabindex="0">
+                        Conoce más Guías <i class="fas fa-arrow-right"></i>
                     </a>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            var btn = document.getElementById('guides-show-btn');
+                            btn.onclick = function() { window.location.href = 'guias-investigacion.html'; };
+                        });
+                    </script>
                 </div>
                 <div class="category-card animate-on-scroll">
                     <h3 class="category-card__title">CEISH</h3>
