@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GETES - Salud Pública UNL | Universidad Nacional de Loja</title>
+    <meta name="description" content="Grupo de investigación GETES - Salud Pública de la Universidad Nacional de Loja. Investigación en salud pública y epidemiología usando datos temporo-espaciales.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/icons/logo unl-NC-01-Background.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/investigacion.css">
+    <link rel="stylesheet" href="css/grupo-investigacion.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="index.html">
+                        <img src="assets/icons/logo unl-NC-01-Background.png" alt="Universidad Nacional de Loja" class="header__logo-img">
+                    </a>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+                        <li class="nav__item"><a href="informacion.html" class="nav__link">Información</a></li>
+                        <li class="nav__item"><a href="docencia.html" class="nav__link">Docencia</a></li>
+                        <li class="nav__item"><a href="investigacion.html" class="nav__link nav__link--active">Investigación</a></li>
+                        <li class="nav__item"><a href="vinculacion.html" class="nav__link">Vinculación</a></li>
+                        <li class="nav__item"><a href="gestion-institucional.html" class="nav__link">Gestión</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="header__menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero hero--group">
+        <div class="hero__background">
+            <img src="assets/img/imgInvestigacion/GETES.jpg" alt="GETES - Salud Pública UNL" class="hero__bg-image">
+            <div class="hero__overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero__content">
+                <nav class="breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <a href="investigacion.html">Investigación</a>
+                    <span>/</span>
+                    <span>GETES</span>
+                </nav>
+                <h1 class="hero__title">GETES - Salud Pública UNL</h1>
+                <p class="hero__subtitle">Investigación en salud pública y epidemiología usando datos temporo-espaciales para mejorar el bienestar y la educación en la zona 7 del Ecuador</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Navigation Tabs -->
+            <div class="group-tabs">
+                <button class="group-tab group-tab--active" data-tab="conocenos">Conócenos</button>
+                <button class="group-tab" data-tab="equipo">Equipo de investigadores</button>
+                <button class="group-tab" data-tab="proyectos">Proyectos de investigación</button>
+                <button class="group-tab" data-tab="produccion">Producción científica</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="group-content">
+                <!-- Conócenos Tab -->
+                <div class="tab-panel tab-panel--active" id="conocenos">
+                    <div class="group-intro">
+                        <h2>Acerca de GETES</h2>
+                        <p>El Grupo de Investigación GETES - Salud Pública UNL se especializa en el análisis epidemiológico y de salud pública utilizando datos temporo-espaciales para generar conocimiento que contribuya al mejoramiento del bienestar y la educación en la zona 7 del Ecuador.</p>
+                        
+                        <div class="group-details">
+                            <div class="detail-card">
+                                <h3>Misión</h3>
+                                <p>Desarrollar investigación científica de alta calidad en salud pública, utilizando metodologías temporo-espaciales para analizar problemas epidemiológicos y contribuir al diseño de políticas públicas que mejoren la salud de la población.</p>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h3>Visión</h3>
+                                <p>Ser un grupo de investigación líder en salud pública a nivel regional, reconocido por sus aportes científicos en el análisis temporo-espacial de fenómenos epidemiológicos y su contribución al bienestar social.</p>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h3>Líneas de Investigación</h3>
+                                <ul>
+                                    <li>Epidemiología espacial y temporal</li>
+                                    <li>Análisis de determinantes sociales de la salud</li>
+                                    <li>Sistemas de información geográfica en salud pública</li>
+                                    <li>Educación para la salud comunitaria</li>
+                                    <li>Vigilancia epidemiológica territorial</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equipo Tab -->
+                <div class="tab-panel" id="equipo">
+                    <h2>Nuestro Equipo</h2>
+                    <div class="researchers-grid">
+                        <div class="researcher-card">
+                            <div class="researcher-image">
+                                <img src="assets/img/placeholder-researcher.svg" alt="Director GETES">
+                            </div>
+                            <div class="researcher-info">
+                                <h3>Dr. [Nombre Director]</h3>
+                                <p class="researcher-role">Director del Grupo</p>
+                                <p class="researcher-speciality">Especialidad en Epidemiología y Salud Pública</p>
+                                <div class="researcher-contact">
+                                    <p>📧 director.getes@unl.edu.ec</p>
+                                    <p>💼 LinkedIn: /in/director-getes</p>
+                                    <p>🔬 ResearchGate: /profile/Director-GETES</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="researcher-card">
+                            <div class="researcher-image">
+                                <img src="assets/img/placeholder-researcher.svg" alt="Investigador GETES">
+                            </div>
+                            <div class="researcher-info">
+                                <h3>Dra. [Nombre Investigadora]</h3>
+                                <p class="researcher-role">Investigadora Principal</p>
+                                <p class="researcher-speciality">Especialidad en Geografía de la Salud</p>
+                                <div class="researcher-contact">
+                                    <p>📧 investigadora.getes@unl.edu.ec</p>
+                                    <p>💼 LinkedIn: /in/investigadora-getes</p>
+                                    <p>🔬 ResearchGate: /profile/Investigadora-GETES</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="researcher-card">
+                            <div class="researcher-image">
+                                <img src="assets/img/placeholder-researcher.svg" alt="Investigador GETES">
+                            </div>
+                            <div class="researcher-info">
+                                <h3>Mg. [Nombre Investigador]</h3>
+                                <p class="researcher-role">Investigador</p>
+                                <p class="researcher-speciality">Especialidad en Sistemas de Información Geográfica</p>
+                                <div class="researcher-contact">
+                                    <p>📧 investigador.getes@unl.edu.ec</p>
+                                    <p>💼 LinkedIn: /in/investigador-getes</p>
+                                    <p>🔬 ResearchGate: /profile/Investigador-GETES</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyectos Tab -->
+                <div class="tab-panel" id="proyectos">
+                    <h2>Proyectos de Investigación</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>Análisis Espacio-Temporal de Enfermedades Transmisibles en la Zona 7</h3>
+                            <p class="project-status">En ejecución</p>
+                            <p class="project-description">
+                                Investigación sobre la distribución espacio-temporal de enfermedades transmisibles en la región sur del Ecuador, utilizando sistemas de información geográfica para identificar patrones epidemiológicos.
+                            </p>
+                            <div class="project-details">
+                                <span class="project-duration">Duración: 2023-2025</span>
+                                <span class="project-funding">Financiamiento: UNL</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Determinantes Sociales de la Salud en Comunidades Rurales</h3>
+                            <p class="project-status">En planificación</p>
+                            <p class="project-description">
+                                Estudio sobre los factores sociales, económicos y ambientales que influyen en la salud de las comunidades rurales de Loja, El Oro y Zamora Chinchipe.
+                            </p>
+                            <div class="project-details">
+                                <span class="project-duration">Duración: 2024-2026</span>
+                                <span class="project-funding">Financiamiento: SENESCYT</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Sistema de Vigilancia Epidemiológica Territorial</h3>
+                            <p class="project-status">Finalizado</p>
+                            <p class="project-description">
+                                Desarrollo de un sistema de vigilancia epidemiológica basado en análisis territorial para el monitoreo de indicadores de salud pública en tiempo real.
+                            </p>
+                            <div class="project-details">
+                                <span class="project-duration">Duración: 2021-2023</span>
+                                <span class="project-funding">Financiamiento: MSP-UNL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producción Científica Tab -->
+                <div class="tab-panel" id="produccion">
+                    <h2>Producción Científica</h2>
+                    
+                    <div class="publications-section">
+                        <h3>Artículos Científicos Recientes</h3>
+                        <div class="publications-list">
+                            <div class="publication-item">
+                                <h4>Análisis espacio-temporal de la malaria en la zona fronteriza Ecuador-Perú</h4>
+                                <p class="publication-authors">[Autores], et al.</p>
+                                <p class="publication-journal">Revista de Salud Pública, 2024</p>
+                                <span class="publication-type">Artículo de revista</span>
+                            </div>
+
+                            <div class="publication-item">
+                                <h4>Determinantes geográficos de la desnutrición infantil en comunidades rurales del sur de Ecuador</h4>
+                                <p class="publication-authors">[Autores], et al.</p>
+                                <p class="publication-journal">International Journal of Environmental Health Research, 2023</p>
+                                <span class="publication-type">Artículo de revista</span>
+                            </div>
+
+                            <div class="publication-item">
+                                <h4>Sistemas de información geográfica aplicados a la vigilancia epidemiológica</h4>
+                                <p class="publication-authors">[Autores], et al.</p>
+                                <p class="publication-journal">Congreso Internacional de Salud Pública, 2023</p>
+                                <span class="publication-type">Ponencia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="achievements-section">
+                        <h3>Logros y Reconocimientos</h3>
+                        <ul class="achievements-list">
+                            <li>Premio a la Mejor Investigación en Salud Pública - UNL 2023</li>
+                            <li>Colaboración internacional con universidades de Colombia y Perú</li>
+                            <li>Convenio de cooperación con el Ministerio de Salud Pública del Ecuador</li>
+                            <li>Participación en redes internacionales de investigación en salud</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>Universidad Nacional de Loja</h3>
+                    <p>Comprometidos con la excelencia académica y la investigación científica.</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="investigacion.html">Investigación</a></li>
+                        <li><a href="docencia.html">Docencia</a></li>
+                        <li><a href="vinculacion.html">Vinculación</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Contacto</h4>
+                    <p>📍 Ciudad Universitaria Guillermo Falconí<br>
+                    Loja, Ecuador<br>
+                    📞 +593 7 257-0275<br>
+                    ✉️ info@unl.edu.ec</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Universidad Nacional de Loja. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.group-tab');
+            const panels = document.querySelectorAll('.tab-panel');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetTab = tab.dataset.tab;
+
+                    // Remove active class from all tabs and panels
+                    tabs.forEach(t => t.classList.remove('group-tab--active'));
+                    panels.forEach(p => p.classList.remove('tab-panel--active'));
+
+                    // Add active class to clicked tab and corresponding panel
+                    tab.classList.add('group-tab--active');
+                    document.getElementById(targetTab).classList.add('tab-panel--active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
