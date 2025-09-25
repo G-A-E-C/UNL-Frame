@@ -4,49 +4,90 @@ body {
     padding: 0;
     background-color: #f0f0f0;
   }
-  .hero {
-    background-color: #ff9999; /* Fondo rojo suave para toda la sección */
-    padding: 40px 0;
-    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+
+  /* Hero Section - Investigación */
+  .hero--investigacion {
+    position: relative;
+    height: 80vh;
+    min-height: 600px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 5;
   }
+
+  .hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero__bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero__overlay--gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+      rgba(182, 58, 54, 0.9) 0%, 
+      rgba(182, 58, 54, 0.8) 20%, 
+      rgba(182, 58, 54, 0.7) 40%, 
+      rgba(182, 58, 54, 0.6) 60%, 
+      rgba(182, 58, 54, 0.5) 75%, 
+      rgba(182, 58, 54, 0.3) 90%, 
+      rgba(182, 58, 54, 0.2) 100%);
+    z-index: 2;
+  }
+
   .hero__container {
+    position: relative;
+    z-index: 3;
+    text-align: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
-  .hero__hexagons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Espacio entre hexágonos */
+
+  .hero__content {
+    color: white;
   }
-  .hexagon {
-    display: inline-flex;
+
+  .hero__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2.5px;
+    text-transform: none !important;
   }
-  .hexagon__inner {
-    background-color: #ff8080; /* Fondo rojo claro para los hexágonos */
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); /* Forma hexagonal */
-    width: 200px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero--investigacion {
+      height: 70vh;
+      min-height: 450px;
+    }
+    
+    .hero__title {
+      font-size: 2.5rem;
+    }
   }
-  .hexagon__inner:hover {
-    transform: scale(1.1); /* Escala al pasar el ratón */
-    background-color: #ff6666; /* Rojo ligeramente más oscuro para el hover */
-  }
-  .hexagon__image {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-    opacity: 0;
-    transform: scale(0.8);
-    animation: fadeInScale 1s ease-out forwards; /* Animación de entrada */
+
+  @media (max-width: 480px) {
+    .hero__title {
+      font-size: 2rem;
+    }
   }
   @keyframes fadeInScale {
     to {
@@ -69,6 +110,7 @@ body {
 :root {
   --color-rojo: #b63a36;
   --color-rojo-dark: #a01018;
+  --color-primary: #b63a36;
   --color-gris-100: #f8f9fa;
   --color-gris-200: #e9ecef;
   --color-gris-300: #dee2e6;
@@ -116,8 +158,20 @@ body {
 .hexagon:nth-child(1){animation-delay:.1s}.hexagon:nth-child(2){animation-delay:.2s}.hexagon:nth-child(3){animation-delay:.3s}.hexagon:nth-child(4){animation-delay:.4s}.hexagon:nth-child(5){animation-delay:.5s}
 
 /* About */
-.about { padding: 80px 0; background: var(--color-white); }
-.about__container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.about { 
+  padding: 100px 0 80px 0; 
+  background: var(--color-white); 
+  position: relative; 
+  z-index: 10; 
+  margin-top: 20px; 
+}
+.about__container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+  position: relative; 
+  z-index: 11; 
+}
 .breadcrumb { font-size: 14px; color: var(--color-gris-700); margin-bottom: 30px; opacity: 0; animation: fadeInUp .6s ease .2s forwards; }
 .about__title { font-size: 48px; font-weight: 700; color: var(--color-gris-900); margin-bottom: 30px; opacity: 0; animation: fadeInUp .8s ease .4s forwards; }
 .about__description { font-size: 18px; line-height: 1.7; color: var(--color-gris-700); max-width: 800px; opacity: 0; animation: fadeInUp .8s ease .6s forwards; }
@@ -166,6 +220,18 @@ body {
 .footer__container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 2fr 1fr; gap: 60px; align-items: center; }
 .footer__info { font-size: 14px; line-height: 1.6; }
 .footer__logo { width: 120px; height: auto; filter: brightness(0) invert(1); }
+
+/* Footer Red */
+.footer-red__content {
+  color: white;
+}
+
+.footer-red__content p {
+  color: white !important;
+  font-size: 12px !important;
+  margin: 0;
+  opacity: 0.9;
+}
 
 /* Animations */
 @keyframes hexagonFadeIn { to { opacity: 1; transform: scale(1) translateY(0); } }
@@ -253,11 +319,13 @@ body {
   opacity: 0;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
   z-index: 1;
+  visibility: hidden;
 }
 
 .hero__slide--groups.hero__slide--active {
   opacity: 1;
   z-index: 2;
+  visibility: visible;
 }
 
 .hero__slide--groups .hero__background {

@@ -39,7 +39,7 @@
 
   // Imágenes de demo
   const IMG1 = './assets/imgVinculacion/c1.png';
-  const IMG  = './assets/imgVinculacion/2seccion.png';
+  const IMG = './assets/imgVinculacion/2seccion.png';
 
   // 4 ítems por pestaña (texto + imagen)
   const DATA = {
@@ -50,21 +50,15 @@
         style:
           'background-size:70% auto; background-repeat:no-repeat; background-position:center; background-color:#fff'
       },
-      { title: 'Visitas Culturales',  img: IMG },
-      { title: 'Foros Académicos',    img: IMG },
-      { title: 'Ferias Científicas',  img: IMG }
-    ],
-    educacion: [
-      { title: 'Cursos de Actualización', img: IMG },
-      { title: 'Diplomados',              img: IMG },
-      { title: 'Seminarios',              img: IMG },
-      { title: 'Talleres',                img: IMG }
+      { title: 'Visitas Culturales', img: IMG },
+      { title: 'Foros Académicos', img: IMG },
+      { title: 'Ferias Científicas', img: IMG }
     ],
     practicas: [
-      { title: 'Prácticas en Comunidad',     img: IMG },
+      { title: 'Prácticas en Comunidad', img: IMG },
       { title: 'Vinculación Sector Público', img: IMG },
-      { title: 'Convenios con Empresas',     img: IMG },
-      { title: 'Proyectos Sociales',         img: IMG }
+      { title: 'Convenios con Empresas', img: IMG },
+      { title: 'Proyectos Sociales', img: IMG }
     ]
   };
 
@@ -157,11 +151,11 @@
 
   // Facultades (coords de ejemplo; ajusta con tus puntos exactos)
   const FACULTADES = [
-    { name: 'Facultad de la Salud Humana', desc: 'Medicina, Enfermería, etc.',                     lat: -3.9919, lng: -79.2057 },
-    { name: 'Fac. Agropecuaria y de Recursos Naturales Renovables', desc: 'Desarrollo rural.',    lat: -3.9965, lng: -79.1990 },
-    { name: 'Fac. Energía, Industrias y Recursos No Renovables', desc: 'Ingenierías y energía.',  lat: -3.9978, lng: -79.2075 },
+    { name: 'Facultad de la Salud Humana', desc: 'Medicina, Enfermería, etc.', lat: -3.9919, lng: -79.2057 },
+    { name: 'Fac. Agropecuaria y de Recursos Naturales Renovables', desc: 'Desarrollo rural.', lat: -3.9965, lng: -79.1990 },
+    { name: 'Fac. Energía, Industrias y Recursos No Renovables', desc: 'Ingenierías y energía.', lat: -3.9978, lng: -79.2075 },
     { name: 'Fac. Jurídica, Social y Administrativa', desc: 'Derecho, administración, sociales.', lat: -3.9942, lng: -79.2021 },
-    { name: 'Fac. Educación, Arte y Comunicación', desc: 'Docencia, arte y comunicación.',        lat: -3.9905, lng: -79.1999 }
+    { name: 'Fac. Educación, Arte y Comunicación', desc: 'Docencia, arte y comunicación.', lat: -3.9905, lng: -79.1999 }
   ];
 
   // Pintar pines
@@ -181,7 +175,7 @@
    Toggle mostrar/ocultar overlay del mapa (flechita)
    ========================================================= */
 (function () {
-  const wrap   = document.querySelector('.map-wrap');
+  const wrap = document.querySelector('.map-wrap');
   const toggle = document.getElementById('mapToggle');
   if (!wrap || !toggle) return;
 
@@ -232,8 +226,8 @@
 /* =========================
    SECCIÓN 8 — CONVENIOS
    ========================= */
-(function(){
-  const track  = document.getElementById('ccTrack');
+(function () {
+  const track = document.getElementById('ccTrack');
   if (!track) return;
 
   // Datos por logo (edítalos a tu gusto)
@@ -258,8 +252,8 @@
         ['Estado', 'Activo']
       ]
     },
-    titanus: {
-      title: 'Titanus',
+    miess: {
+      title: 'Ministerio de Inclusión Económica y Social',
       rows: [
         ['Tipo', 'Vinculación Empresa'],
         ['Vigencia', '2024 – 2026'],
@@ -268,7 +262,27 @@
         ['Estado', 'Activo']
       ]
     },
-    active: {
+    ministerio_salud: {
+      title: 'Ministerio de Salud Pública',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+    ministerio_turismo: {
+      title: 'Ministerio de Turismo',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+    instituto_fomento: {
       title: 'Active',
       rows: [
         ['Tipo', 'Convenio Interinstitucional'],
@@ -277,35 +291,247 @@
         ['Actividades', 'Campañas y servicios comunitarios'],
         ['Estado', 'Activo']
       ]
-    }
+    },
+    alcaldia_yantzaza: {
+      title: 'Alcaldía de Yantzaza',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+    cideecuador: {
+      title: 'Cide Ecuador',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+    ecuacorriente: {
+      title: 'Ecuacorriente',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+    iess: {
+      title: 'Iess',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+    fundacion_carolina: {
+      title: 'Fundación Carolina',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+    academia_awe: {
+      title: 'Academy for Women Entrepreneurs Ecuador',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+    lundin_gold: {
+      title: 'Lundin Gold',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+
+    emovies: {
+      title: 'Espacio de Movilidad Virtual en la Educación Superior',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+    naturaleza_cultura: {
+      title: 'Naturaleza y Cultura Internacional',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+    gad_zamora: {
+      title: 'Gad Provincial de Zamora Chinchipe',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+    universidad_talca: {
+      title: 'Universidad de Talca Chile',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+    universidad_azuay: {
+      title: 'universidad del Azuay',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+    universidad_artes: {
+      title: 'Universidad de las Artes',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+     universidad_santiago: {
+      title: 'Universidad de Santiago de Chile',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+     universidad_rioja: {
+      title: 'Universidad de La Rioja',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+     secretaria_riesgos: {
+      title: 'Secretaria de Gestión de Riesgos',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+     universidad_malaga: {
+      title: 'Universidad de Málaga',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+     universidad_paulo: {
+      title: 'Universidad de São Paulo - Brasil',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+     universida_bahama: {
+      title: 'Universidad Tecnologica de la bahama',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+    universidad_valparaiso: {
+      title: ' Pontificia Universidad Católica de Valparaíso',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+     universidad_palacki: {
+      title: 'Palacký University Olomouc',
+      rows: [
+        ['Tipo', 'Convenio Interinstitucional'],
+        ['Vigencia', '2024 – 2027'],
+        ['Foco', 'Salud y deportes'],
+        ['Actividades', 'Campañas y servicios comunitarios'],
+        ['Estado', 'Activo']
+      ]
+    },
+
   };
 
   const slides = [...track.querySelectorAll('.cc-slide')];
-  const title  = document.getElementById('cvTitle');
+  const title = document.getElementById('cvTitle');
   const rowsEl = document.getElementById('cvRows');
-  const prev   = track.parentElement.querySelector('.cc-arrow.prev');
-  const next   = track.parentElement.querySelector('.cc-arrow.next');
+  const prev = track.parentElement.querySelector('.cc-arrow.prev');
+  const next = track.parentElement.querySelector('.cc-arrow.next');
 
-  function renderDetail(key){
-    const d = DATA[key] || {title:'', rows:[]};
+  function renderDetail(key) {
+    const d = DATA[key] || { title: '', rows: [] };
     title.textContent = d.title || '';
-    rowsEl.innerHTML = d.rows.map(([k,v]) =>
+    rowsEl.innerHTML = d.rows.map(([k, v]) =>
       `<div class="k">${k}</div><div class="v">${v}</div>`).join('');
     slides.forEach(li => li.classList.toggle('is-active', li.dataset.key === key));
   }
 
   // Centrar/ir a un slide
-  function goToSlide(li){
-    const offset = li.offsetLeft - (track.clientWidth/2 - li.clientWidth/2);
+  function goToSlide(li) {
+    const offset = li.offsetLeft - (track.clientWidth / 2 - li.clientWidth / 2);
     track.scrollTo({ left: offset, behavior: 'smooth' });
     renderDetail(li.dataset.key);
   }
 
   // Observa el slide más visible para actualizar el panel al “scrollear”
-  const io = new IntersectionObserver((entries)=>{
+  const io = new IntersectionObserver((entries) => {
     const visible = entries
       .filter(e => e.isIntersecting)
-      .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
     if (visible) renderDetail(visible.target.dataset.key);
   }, { root: track, threshold: 0.6 });
 
@@ -315,13 +541,13 @@
     li.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goToSlide(li); }
     });
-    li.setAttribute('tabindex','0');
+    li.setAttribute('tabindex', '0');
   });
 
   // Flechas
   const step = () => Math.max(slides[0]?.clientWidth || 240, track.clientWidth * 0.6);
   prev?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
-  next?.addEventListener('click', () => track.scrollBy({ left:  step(), behavior: 'smooth' }));
+  next?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
 
   // Rueda del mouse → scroll horizontal
   track.addEventListener('wheel', (e) => {
