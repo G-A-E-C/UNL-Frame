@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GITED - Tecnología Educativa UNL | Universidad Nacional de Loja</title>
+    <meta name="description" content="Grupo de investigación GITED - Tecnología Educativa de la Universidad Nacional de Loja. Investigación en tecnología educativa para desarrollar soluciones innovadoras.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/icons/logo unl-NC-01-Background.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/investigacion.css">
+    <link rel="stylesheet" href="css/grupo-investigacion.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="index.html">
+                        <img src="assets/icons/logo unl-NC-01-Background.png" alt="Universidad Nacional de Loja" class="header__logo-img">
+                    </a>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+                        <li class="nav__item"><a href="informacion.html" class="nav__link">Información</a></li>
+                        <li class="nav__item"><a href="docencia.html" class="nav__link">Docencia</a></li>
+                        <li class="nav__item"><a href="investigacion.html" class="nav__link nav__link--active">Investigación</a></li>
+                        <li class="nav__item"><a href="vinculacion.html" class="nav__link">Vinculación</a></li>
+                        <li class="nav__item"><a href="gestion-institucional.html" class="nav__link">Gestión</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="header__menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero hero--group">
+        <div class="hero__background">
+            <img src="assets/img/imgInvestigacion/GITED.jpg" alt="GITED - Tecnología Educativa UNL" class="hero__bg-image">
+            <div class="hero__overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero__content">
+                <nav class="breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <a href="investigacion.html">Investigación</a>
+                    <span>/</span>
+                    <span>GITED</span>
+                </nav>
+                <h1 class="hero__title">GITED - Tecnología Educativa UNL</h1>
+                <p class="hero__subtitle">Investigación en tecnología educativa para desarrollar soluciones innovadoras que mejoren la enseñanza y el aprendizaje en la región</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Navigation Tabs -->
+            <div class="group-tabs">
+                <button class="group-tab group-tab--active" data-tab="conocenos">Conócenos</button>
+                <button class="group-tab" data-tab="equipo">Equipo de investigadores</button>
+                <button class="group-tab" data-tab="proyectos">Proyectos de investigación</button>
+                <button class="group-tab" data-tab="produccion">Producción científica</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="group-content">
+                <!-- Conócenos Tab -->
+                <div class="tab-panel tab-panel--active" id="conocenos">
+                    <div class="group-intro">
+                        <h2>Acerca de GITED</h2>
+                        <p>El Grupo de Investigación GITED - Tecnología Educativa UNL se dedica al desarrollo y aplicación de tecnologías innovadoras en el ámbito educativo, buscando transformar los procesos de enseñanza-aprendizaje mediante soluciones digitales adaptadas a los contextos locales y regionales.</p>
+                        
+                        <div class="group-details">
+                            <div class="detail-card">
+                                <h3>Misión</h3>
+                                <p>Generar conocimiento científico y desarrollar tecnologías educativas innovadoras que contribuyan al mejoramiento de la calidad educativa en todos los niveles, promoviendo la inclusión digital y la transformación pedagógica.</p>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h3>Visión</h3>
+                                <p>Ser un grupo de investigación reconocido nacional e internacionalmente por liderar la innovación en tecnología educativa y contribuir significativamente a la transformación digital de la educación.</p>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h3>Líneas de Investigación</h3>
+                                <ul>
+                                    <li>Desarrollo de recursos educativos digitales</li>
+                                    <li>Plataformas de aprendizaje adaptativo</li>
+                                    <li>Realidad virtual y aumentada en educación</li>
+                                    <li>Inteligencia artificial aplicada al aprendizaje</li>
+                                    <li>Evaluación educativa mediante tecnología</li>
+                                    <li>Inclusión digital en contextos rurales</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equipo Tab -->
+                <div class="tab-panel" id="equipo">
+                    <h2>Nuestro Equipo</h2>
+                    <div class="researchers-grid">
+                        <div class="researcher-card">
+                            <div class="researcher-image">
+                                <img src="assets/img/placeholder-researcher.svg" alt="Director GITED">
+                            </div>
+                            <div class="researcher-info">
+                                <h3>Dr. [Nombre Director]</h3>
+                                <p class="researcher-role">Director del Grupo</p>
+                                <p class="researcher-speciality">Especialidad en Tecnología Educativa e Innovación Digital</p>
+                                <div class="researcher-contact">
+                                    <p>📧 director.gited@unl.edu.ec</p>
+                                    <p>💼 LinkedIn: /in/director-gited</p>
+                                    <p>🔬 ResearchGate: /profile/Director-GITED</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="researcher-card">
+                            <div class="researcher-image">
+                                <img src="assets/img/placeholder-researcher.svg" alt="Investigadora GITED">
+                            </div>
+                            <div class="researcher-info">
+                                <h3>Dra. [Nombre Investigadora]</h3>
+                                <p class="researcher-role">Investigadora Principal</p>
+                                <p class="researcher-speciality">Especialidad en Pedagogía Digital y E-learning</p>
+                                <div class="researcher-contact">
+                                    <p>📧 investigadora.gited@unl.edu.ec</p>
+                                    <p>💼 LinkedIn: /in/investigadora-gited</p>
+                                    <p>🔬 ResearchGate: /profile/Investigadora-GITED</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="researcher-card">
+                            <div class="researcher-image">
+                                <img src="assets/img/placeholder-researcher.svg" alt="Investigador GITED">
+                            </div>
+                            <div class="researcher-info">
+                                <h3>Mg. [Nombre Investigador]</h3>
+                                <p class="researcher-role">Investigador</p>
+                                <p class="researcher-speciality">Especialidad en Desarrollo de Software Educativo</p>
+                                <div class="researcher-contact">
+                                    <p>📧 investigador.gited@unl.edu.ec</p>
+                                    <p>💼 LinkedIn: /in/investigador-gited</p>
+                                    <p>🔬 ResearchGate: /profile/Investigador-GITED</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="researcher-card">
+                            <div class="researcher-image">
+                                <img src="assets/img/placeholder-researcher.svg" alt="Investigador GITED">
+                            </div>
+                            <div class="researcher-info">
+                                <h3>Mg. [Nombre Investigador]</h3>
+                                <p class="researcher-role">Investigador</p>
+                                <p class="researcher-speciality">Especialidad en Realidad Virtual y Aumentada</p>
+                                <div class="researcher-contact">
+                                    <p>📧 investigador2.gited@unl.edu.ec</p>
+                                    <p>💼 LinkedIn: /in/investigador2-gited</p>
+                                    <p>🔬 ResearchGate: /profile/Investigador2-GITED</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyectos Tab -->
+                <div class="tab-panel" id="proyectos">
+                    <h2>Proyectos de Investigación</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>Plataforma Adaptativa de Aprendizaje para Educación Superior</h3>
+                            <p class="project-status">En ejecución</p>
+                            <p class="project-description">
+                                Desarrollo de una plataforma de aprendizaje que utiliza inteligencia artificial para adaptar el contenido y metodología según las necesidades individuales de cada estudiante.
+                            </p>
+                            <div class="project-details">
+                                <span class="project-duration">Duración: 2023-2025</span>
+                                <span class="project-funding">Financiamiento: SENESCYT</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Realidad Virtual para la Enseñanza de Ciencias Naturales</h3>
+                            <p class="project-status">En ejecución</p>
+                            <p class="project-description">
+                                Creación de entornos virtuales inmersivos para la enseñanza de biología, química y física en instituciones educativas de la región sur del Ecuador.
+                            </p>
+                            <div class="project-details">
+                                <span class="project-duration">Duración: 2023-2024</span>
+                                <span class="project-funding">Financiamiento: UNL-MinEduc</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Inclusión Digital en Comunidades Rurales</h3>
+                            <p class="project-status">En planificación</p>
+                            <p class="project-description">
+                                Programa integral para cerrar la brecha digital en comunidades rurales mediante el desarrollo de recursos educativos digitales adaptados a sus contextos culturales.
+                            </p>
+                            <div class="project-details">
+                                <span class="project-duration">Duración: 2024-2026</span>
+                                <span class="project-funding">Financiamiento: Cooperación Internacional</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Sistema de Evaluación Automática con IA</h3>
+                            <p class="project-status">Finalizado</p>
+                            <p class="project-description">
+                                Desarrollo de un sistema de evaluación educativa que utiliza procesamiento de lenguaje natural para calificar automáticamente respuestas abiertas.
+                            </p>
+                            <div class="project-details">
+                                <span class="project-duration">Duración: 2021-2023</span>
+                                <span class="project-funding">Financiamiento: UNL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producción Científica Tab -->
+                <div class="tab-panel" id="produccion">
+                    <h2>Producción Científica</h2>
+                    
+                    <div class="publications-section">
+                        <h3>Artículos Científicos Recientes</h3>
+                        <div class="publications-list">
+                            <div class="publication-item">
+                                <h4>Adaptive Learning Platforms: A Systematic Review of AI Implementation in Higher Education</h4>
+                                <p class="publication-authors">[Autores], et al.</p>
+                                <p class="publication-journal">Computers & Education, 2024</p>
+                                <span class="publication-type">Artículo de revista</span>
+                            </div>
+
+                            <div class="publication-item">
+                                <h4>Virtual Reality in Science Education: Impact on Learning Outcomes in Rural Schools</h4>
+                                <p class="publication-authors">[Autores], et al.</p>
+                                <p class="publication-journal">Educational Technology Research and Development, 2023</p>
+                                <span class="publication-type">Artículo de revista</span>
+                            </div>
+
+                            <div class="publication-item">
+                                <h4>Bridging the Digital Divide: Educational Technology Solutions for Rural Communities</h4>
+                                <p class="publication-authors">[Autores], et al.</p>
+                                <p class="publication-journal">International Conference on Educational Technology, 2023</p>
+                                <span class="publication-type">Ponencia</span>
+                            </div>
+
+                            <div class="publication-item">
+                                <h4>Automated Assessment Systems Using Natural Language Processing in Spanish</h4>
+                                <p class="publication-authors">[Autores], et al.</p>
+                                <p class="publication-journal">Journal of Educational Computing Research, 2023</p>
+                                <span class="publication-type">Artículo de revista</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="achievements-section">
+                        <h3>Logros y Reconocimientos</h3>
+                        <ul class="achievements-list">
+                            <li>Premio Nacional de Innovación Educativa - Ecuador 2024</li>
+                            <li>Colaboración con Microsoft Education para proyectos de IA</li>
+                            <li>Certificación como Centro de Excelencia en Tecnología Educativa</li>
+                            <li>Red de investigación con universidades de América Latina</li>
+                            <li>Registro de 3 patentes de software educativo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>Universidad Nacional de Loja</h3>
+                    <p>Comprometidos con la excelencia académica y la investigación científica.</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="investigacion.html">Investigación</a></li>
+                        <li><a href="docencia.html">Docencia</a></li>
+                        <li><a href="vinculacion.html">Vinculación</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Contacto</h4>
+                    <p>📍 Ciudad Universitaria Guillermo Falconí<br>
+                    Loja, Ecuador<br>
+                    📞 +593 7 257-0275<br>
+                    ✉️ info@unl.edu.ec</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Universidad Nacional de Loja. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.group-tab');
+            const panels = document.querySelectorAll('.tab-panel');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetTab = tab.dataset.tab;
+
+                    // Remove active class from all tabs and panels
+                    tabs.forEach(t => t.classList.remove('group-tab--active'));
+                    panels.forEach(p => p.classList.remove('tab-panel--active'));
+
+                    // Add active class to clicked tab and corresponding panel
+                    tab.classList.add('group-tab--active');
+                    document.getElementById(targetTab).classList.add('tab-panel--active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

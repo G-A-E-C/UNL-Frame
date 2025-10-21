@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GICIR - Ciencia Regional UNL | Universidad Nacional de Loja</title>
+    <meta name="description" content="Grupo de investigación GICIR - Ciencia Regional de la Universidad Nacional de Loja. Investigación en desarrollo territorial y ciencia regional para reducir desigualdades.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/icons/logo unl-NC-01-Background.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/investigacion.css">
+    <link rel="stylesheet" href="css/grupo-investigacion.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="index.html">
+                        <img src="assets/icons/logo unl-NC-01-Background.png" alt="Universidad Nacional de Loja" class="header__logo-img">
+                    </a>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+                        <li class="nav__item"><a href="informacion.html" class="nav__link">Información</a></li>
+                        <li class="nav__item"><a href="docencia.html" class="nav__link">Docencia</a></li>
+                        <li class="nav__item"><a href="investigacion.html" class="nav__link nav__link--active">Investigación</a></li>
+                        <li class="nav__item"><a href="vinculacion.html" class="nav__link">Vinculación</a></li>
+                        <li class="nav__item"><a href="gestion-institucional.html" class="nav__link">Gestión</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="header__menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero hero--group">
+        <div class="hero__background">
+            <img src="assets/img/imgInvestigacion/GICIR.jpg" alt="GICIR - Ciencia Regional UNL" class="hero__bg-image">
+            <div class="hero__overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero__content">
+                <nav class="breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <a href="investigacion.html">Investigación</a>
+                    <span>/</span>
+                    <span>GICIR</span>
+                </nav>
+                <h1 class="hero__title">GICIR - Ciencia Regional UNL</h1>
+                <p class="hero__subtitle">Investigación en desarrollo territorial y ciencia regional para reducir desigualdades y promover planificación sostenible en la región</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Navigation Tabs -->
+            <div class="group-tabs">
+                <button class="group-tab group-tab--active" data-tab="conocenos">Conócenos</button>
+                <button class="group-tab" data-tab="equipo">Equipo de investigadores</button>
+                <button class="group-tab" data-tab="proyectos">Proyectos de investigación</button>
+                <button class="group-tab" data-tab="produccion">Producción científica</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="group-content">
+                <!-- Conócenos Tab -->
+                <div class="tab-panel tab-panel--active" id="conocenos">
+                    <div class="group-intro">
+                        <h2>Acerca de GICIR</h2>
+                        <p>El Grupo de Investigación GICIR - Ciencia Regional UNL se dedica al estudio de los procesos de desarrollo territorial, analizando las dinámicas socioeconómicas, políticas y espaciales que configuran las regiones, con el objetivo de contribuir a la reducción de desigualdades y promover una planificación territorial sostenible.</p>
+                        
+                        <div class="group-details">
+                            <div class="detail-card">
+                                <h3>Misión</h3>
+                                <p>Generar conocimiento científico en ciencia regional y desarrollo territorial que contribuya a la comprensión de las dinámicas espaciales, económicas y sociales, apoyando la formulación de políticas públicas orientadas al desarrollo sostenible y equitativo de los territorios.</p>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h3>Visión</h3>
+                                <p>Ser un grupo de investigación reconocido nacional e internacionalmente por sus aportes al conocimiento de la ciencia regional y el desarrollo territorial, liderando procesos de investigación que contribuyan a la transformación positiva de los territorios.</p>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h3>Líneas de Investigación</h3>
+                                <ul>
+                                    <li>Desarrollo económico territorial</li>
+                                    <li>Planificación urbana y regional</li>
+                                    <li>Geografía económica y análisis espacial</li>
+                                    <li>Políticas públicas territoriales</li>
+                                    <li>Innovación y sistemas territoriales</li>
+                                    <li>Gobernanza territorial y participación ciudadana</li>
+                                    <li>Análisis de desigualdades regionales</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equipo Tab -->
+                <div class="tab-panel" id="equipo">
+                    <h2>Nuestro Equipo</h2>
+                    <div class="researchers-grid">
+                        <div class="researcher-card">
+                            <div class="researcher-image">
+                                <img src="assets/img/placeholder-researcher.svg" alt="Director GICIR">
+                            </div>
+                            <div class="researcher-info">
+                                <h3>Dr. [Nombre Director]</h3>
+                                <p class="researcher-role">Director del Grupo</p>
+                                <p class="researcher-speciality">PhD en Geografía y Planificación Regional</p>
+                                <div class="researcher-contact">
+                                    <p>📧 director.gicir@unl.edu.ec</p>
+                                    <p>💼 LinkedIn: /in/director-gicir</p>
+                                    <p>🔬 ResearchGate: /profile/Director-GICIR</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="researcher-card">
+                            <div class="researcher-image">
+                                <img src="assets/img/placeholder-researcher.svg" alt="Investigadora GICIR">
+                            </div>
+                            <div class="researcher-info">
+                                <h3>Dra. [Nombre Investigadora]</h3>
+                                <p class="researcher-role">Investigadora Principal</p>
+                                <p class="researcher-speciality">Especialidad en Desarrollo Económico Territorial</p>
+                                <div class="researcher-contact">
+                                    <p>📧 investigadora.gicir@unl.edu.ec</p>
+                                    <p>💼 LinkedIn: /in/investigadora-gicir</p>
+                                    <p>🔬 ResearchGate: /profile/Investigadora-GICIR</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="researcher-card">
+                            <div class="researcher-image">
+                                <img src="assets/img/placeholder-researcher.svg" alt="Investigador GICIR">
+                            </div>
+                            <div class="researcher-info">
+                                <h3>Dr. [Nombre Investigador]</h3>
+                                <p class="researcher-role">Investigador Principal</p>
+                                <p class="researcher-speciality">Especialidad en Políticas Públicas Territoriales</p>
+                                <div class="researcher-contact">
+                                    <p>📧 investigador.gicir@unl.edu.ec</p>
+                                    <p>💼 LinkedIn: /in/investigador-gicir</p>
+                                    <p>🔬 ResearchGate: /profile/Investigador-GICIR</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="researcher-card">
+                            <div class="researcher-image">
+                                <img src="assets/img/placeholder-researcher.svg" alt="Investigadora GICIR">
+                            </div>
+                            <div class="researcher-info">
+                                <h3>Mg. [Nombre Investigadora]</h3>
+                                <p class="researcher-role">Investigadora</p>
+                                <p class="researcher-speciality">Especialidad en Planificación Urbana</p>
+                                <div class="researcher-contact">
+                                    <p>📧 investigadora2.gicir@unl.edu.ec</p>
+                                    <p>💼 LinkedIn: /in/investigadora2-gicir</p>
+                                    <p>🔬 ResearchGate: /profile/Investigadora2-GICIR</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="researcher-card">
+                            <div class="researcher-image">
+                                <img src="assets/img/placeholder-researcher.svg" alt="Investigador GICIR">
+                            </div>
+                            <div class="researcher-info">
+                                <h3>Mg. [Nombre Investigador]</h3>
+                                <p class="researcher-role">Investigador</p>
+                                <p class="researcher-speciality">Especialidad en Análisis Espacial y SIG</p>
+                                <div class="researcher-contact">
+                                    <p>📧 investigador2.gicir@unl.edu.ec</p>
+                                    <p>💼 LinkedIn: /in/investigador2-gicir</p>
+                                    <p>🔬 ResearchGate: /profile/Investigador2-GICIR</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyectos Tab -->
+                <div class="tab-panel" id="proyectos">
+                    <h2>Proyectos de Investigación</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>Atlas de Desarrollo Territorial de la Zona 7 del Ecuador</h3>
+                            <p class="project-status">En ejecución</p>
+                            <p class="project-description">
+                                Construcción de un atlas digital que sistematice información territorial, socioeconómica y ambiental de las provincias de Loja, El Oro y Zamora Chinchipe para apoyar la planificación regional.
+                            </p>
+                            <div class="project-details">
+                                <span class="project-duration">Duración: 2023-2025</span>
+                                <span class="project-funding">Financiamiento: SENPLADES-UNL</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Dinámicas de Migración y Desarrollo Rural en el Sur de Ecuador</h3>
+                            <p class="project-status">En ejecución</p>
+                            <p class="project-description">
+                                Análisis de los procesos migratorios internos e internacionales y su impacto en el desarrollo rural de las comunidades del sur del Ecuador, incluyendo remesas y transformaciones territoriales.
+                            </p>
+                            <div class="project-details">
+                                <span class="project-duration">Duración: 2023-2024</span>
+                                <span class="project-funding">Financiamiento: SENESCYT</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Innovación Territorial y Sistemas Productivos Locales</h3>
+                            <p class="project-status">En planificación</p>
+                            <p class="project-description">
+                                Investigación sobre los procesos de innovación territorial y la conformación de sistemas productivos locales en sectores estratégicos de la región sur del Ecuador.
+                            </p>
+                            <div class="project-details">
+                                <span class="project-duration">Duración: 2024-2026</span>
+                                <span class="project-funding">Financiamiento: BID-Ecuador</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Planificación Urbana Sostenible en Ciudades Intermedias</h3>
+                            <p class="project-status">En ejecución</p>
+                            <p class="project-description">
+                                Estudio de las dinámicas urbanas en ciudades intermedias del sur de Ecuador, con propuestas de planificación urbana sostenible que consideren el crecimiento demográfico y la gestión ambiental.
+                            </p>
+                            <div class="project-details">
+                                <span class="project-duration">Duración: 2022-2024</span>
+                                <span class="project-funding">Financiamiento: GAD Municipales-UNL</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Gobernanza Territorial y Participación Ciudadana</h3>
+                            <p class="project-status">Finalizado</p>
+                            <p class="project-description">
+                                Análisis de los mecanismos de gobernanza territorial y participación ciudadana en la gestión pública local, con énfasis en los procesos de planificación participativa.
+                            </p>
+                            <div class="project-details">
+                                <span class="project-duration">Duración: 2020-2023</span>
+                                <span class="project-funding">Financiamiento: UNL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producción Científica Tab -->
+                <div class="tab-panel" id="produccion">
+                    <h2>Producción Científica</h2>
+                    
+                    <div class="publications-section">
+                        <h3>Artículos Científicos Recientes</h3>
+                        <div class="publications-list">
+                            <div class="publication-item">
+                                <h4>Territorial development dynamics in southern Ecuador: a regional science approach</h4>
+                                <p class="publication-authors">[Autores], et al.</p>
+                                <p class="publication-journal">Regional Studies, 2024</p>
+                                <span class="publication-type">Artículo de revista</span>
+                            </div>
+
+                            <div class="publication-item">
+                                <h4>Migration patterns and rural development in the Ecuadorian Andes</h4>
+                                <p class="publication-authors">[Autores], et al.</p>
+                                <p class="publication-journal">Journal of Rural Studies, 2023</p>
+                                <span class="publication-type">Artículo de revista</span>
+                            </div>
+
+                            <div class="publication-item">
+                                <h4>Sistemas productivos locales e innovación territorial en Ecuador</h4>
+                                <p class="publication-authors">[Autores], et al.</p>
+                                <p class="publication-journal">EURE - Revista Latinoamericana de Estudios Urbano Regionales, 2023</p>
+                                <span class="publication-type">Artículo de revista</span>
+                            </div>
+
+                            <div class="publication-item">
+                                <h4>Sustainable urban planning in intermediate cities: lessons from southern Ecuador</h4>
+                                <p class="publication-authors">[Autores], et al.</p>
+                                <p class="publication-journal">Cities, 2023</p>
+                                <span class="publication-type">Artículo de revista</span>
+                            </div>
+
+                            <div class="publication-item">
+                                <h4>Gobernanza territorial y desarrollo local en América Latina</h4>
+                                <p class="publication-authors">[Autores], et al.</p>
+                                <p class="publication-journal">Gestión y Política Pública, 2022</p>
+                                <span class="publication-type">Artículo de revista</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="achievements-section">
+                        <h3>Logros y Reconocimientos</h3>
+                        <ul class="achievements-list">
+                            <li>Red Iberoamericana de Investigadores en Ciencia Regional</li>
+                            <li>Colaboración con la Asociación Española de Ciencia Regional (AECR)</li>
+                            <li>Premio Nacional de Investigación en Desarrollo Territorial - Ecuador 2023</li>
+                            <li>Convenios con universidades de Chile, Colombia y España</li>
+                            <li>Observatorio de Desarrollo Territorial del Sur de Ecuador</li>
+                            <li>Asesoría técnica a gobiernos locales en planificación territorial</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>Universidad Nacional de Loja</h3>
+                    <p>Comprometidos con la excelencia académica y la investigación científica.</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="investigacion.html">Investigación</a></li>
+                        <li><a href="docencia.html">Docencia</a></li>
+                        <li><a href="vinculacion.html">Vinculación</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Contacto</h4>
+                    <p>📍 Ciudad Universitaria Guillermo Falconí<br>
+                    Loja, Ecuador<br>
+                    📞 +593 7 257-0275<br>
+                    ✉️ info@unl.edu.ec</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Universidad Nacional de Loja. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.group-tab');
+            const panels = document.querySelectorAll('.tab-panel');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetTab = tab.dataset.tab;
+
+                    // Remove active class from all tabs and panels
+                    tabs.forEach(t => t.classList.remove('group-tab--active'));
+                    panels.forEach(p => p.classList.remove('tab-panel--active'));
+
+                    // Add active class to clicked tab and corresponding panel
+                    tab.classList.add('group-tab--active');
+                    document.getElementById(targetTab).classList.add('tab-panel--active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
