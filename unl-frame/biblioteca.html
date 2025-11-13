@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>UNL | Biblioteca Virtual</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <style>
+    :root {
+      --unl-red: #B71C1C;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      color: #222;
+    }
+
+    /* === HEADER TRANSPARENTE FLOTANTE === */
+    .header__main {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: transparent;
+      border-bottom: none;
+      padding: 16px 20px;
+    }
+
+    .header__main .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__logo img {
+      height: 70px;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    /* === ESTILOS PARA ICONOS SOCIALES EN NAVBAR === */
+    .header-nav a {
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: .8px;
+        transition: all 0.3s ease;
+        padding: 8px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .header-nav a:hover {
+        color: var(--unl-red);
+        background: rgba(255,255,255,0.2);
+        transform: translateY(-2px);
+    }
+
+    .header-nav a i {
+        font-size: 16px;
+    }
+
+    /* === MENÚ HAMBURGUESA === */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: rgba(255,255,255,0.9);
+      cursor: pointer;
+      transition: color 0.3s ease;
+      z-index: 1001;
+    }
+
+    .menu-toggle:hover {
+      color: var(--unl-red);
+    }
+
+    /* === BACKDROP PARA MENÚ === */
+    .menu-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 998;
+    }
+
+    .menu-backdrop.active {
+      display: block;
+    }
+
+    /* === HERO === */
+    .library-hero {
+      position: relative;
+      height: 85vh;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      overflow: visible;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .library-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('./assets/imgBiblioteca/fondo.png');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.55);
+      z-index: 1;
+    }
+
+    .library-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.65));
+      z-index: 2;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 3;
+      max-width: 1000px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      padding-bottom: 80px;
+    }
+
+    /* === TÍTULO === */
+    .library-title {
+      font-size: 56px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--white);
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      margin: 0 0 30px 0;
+    }
+
+    /* === MENÚ SECUNDARIO (bajo el título) === */
+    .library-menu-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .library-menu {
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      backdrop-filter: none;
+      display: flex;
+      gap: 48px;
+      margin: 0;
+      list-style: none;
+    }
+
+    .library-menu a {
+      color: rgba(255,255,255,0.95);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .library-menu a:hover {
+      color: var(--unl-red);
+    }
+
+    .library-menu a.active {
+      color: var(--unl-red);
+    }
+
+    .library-menu a.active::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--unl-red);
+    }
+
+    /* === PALABRAS DESTACADAS === */
+    .red-text {
+      color: var(--unl-red);
+    }
+
+    /* === FRASE Y AUTOR === */
+    .library-quote {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: rgba(255,255,255,0.98);
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+      margin-bottom: 12px;
+      margin-top: 80px;
+    }
+
+    .library-author {
+      font-size: 15px;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: .8px;
+    }
+
+    /* === BARRA DE BÚSQUEDA === */
+    .hero-search {
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .search-box {
+      background: #fff;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 30px;
+      max-width: 900px;
+      width: 80%;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    .search-box input {
+      flex: 1;
+      border: 0;
+      outline: none;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .search-box input::placeholder {
+      color: #999;
+    }
+
+    .search-btn {
+      background: var(--unl-red);
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .search-btn:hover {
+      background: #a00;
+    }
+
+    /* === SECCIÓN INFORMACIÓN BIBLIOTECA === */
+    .info-section {
+      background: #ffffff;
+      background-image: radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px);
+      background-size: 20px 20px;
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .info-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .info-content {
+      z-index: 1;
+    }
+
+    .info-title {
+  color: var(--unl-red); /* #B71C1C - ROJO UNL */
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0 0 30px 0;
+  line-height: 1.3;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+.info-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--unl-red);
+  border-radius: 2px;
+}
+
+.horarios-title {
+  color: var(--unl-red); /* #B71C1C - ROJO UNL */
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0 0 25px 0;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, rgba(183,28,28,0.1) 0%, rgba(183,28,28,0.05) 100%);
+  border-radius: 8px;
+  border-left: 4px solid var(--unl-red);
+}
+
+    .info-description {
+      color: #4a4a4a;
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0 0 20px 0;
+    }
+
+    .horarios-section {
+      margin-top: 50px;
+    }
+
+    .horarios-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .horario-item {
+      display: flex;
+      gap: 12px;
+      color: #4a4a4a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .horario-days {
+      font-weight: 500;
+      min-width: 140px;
+    }
+
+    .horario-time {
+      color: #666;
+    }
+
+    .info-visual {
+      position: relative;
+      z-index: 1;
+    }
+
+    .info-image-wrapper {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    }
+
+    .info-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* === SECCIÓN VIDEO === */
+    .video-section {
+      width: 100%;
+      padding: 20px 0; /* reducir altura del video */
+      margin: 0;
+      background: #f5f5f5;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      padding-bottom: 700px; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .video-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+/* === SECCIÓN MAPA === */
+.map-section {
+  width: 100%;
+  padding: 40px 20px; /* Agregar padding */
+  margin: 0;
+  background: #fff;
+}
+
+.map-container {
+  width: 100%;
+  max-width: 100%; /* Limitar ancho máximo */
+  height: 500px; /* Reducir altura */
+  margin: 0 auto; /* Centrar */
+  position: relative;
+  z-index: 1;
+  border-radius: 8px; /* Opcional: bordes redondeados */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Opcional: sombra sutil */
+}
+
+    /* Estilos para los controles del mapa */
+    .leaflet-control {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .leaflet-control-zoom a {
+      color: #333;
+      background: #fff;
+      border: 1px solid #ccc;
+    }
+
+    .leaflet-control-zoom a:hover {
+      background: #f4f4f4;
+    }
+
+    /* Estilos para el marcador personalizado */
+    .biblioteca-marker {
+      background: transparent;
+      border: none;
+    }
+
+    .marker-pin {
+      width: 32px;
+      height: 32px;
+      background: #3388ff;
+      border: 3px solid #fff;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .marker-pin::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    /* === CONTENIDO === */
+    .content {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .content h2 {
+      color: var(--unl-red);
+      font-size: 28px;
+    }
+
+    /* === SECCIÓN ACCESOS DIRECTOS === */
+    .accesos-section {
+      background: linear-gradient(135deg, rgba(60, 10, 10, 0.95) 0%, rgba(100, 20, 20, 0.98) 50%, rgba(80, 15, 15, 0.95) 100%);
+      padding: 140px 20px 60px 20px;
+      text-align: center;
+      position: relative;
+      margin-top: 0;
+    }
+
+    .accesos-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .accesos-section h2 {
+      color: #fff;
+      font-size: 28px;
+      margin: 0 0 45px 0;
+      font-weight: 300;
+      letter-spacing: 0.3px;
+    }
+
+    .accesos-label {
+      color: rgba(255,255,255,0.7);
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+      font-weight: 500;
+    }
+
+    .accesos-grid-wrapper {
+      position: relative;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 60px;
+      z-index: 1;
+    }
+
+    .accesos-section h2,
+    .accesos-label {
+      position: relative;
+      z-index: 1;
+    }
+
+    .accesos-grid {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      padding: 20px 0 40px 0;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.3) transparent;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .accesos-grid::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .accesos-grid::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+    }
+
+    .accesos-grid::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.3);
+      border-radius: 10px;
+    }
+
+    .accesos-grid::-webkit-scrollbar-thumb:hover {
+      background: rgba(255,255,255,0.5);
+    }
+
+    .acceso-card {
+      background: rgba(255,255,255,0.14);
+      padding: 32px 28px;
+      border-radius: 16px;
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.1) inset;
+      min-width: 200px;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .acceso-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.5s;
+    }
+
+    .acceso-card:hover::before {
+      left: 100%;
+    }
+
+    .acceso-card:hover {
+      background: rgba(255,255,255,0.22);
+      border-color: rgba(255,255,255,0.35);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.2) inset;
+    }
+
+    .acceso-icon {
+      font-size: 40px;
+      color: #fff;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.18);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .acceso-card:hover .acceso-icon {
+      background: rgba(255,255,255,0.28);
+      border-color: rgba(255,255,255,0.4);
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+
+    .acceso-name {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.5;
+      letter-spacing: 0.3px;
+      text-align: center;
+      color: rgba(255,255,255,0.98);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Botones de navegación del carrusel */
+    .accesos-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      font-size: 20px;
+    }
+
+    .accesos-nav-btn:hover {
+      background: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.35);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .accesos-nav-btn.prev {
+      left: 0;
+    }
+
+    .accesos-nav-btn.next {
+      right: 0;
+    }
+
+    .accesos-nav-btn:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    /* === RESPONSIVE ACCESOS === */
+    @media (max-width: 1024px) {
+      .accesos-grid-wrapper {
+        padding: 0 50px;
+      }
+
+      .acceso-card {
+        min-width: 180px;
+        padding: 28px 24px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .info-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .info-title {
+        font-size: 28px;
+      }
+
+      .info-description {
+        font-size: 15px;
+      }
+
+      .info-section {
+        padding: 60px 20px;
+      }
+
+      .video-section {
+        padding: 60px 15px;
+      }
+
+      .accesos-section {
+        padding: 120px 15px 40px 15px;
+      }
+
+      .accesos-section h2 {
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+
+      .accesos-grid-wrapper {
+        padding: 0 50px;
+      }
+
+      .accesos-grid {
+        gap: 18px;
+      }
+
+      .acceso-card {
+        min-width: 160px;
+        padding: 24px 20px;
+        gap: 16px;
+      }
+
+      .acceso-icon {
+        font-size: 36px;
+        width: 70px;
+        height: 70px;
+      }
+
+      .acceso-name {
+        font-size: 13px;
+      }
+
+      .accesos-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .info-section {
+        padding: 40px 15px;
+      }
+
+      .info-title {
+        font-size: 24px;
+      }
+
+      .info-description {
+        font-size: 14px;
+      }
+
+      .horarios-title {
+        font-size: 16px;
+      }
+
+      .horario-item {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .horario-days {
+        min-width: auto;
+      }
+
+      .video-section {
+        padding: 40px 10px;
+      }
+
+      .accesos-section {
+        padding: 110px 10px 30px 10px;
+      }
+
+      .accesos-section h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .accesos-grid-wrapper {
+        padding: 0 45px;
+      }
+
+      .accesos-grid {
+        gap: 15px;
+      }
+
+      .acceso-card {
+        min-width: 140px;
+        padding: 20px 16px;
+        gap: 14px;
+      }
+
+      .acceso-icon {
+        font-size: 32px;
+        width: 60px;
+        height: 60px;
+      }
+
+      .acceso-name {
+        font-size: 12px;
+      }
+
+      .accesos-nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+      }
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 1024px) {
+      .library-title { font-size: 42px; }
+      .library-menu { gap: 24px; }
+      .search-box { width: 85%; }
+    }
+
+    @media (max-width: 768px) {
+      /* Header responsive */
+      .header__main .container {
+        justify-content: space-between;
+      }
+
+      .header-nav {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: linear-gradient(180deg, rgba(183,28,28,0.85), rgba(139,0,0,0.8));
+        padding: 20px 0;
+        z-index: 999;
+        flex: none;
+        justify-content: flex-start;
+      }
+
+      .header-nav.active {
+        display: flex;
+      }
+
+      .header-nav a {
+        padding: 16px 20px;
+        display: block;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        color: rgba(255,255,255,0.95);
+        font-size: 16px;
+        width: auto;
+        height: auto;
+        border-radius: 0;
+        background: transparent;
+        backdrop-filter: none;
+      }
+
+      .header-nav a:hover {
+        background: rgba(255,255,255,0.1);
+        transform: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      /* Responsive para los iconos */
+      .header-nav {
+        gap: 0;
+      }
+      
+      .header-nav a {
+        width: auto;
+        height: auto;
+        padding: 16px 20px;
+      }
+      
+      .header-nav a i {
+        font-size: 18px;
+        margin-right: 10px;
+      }
+
+      /* Hero responsive */
+      .hero-inner {
+        padding-bottom: 150px;
+      }
+
+      .library-title { 
+        font-size: 32px;
+        margin-bottom: 30px;
+      }
+
+      .library-menu-wrapper {
+        margin-bottom: 50px;
+      }
+
+      .library-menu { 
+        gap: 20px;
+        font-size: 13px;
+        padding: 0;
+        flex-wrap: nowrap;
+        justify-content: center;
+      }
+
+      .library-menu a {
+        padding: 0;
+      }
+
+      .library-quote { 
+        font-size: 20px;
+        margin-bottom: 10px;
+        margin-top: 40px;
+      }
+
+      .library-author {
+        font-size: 13px;
+        margin-bottom: 30px;
+      }
+
+      .hero-search {
+        bottom: -50px;
+        padding: 0 20px;
+      }
+
+      .search-box { 
+        width: 100%;
+        max-width: 100%;
+        padding: 14px 20px;
+      }
+
+      .search-box input {
+        font-size: 14px;
+      }
+
+      .search-btn {
+        padding: 10px 20px;
+        font-size: 13px;
+      }
+
+      .header__logo img {
+        height: 52px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .library-title { 
+        font-size: 26px;
+        margin-bottom: 25px;
+      }
+
+      .library-menu-wrapper {
+        margin-bottom: 30px;
+      }
+
+      .library-menu {
+        gap: 12px;
+        font-size: 11px;
+        padding: 0;
+      }
+
+      .library-quote { 
+        font-size: 18px;
+        margin-bottom: 8px;
+        margin-top: 20px;
+      }
+
+      .library-author {
+        font-size: 12px;
+        margin-bottom: 25px;
+      }
+
+      .hero-search {
+        bottom: -40px;
+      }
+
+      .search-box {
+        padding: 12px 16px;
+        gap: 8px;
+      }
+
+      .search-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+      }
+
+      .hero-inner {
+        padding-bottom: 120px;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+
+ <!-- === NAVBAR TRANSPARENTE FLOTANTE === -->
+<header class="header__main" id="header">
+    <div class="container">
+        <a href="./index.html" class="header__logo">
+            <img src="./assets/imgBiblioteca/logoNavbar.png" alt="Logo UNL">
+        </a>
+
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="header-nav" id="header-nav">
+            <!-- ICONOS SOCIALES -->
+            <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </nav>
+    </div>
+</header>
+
+
+<!-- === BACKDROP PARA MENÚ MOBILE === -->
+  <div class="menu-backdrop" id="menu-backdrop"></div>
+
+ <!-- === SECCIÓN HERO === -->
+  <section class="library-hero">
+    <div class="hero-inner">
+      <h1 class="library-title">UNL | Biblioteca Virtual</h1>
+
+      <div class="library-menu-wrapper">
+        <ul class="library-menu">
+          <!-- OPCIONES DEL NAVBAR AHORA EN EL MENÚ SECUNDARIO -->
+          <li><a href="./index.html" class="active">INICIO</a></li>
+          <li><a href="./docencia.html">DOCENCIA</a></li>
+          <li><a href="#servicios">SERVICIOS</a></li>
+          <li><a href="#contacto">CONTACTO</a></li>
+        </ul>
+      </div>
+
+      <div class="library-quote">"Cada <span class="red-text">lectura</span> es una <span class="red-text">conversación</span> con quien ya vio más lejos que <span class="red-text">nosotros</span>"</div>
+      <div class="library-author">— Cristian Ajila</div>
+    </div>
+
+    <!-- BARRA DE BÚSQUEDA EN LA TRANSICIÓN -->
+    <div class="hero-search">
+      <div class="search-box">
+        <input id="library-search" type="search" placeholder="Buscar un libro, autor, artículo o tema">
+        <button class="search-btn" id="search-btn">Buscar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- === SECCIÓN ACCESOS DIRECTOS === -->
+  <section class="accesos-section">
+    <span class="accesos-label">Accesos Directos</span>
+    <h2>¿Qué estás buscando?</h2>
+    
+    <div class="accesos-grid-wrapper">
+      <button class="accesos-nav-btn prev" id="prevBtn" aria-label="Anterior">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="accesos-grid" id="accesosGrid">
+      <a href="#" class="acceso-card">
+        <div class="acceso-icon">
+          <i class="fas fa-book"></i>
+        </div>
+        <div class="acceso-name">SIGB KOHA</div>
+      </a>
+
+      <a href="#" class="acceso-card">
+        <div class="acceso-icon">
+          <i class="fas fa-headphones"></i>
+        </div>
+        <div class="acceso-name">Biblioteca Audiolibros PCD</div>
+      </a>
+
+      <a href="#" class="acceso-card">
+        <div class="acceso-icon">
+          <i class="fas fa-database"></i>
+        </div>
+        <div class="acceso-name">Repositorio Institucional</div>
+      </a>
+
+      <a href="#" class="acceso-card">
+        <div class="acceso-icon">
+          <i class="fas fa-flask-vial"></i>
+        </div>
+        <div class="acceso-name">Portal de Investigación</div>
+      </a>
+
+      <a href="#" class="acceso-card">
+        <div class="acceso-icon">
+          <i class="fas fa-cogs"></i>
+        </div>
+        <div class="acceso-name">Tecnologías</div>
+      </a>
+
+      <a href="#" class="acceso-card">
+        <div class="acceso-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <div class="acceso-name">Convenios</div>
+      </a>
+
+      <a href="#" class="acceso-card">
+        <div class="acceso-icon">
+          <i class="fas fa-lock"></i>
+        </div>
+        <div class="acceso-name">Manual de Acceso VPN</div>
+      </a>
+
+      <a href="#" class="acceso-card">
+        <div class="acceso-icon">
+          <i class="fas fa-info-circle"></i>
+        </div>
+        <div class="acceso-name">Instructivo</div>
+      </a>
+
+      <a href="#" class="acceso-card">
+        <div class="acceso-icon">
+          <i class="fas fa-file-pdf"></i>
+        </div>
+        <div class="acceso-name">Manual Servicio de Bibliotecas</div>
+      </a>
+
+      <a href="#" class="acceso-card">
+        <div class="acceso-icon">
+          <i class="fas fa-gift"></i>
+        </div>
+        <div class="acceso-name">Servicio de Préstamo</div>
+      </a>
+
+      <a href="#" class="acceso-card">
+        <div class="acceso-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="acceso-name">Capacitaciones</div>
+      </a>
+      </div>
+      <button class="accesos-nav-btn next" id="nextBtn" aria-label="Siguiente">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- === SECCIÓN INFORMACIÓN BIBLIOTECA === -->
+  <section class="info-section">
+    <div class="info-container">
+      <div class="info-content">
+        <h2 class="info-title">¿Qué es la biblioteca UNL?</h2>
+        <p class="info-description">
+          La Biblioteca Virtual de la Universidad Nacional de Loja es un espacio digital diseñado para brindar acceso a recursos bibliográficos, bases de datos especializadas y servicios académicos. Nuestro objetivo es apoyar la investigación, el aprendizaje y la docencia de nuestra comunidad universitaria.
+        </p>
+        <p class="info-description">
+          Ofrecemos acceso a catálogos digitales, repositorios institucionales, revistas académicas y una amplia gama de recursos electrónicos que facilitan el trabajo académico y la investigación.
+        </p>
+
+        <div class="horarios-section">
+          <h3 class="horarios-title">HORARIOS DE ATENCIÓN</h3>
+          <div class="horarios-list">
+            <div class="horario-item">
+              <span class="horario-days">Lunes a viernes:</span>
+              <span class="horario-time">7:00 a 21:00</span>
+            </div>
+            <div class="horario-item">
+              <span class="horario-days">Sábados:</span>
+              <span class="horario-time">8:00 a 12:00</span>
+            </div>
+            <div class="horario-item">
+              <span class="horario-days">No hay atención en días festivos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-visual">
+        <div class="info-image-wrapper">
+          <img src="./assets/imgBiblioteca/biblioteca.png" alt="Biblioteca UNL" class="info-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === SECCIÓN VIDEO === -->
+  <section class="video-section">
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/AwYDPj-H0As" 
+        title="Tour Virtual - Biblioteca UNL" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+        class="video-iframe">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- === SECCIÓN MAPA === -->
+  <section class="map-section">
+    <div id="bibliotecaMap" class="map-container"></div>
+  </section>
+
+  <!-- === SECCIÓN FOOTER === -->
+  <footer class="footer-red" role="contentinfo">
+    <!-- Video de fondo -->
+    <video class="footer-red__video" autoplay muted loop>
+        <source src="./assets/video/UNL.mp4" type="video/mp4">
+    </video>
+    <div class="footer-red__overlay"></div>
+    
+    <div class="container">
+        <div class="footer-red__content">
+            <!-- Newsletter Section -->
+            <div class="footer-red__newsletter">
+                <h3 class="footer-red__newsletter-title">Suscríbete a nuestras noticias</h3>
+                <form class="footer-red__newsletter-form">
+                    <input type="email" placeholder="Tu correo" class="footer-red__newsletter-input" required>
+                    <button type="submit" class="footer-red__newsletter-btn">
+                        Suscríbete 
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Línea divisoria -->
+            <div class="footer-red__divider"></div>
+            
+            <!-- Información principal -->
+            <div class="footer-red__main">
+                <div class="footer-red__info">
+                    <!-- Logo -->
+                    <div class="footer-red__logo">
+                        <img src="./assets/img/logogris_0.png" alt="Universidad Nacional de Loja" class="footer-red__logo-image">
+                    </div>
+                    
+                    <!-- Contacto -->
+                    <div class="footer-red__contact">
+                        <div class="footer-red__contact-item">
+                            <svg class="footer-red__contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>Ciudad Universitaria Guillermo Falconí - Loja - Ecuador</span>
+                        </div>
+                        
+                        <div class="footer-red__contact-item">
+                            <svg class="footer-red__contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>07 2593550 (Opción 1 - Modalidad Presencial)</span>
+                        </div>
+                        
+                        <div class="footer-red__contact-item">
+                            <svg class="footer-red__contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>07 2593550 (Opción 2 - Modalidad Distancia)</span>
+                        </div>
+                        
+                        <div class="footer-red__contact-item">
+                            <svg class="footer-red__contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span><strong>Contáctanos:</strong> comunicacion@unl.edu.ec</span>
+                        </div>
+                        
+                        <div class="footer-red__contact-item">
+                            <a href="#" class="footer-red__map-link">Ver ubicación en el mapa</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Redes sociales -->
+                <div class="footer-red__social">
+                    <h4 class="footer-red__social-title">Síguenos en redes</h4>
+                    <div class="footer-red__social-links">
+                        <a href="#" class="footer-red__social-link" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-red__social-link" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-red__social-link" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-red__social-link" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-red__copyright">
+                <div class="footer-red__divider"></div>
+                <p>©2025 Universidad Nacional de Loja. Todos los derechos reservados</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./js/biblioteca.js"></script>
+</body>
+</html>
